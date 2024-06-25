@@ -1,7 +1,7 @@
 #include "registration.h"
 
 
-Registration::Registration(Person a)
+Registration::Registration(const Person &a)
     : m_Attendee(a)
 {
 

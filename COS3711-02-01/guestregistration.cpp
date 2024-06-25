@@ -1,6 +1,6 @@
 #include "guestregistration.h"
 
-GuestRegistration::GuestRegistration(Person a, QString q)
+GuestRegistration::GuestRegistration(const Person &a, const QString &q)
     : Registration(a), m_Category(q)
 {
 
