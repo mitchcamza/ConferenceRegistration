@@ -6,12 +6,12 @@
 class StudentRegistration : public Registration
 {
 public:
-    StudentRegistration(Person a, QString q);
+    StudentRegistration(const Person &a, const QString &q);
+    virtual double calculateFee() const override;
+    virtual QString toString() const override;
 
 private:
     QString m_Qualification;
-    virtual double calculateFee() const override;
-    virtual QString toString() const override;
 };
 
 #endif // STUDENTREGISTRATION_H

@@ -10,17 +10,17 @@ RegistrationList::~RegistrationList()
 
 }
 
-bool RegistrationList::isRegistered(QString n)
+bool RegistrationList::isRegistered(const QString &n)
 {
     return false;
 }
 
-double RegistrationList::totalFee(QString t)
+double RegistrationList::totalFee(const QString &t)
 {
     return 0;
 }
 
-int RegistrationList::totalRegistrations(QString a)
+int RegistrationList::totalRegistrations(const QString &a)
 {
     return 0;
 }

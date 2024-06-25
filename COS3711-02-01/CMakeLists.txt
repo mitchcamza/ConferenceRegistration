@@ -27,6 +27,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         studentregistration.h studentregistration.cpp
         guestregistration.h guestregistration.cpp
         registrationlist.h registrationlist.cpp
+        standardregistration.h standardregistration.cpp
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET COS3711-02-01 APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

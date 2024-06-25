@@ -6,7 +6,7 @@
 class Person
 {
 public:
-    Person(QString n, QString a, QString e);
+    Person(const QString &n, const QString &a, const QString &e);
 
     QString getName() const;
     QString getAffiliation() const;

@@ -1,6 +1,6 @@
 #include "person.h"
 
-Person::Person(QString n, QString a, QString e)
+Person::Person(const QString &n, const QString &a, const QString &e)
 {
 
 }

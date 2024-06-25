@@ -9,14 +9,17 @@
 
 class Registration
 {
-public:
-    const double STANDARD_FEE = 100.00;
+protected:
+    // Constructor marked protected to ensure that only derived classes can call it
+    Registration(const Person &a);
 
-    Registration(Person a);
+public:
+    static constexpr double STANDARD_FEE = 100.00;
+
     Person getAttendee() const;
     QDate getBookingDate() const;
-    virtual double calculateFee() const;
-    virtual QString toString() const;
+    virtual double calculateFee() const = 0;
+    virtual QString toString() const = 0;
 
 private:
     Person m_Attendee;
