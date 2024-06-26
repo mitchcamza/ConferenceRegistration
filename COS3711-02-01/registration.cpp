@@ -2,7 +2,7 @@
 
 
 Registration::Registration(const Person &a)
-    : m_Attendee(a)
+    : QObject(nullptr), m_Attendee(a), m_BookingDate(QDate::currentDate())
 {
 
 }
@@ -17,12 +17,9 @@ QDate Registration::getBookingDate() const
     return m_BookingDate;
 }
 
-double Registration::calculateFee() const
-{
-    return 0;
-}
-
 QString Registration::toString() const
 {
-    return QString();
+    return QString("Attendee: %1\nBooking Date: %2")
+        .arg(m_Attendee.toString())
+        .arg(m_BookingDate.toString());
 }

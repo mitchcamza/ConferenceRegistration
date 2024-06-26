@@ -5,6 +5,8 @@
 
 class GuestRegistration : public Registration
 {
+    Q_OBJECT
+
 public:
     GuestRegistration(const Person &a, const QString &q);
     virtual double calculateFee() const override;

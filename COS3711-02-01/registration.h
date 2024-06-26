@@ -7,11 +7,9 @@
 #include <QString>
 
 
-class Registration
+class Registration : public QObject
 {
-protected:
-    // Constructor marked protected to ensure that only derived classes can call it
-    Registration(const Person &a);
+    Q_OBJECT
 
 public:
     static constexpr double STANDARD_FEE = 100.00;
@@ -19,7 +17,11 @@ public:
     Person getAttendee() const;
     QDate getBookingDate() const;
     virtual double calculateFee() const = 0;
-    virtual QString toString() const = 0;
+    virtual QString toString() const;
+
+protected:
+    // Protected constructor to prevent direct instantiation
+    Registration(const Person &a);
 
 private:
     Person m_Attendee;
