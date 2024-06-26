@@ -5,6 +5,8 @@
 
 class StudentRegistration : public Registration
 {
+    Q_OBJECT
+
 public:
     StudentRegistration(const Person &a, const QString &q);
     virtual double calculateFee() const override;

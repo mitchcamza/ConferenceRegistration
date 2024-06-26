@@ -13,7 +13,10 @@ double StandardRegistration::calculateFee() const
 
 QString StandardRegistration::toString() const
 {
-    return QString();
+    QString typeName = metaObject()->className();
+    return Registration::toString() + QString("Type: %1\nFee: %2")
+        .arg(typeName)
+        .arg(calculateFee());
 }
 
 
