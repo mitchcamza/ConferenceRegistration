@@ -14,8 +14,8 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 
 set(PROJECT_SOURCES
         main.cpp
-        userinterface.cpp
-        userinterface.h
+
+
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
@@ -28,6 +28,12 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         guestregistration.h guestregistration.cpp
         registrationlist.h registrationlist.cpp
         standardregistration.h standardregistration.cpp
+        mainwindow.h mainwindow.cpp
+        newregistrationdialog.h newregistrationdialog.cpp
+        searchdialog.h searchdialog.cpp
+        totalfeesdialog.h totalfeesdialog.cpp
+        totalregistereddialog.h totalregistereddialog.cpp
+        resources.qrc
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET COS3711-02-01 APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
