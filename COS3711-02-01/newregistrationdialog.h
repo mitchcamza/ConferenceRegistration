@@ -9,7 +9,7 @@ class QDateEdit;
 class QPushButton;
 class QGridLayout;
 class QGroupBox;
-class QFormLayout;
+class QLabel;
 
 class NewRegistrationDialog : public QDialog
 {
@@ -21,12 +21,14 @@ public:
 private slots:
     void on_pushButtonRegister_clicked();
     void on_pushButtonCancel_clicked();
+    void on_comboBoxRegistrationType_changed();
 
 private:
     void setupUI();
     void setupRegistrationGroup();
     void setupApplicantGroup();
     void setupButtons();
+    void updateRegistrationFormBasedOnRegistrationType();
 
 private:
     QComboBox *comboBoxRegistrationType;
@@ -39,8 +41,11 @@ private:
     QPushButton *pushButtonRegister;
     QPushButton *pushButtonCancel;
     QGridLayout *mainLayout;
+    QGridLayout *gridLayoutApplicant;
     QGroupBox *groupBoxRegistration;
     QGroupBox *groupBoxApplicant;
+    QLabel *labelStudentQualification;
+    QLabel *labelGuestCategory;
 };
 
 #endif // NEWREGISTRATIONDIALOG_H
