@@ -1,13 +1,15 @@
 #include "newregistrationdialog.h"
 
 #include <QGridLayout>
-#include <QFormLayout>
 #include <QGroupBox>
 #include <QLineEdit>
 #include <QComboBox>
 #include <QDateEdit>
 #include <QPushButton>
 #include <QLabel>
+
+#include <QMetaObject>
+#include <QMetaProperty>
 
 NewRegistrationDialog::NewRegistrationDialog(QDialog *parent)
     : QDialog(parent),
@@ -22,13 +24,16 @@ NewRegistrationDialog::NewRegistrationDialog(QDialog *parent)
     lineEditStudentQualification(new QLineEdit()),
     lineEditGuestCategory(new QLineEdit()),
     pushButtonRegister(new QPushButton("Register")),
-    pushButtonCancel(new QPushButton("Cancel"))
+    pushButtonCancel(new QPushButton("Cancel")),
+    labelStudentQualification(new QLabel("Student Qualification: ")),
+    labelGuestCategory(new QLabel("Guest Category: "))
 {
     setupUI();
 
     // Connect signals and slots
     connect(pushButtonRegister, &QPushButton::clicked, this, &NewRegistrationDialog::on_pushButtonRegister_clicked);
     connect(pushButtonCancel, &QPushButton::clicked, this, &NewRegistrationDialog::on_pushButtonCancel_clicked);
+    connect(comboBoxRegistrationType, &QComboBox::currentIndexChanged, this, &NewRegistrationDialog::on_comboBoxRegistrationType_changed);
 }
 
 NewRegistrationDialog::~NewRegistrationDialog()
@@ -44,6 +49,59 @@ void NewRegistrationDialog::on_pushButtonRegister_clicked()
 void NewRegistrationDialog::on_pushButtonCancel_clicked()
 {
     this->close();
+}
+
+void NewRegistrationDialog::updateRegistrationFormBasedOnRegistrationType()
+{
+    QString registrationType = comboBoxRegistrationType->currentText().toLower();
+
+    labelStudentQualification->setProperty("registrationType", QVariantMap{
+        { "standard", false },
+        { "student", true },
+        { "guest", false }
+    });
+
+    lineEditStudentQualification->setProperty("registrationType", QVariantMap{
+        { "standard", false },
+        { "student", true },
+        { "guest", false }
+    });
+
+    labelGuestCategory->setProperty("registrationType", QVariantMap{
+        { "standard", false },
+        { "student", false },
+        { "guest", true }
+    });
+
+    lineEditGuestCategory->setProperty("registrationType", QVariantMap{
+        { "standard", false },
+        { "student", false },
+        { "guest", true }
+    });
+
+    // Enable or disable fields, depending on registration type
+    QList<QWidget*> widgets = { labelStudentQualification, lineEditStudentQualification, labelGuestCategory, lineEditGuestCategory };
+    for (QWidget* widget : widgets)
+    {
+        QVariantMap properties = widget->property("registrationType").toMap();
+        if (properties.contains(registrationType))
+        {
+            widget->setVisible(properties.value(registrationType).toBool());
+        }
+        else
+        {
+            widget->setVisible(false);  // Default state if the registration type is not found
+        }
+    }
+
+    // Clear line edits after updating their states
+    lineEditStudentQualification->clear();
+    lineEditGuestCategory->clear();
+}
+
+void NewRegistrationDialog::on_comboBoxRegistrationType_changed()
+{
+    updateRegistrationFormBasedOnRegistrationType();
 }
 
 void NewRegistrationDialog::setupUI()
@@ -110,13 +168,15 @@ void NewRegistrationDialog::setupApplicantGroup()
     gridLayoutApplicant->addWidget(lineEditEmail, 2, 1);
 
     // Student Qualification
-    QLabel *labelStudentQualification = new QLabel("Student Qualification: ");
+    // labelStudentQualification->setVisible(false);
+    // lineEditStudentQualification->setVisible(false);
     lineEditStudentQualification->setToolTip("Selects the applicant's qualification. Only applicable to student registrations.");
     gridLayoutApplicant->addWidget(labelStudentQualification, 3, 0);
     gridLayoutApplicant->addWidget(lineEditStudentQualification, 3, 1);
 
     // Guest Category
-    QLabel *labelGuestCategory = new QLabel("Guest Category: ");
+    // labelGuestCategory->setVisible(false);
+    // lineEditGuestCategory->setVisible(false);
     lineEditGuestCategory->setToolTip("Selects the applicant's category. Only applicable to guests.");
     gridLayoutApplicant->addWidget(labelGuestCategory, 4, 0);
     gridLayoutApplicant->addWidget(lineEditGuestCategory, 4, 1);
@@ -124,6 +184,8 @@ void NewRegistrationDialog::setupApplicantGroup()
     groupBoxApplicant->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
     groupBoxApplicant->setLayout(gridLayoutApplicant);
     mainLayout->addWidget(groupBoxApplicant, 1, 0);
+
+    updateRegistrationFormBasedOnRegistrationType();
 }
 
 void NewRegistrationDialog::setupButtons()
