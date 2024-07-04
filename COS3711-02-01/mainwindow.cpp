@@ -3,8 +3,9 @@
 #include "searchdialog.h"
 #include "totalfeesdialog.h"
 #include "totalregistereddialog.h"
+#include "registrationmodel.h"
 
-#include <QTableWidget>
+#include <QTableView>
 #include <QStandardItem>
 #include <QHeaderView>
 #include <QMenuBar>
@@ -13,9 +14,11 @@
 #include <QIcon>
 
 
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent),
-    tableWidgetRegistrations(new QTableWidget(0, 8, this)),
+    registrationModel(new RegistrationModel()),
+    tableViewRegistrations(new QTableView(this)),
     actionAddAttendee(new QAction(QIcon(":/icons/add"), tr("New Registration"), this)),
     actionSearchAttendee(new QAction(QIcon(":/icons/search"), tr("Search"), this)),
     actionGetTotalFees(new QAction(QIcon(":/icons/fees"), tr("Total Fees"), this)),
@@ -42,10 +45,7 @@ MainWindow::~MainWindow()
 void MainWindow::setupUI(QMainWindow *mainApplicationWindow)
 {
     // Main Application window
-    if (mainApplicationWindow->objectName().isEmpty())
-    {
-        mainApplicationWindow->setObjectName("Conference Registration");
-    }
+    this->setWindowTitle("Conference Registration");
     mainApplicationWindow->resize(800, 600);
 
     // Menubar
@@ -84,19 +84,10 @@ void MainWindow::setupUI(QMainWindow *mainApplicationWindow)
     toolBar->addAction(actionGetNumberOfAttendeesForAffiliation);
 
     // Registration table
-    mainApplicationWindow->setCentralWidget(tableWidgetRegistrations);
-    tableWidgetRegistrations->setSortingEnabled(true);
-    QStringList tableHeaders;
-    tableHeaders << "Name"
-                 << "Affiliation"
-                 << "Email"
-                 << "Booking Date"
-                 << "Type"
-                 << "Fee"
-                 << "Qualification"
-                 << "Category";
-    tableWidgetRegistrations->setHorizontalHeaderLabels(tableHeaders);
-    tableWidgetRegistrations->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    mainApplicationWindow->setCentralWidget(tableViewRegistrations);
+    tableViewRegistrations->setModel(registrationModel);
+    tableViewRegistrations->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    tableViewRegistrations->setSortingEnabled(true);
 }
 
 void MainWindow::on_actionAddAttendee_triggered()

@@ -3,7 +3,8 @@
 
 #include <QMainWindow>
 
-class QTableWidget;
+class QTableView;
+class RegistrationModel;
 
 class MainWindow : public QMainWindow
 {
@@ -22,7 +23,8 @@ private slots:
     void on_actionGetNumberOfAttendeesForAffiliation_triggered();
 
 private:
-    QTableWidget *tableWidgetRegistrations;
+    QTableView *tableViewRegistrations;
+    RegistrationModel *registrationModel;
     QMenuBar *menuBar;
     QStatusBar *statusBar;
     QToolBar *toolBar;
