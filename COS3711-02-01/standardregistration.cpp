@@ -1,7 +1,7 @@
 #include "standardregistration.h"
 
-StandardRegistration::StandardRegistration(const Person &a)
-    : Registration(a)
+StandardRegistration::StandardRegistration(const Person &attendee)
+    : Registration(attendee)
 {
 
 }

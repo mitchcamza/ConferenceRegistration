@@ -6,7 +6,8 @@
 class Person
 {
 public:
-    Person(const QString &n, const QString &a, const QString &e);
+    Person(const QString &name, const QString &affiliation, const QString &email);
+    ~Person() = default;
 
     QString getName() const;
     QString getAffiliation() const;

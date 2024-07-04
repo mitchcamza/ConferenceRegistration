@@ -1,7 +1,7 @@
 #include "person.h"
 
-Person::Person(const QString &n, const QString &a, const QString &e)
-    : m_Name(n), m_Affiliation(a), m_Email(e)
+Person::Person(const QString &name, const QString &affiliation, const QString &email)
+    : m_Name(name), m_Affiliation(affiliation), m_Email(email)
 {
 
 }

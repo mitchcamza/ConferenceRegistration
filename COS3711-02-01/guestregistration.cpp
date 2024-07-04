@@ -1,7 +1,7 @@
 #include "guestregistration.h"
 
-GuestRegistration::GuestRegistration(const Person &a, const QString &q)
-    : Registration(a), m_Category(q)
+GuestRegistration::GuestRegistration(const Person &attendee, const QString &category)
+    : Registration(attendee), m_Category(category)
 {
 
 }
@@ -18,4 +18,9 @@ QString GuestRegistration::toString() const
         .arg(typeName)
         .arg(m_Category)
         .arg(calculateFee());
+}
+
+QString GuestRegistration::getCategory() const
+{
+    return m_Category;
 }
