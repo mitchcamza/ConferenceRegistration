@@ -18,7 +18,7 @@ public:
     Person getAttendee() const;
     QDate getBookingDate() const;
     virtual double calculateFee() const = 0;
-    virtual QString toString() const = 0;
+    virtual QString toString() const;
 
 protected:
     Registration(const Person &attendee);

@@ -13,9 +13,7 @@ double GuestRegistration::calculateFee() const
 
 QString GuestRegistration::toString() const
 {
-    QString typeName = metaObject()->className();
-    return Registration::toString() + QString("Type: %1\nCategory: %2\nFee: %3")
-        .arg(typeName)
+    return Registration::toString() + QString("Category: %1\nRegistration Fee: %2")
         .arg(m_Category)
         .arg(calculateFee());
 }
