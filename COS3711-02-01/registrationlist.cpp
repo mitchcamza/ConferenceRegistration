@@ -14,22 +14,25 @@ RegistrationList::~RegistrationList()
     m_AttendeeList.clear();
 }
 
-bool RegistrationList::addRegistration(Registration *r)
-{
-    // Append registration to list if it does not exist
-    if (!isRegistered(r->getAttendee().getName()))
+bool RegistrationList::addRegistration(Registration *registration)
+{    
+    // If email address is already registered, only add new registration if names differ
+    foreach (Registration *existingRegistration, m_AttendeeList)
     {
-        m_AttendeeList.append(r);
-        return true;
+        if (!(existingRegistration->getAttendee().getEmail() == registration->getAttendee().getEmail() && existingRegistration->getAttendee().getName() == registration->getAttendee().getName()))
+        {
+            m_AttendeeList.append(registration);
+            return true;
+        }
     }
     return false;
 }
 
-bool RegistrationList::isRegistered(const QString &n) const
+bool RegistrationList::isRegistered(const QString &name) const
 {
     foreach (Registration *r, m_AttendeeList)
     {
-        if (r->getAttendee().getName() == n)
+        if (r->getAttendee().getName() == name)
         {
             return true;
         }
@@ -37,13 +40,13 @@ bool RegistrationList::isRegistered(const QString &n) const
     return false;
 }
 
-double RegistrationList::totalFee(const QString &t) const
+double RegistrationList::totalFee(const QString &type) const
 {
     double total = 0;
     foreach (Registration *r, m_AttendeeList)
     {
         // Calculate total fees for given registration type
-        if (t == "All" || QString(r->metaObject()->className()) == t)
+        if (type == "All" || QString(r->metaObject()->className()) == type)
         {
             total += r->calculateFee();
         }
@@ -51,12 +54,12 @@ double RegistrationList::totalFee(const QString &t) const
     return total;
 }
 
-int RegistrationList::totalRegistrations(const QString &a) const
+int RegistrationList::totalRegistrations(const QString &affiliation) const
 {
     int totalRegistrationsForAffiliation = 0;
     foreach (Registration *r, m_AttendeeList)
     {
-        if (r->getAttendee().getAffiliation() == a)
+        if (r->getAttendee().getAffiliation() == affiliation)
         {
             totalRegistrationsForAffiliation++;
         }
