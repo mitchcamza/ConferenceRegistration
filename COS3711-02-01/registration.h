@@ -14,14 +14,14 @@ class Registration : public QObject
 public:
     static constexpr double STANDARD_FEE = 100.00;
 
+    virtual ~Registration() = default;
     Person getAttendee() const;
     QDate getBookingDate() const;
     virtual double calculateFee() const = 0;
-    virtual QString toString() const;
+    virtual QString toString() const = 0;
 
 protected:
-    // Protected constructor to prevent direct instantiation
-    Registration(const Person &a);
+    Registration(const Person &attendee);
 
 private:
     Person m_Attendee;

@@ -1,8 +1,8 @@
 #include "registration.h"
 
 
-Registration::Registration(const Person &a)
-    : QObject(nullptr), m_Attendee(a), m_BookingDate(QDate::currentDate())
+Registration::Registration(const Person &attendee)
+    : QObject(nullptr), m_Attendee(attendee), m_BookingDate(QDate::currentDate())
 {
 
 }

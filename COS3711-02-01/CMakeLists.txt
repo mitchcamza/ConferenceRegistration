@@ -34,6 +34,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         totalfeesdialog.h totalfeesdialog.cpp
         totalregistereddialog.h totalregistereddialog.cpp
         resources.qrc
+        registrationmodel.h registrationmodel.cpp
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET COS3711-02-01 APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
