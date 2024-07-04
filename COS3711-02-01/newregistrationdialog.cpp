@@ -168,15 +168,11 @@ void NewRegistrationDialog::setupApplicantGroup()
     gridLayoutApplicant->addWidget(lineEditEmail, 2, 1);
 
     // Student Qualification
-    // labelStudentQualification->setVisible(false);
-    // lineEditStudentQualification->setVisible(false);
     lineEditStudentQualification->setToolTip("Selects the applicant's qualification. Only applicable to student registrations.");
     gridLayoutApplicant->addWidget(labelStudentQualification, 3, 0);
     gridLayoutApplicant->addWidget(lineEditStudentQualification, 3, 1);
 
     // Guest Category
-    // labelGuestCategory->setVisible(false);
-    // lineEditGuestCategory->setVisible(false);
     lineEditGuestCategory->setToolTip("Selects the applicant's category. Only applicable to guests.");
     gridLayoutApplicant->addWidget(labelGuestCategory, 4, 0);
     gridLayoutApplicant->addWidget(lineEditGuestCategory, 4, 1);
@@ -192,6 +188,8 @@ void NewRegistrationDialog::setupButtons()
 {
     mainLayout->addWidget(pushButtonRegister, 2, 0);
     mainLayout->addWidget(pushButtonCancel, 3, 0);
+    pushButtonRegister->setToolTip("Registers new applicant.");
+    pushButtonCancel->setToolTip("Cancels registration and returns to main application window.");
     pushButtonRegister->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
     pushButtonCancel->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
 }
