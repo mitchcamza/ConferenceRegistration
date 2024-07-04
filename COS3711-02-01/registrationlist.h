@@ -32,25 +32,25 @@ public:
     ~RegistrationList();
 
     /** @brief Adds attendee to list if their name is not on the list.
-     *  @param r The registration.
+     *  @param registration The registration.
      */
     bool addRegistration(Registration* registration);
 
     /** @brief Returns true if the attendee (person) is already registered (by name).
      *  Returns false if the attendee's name is not on the list.
      *  @note Since a uniqueness check is only performed on names, duplicate Email addresses may exist.
-     *  @param n The attendee's name.
+     *  @param name The attendee's name.
      */
     bool isRegistered(const QString &name) const;
 
     /** @brief Returns the total registration fees for a type of registration
      *  @note Registration types may include "StandardRegistration", "StudentRegistration", "GuestRegistration", or "All".
-     *  @param t The type of Registration.
+     *  @param type The type of Registration.
      */
-    double totalFee(const QString &totalFee) const;
+    double totalFee(const QString &type) const;
 
     /** @brief Returns the number of attendees that are registered for the conference from an institution.
-     *  @param a The affiliation (institution).
+     *  @param affiliation The affiliation (institution).
      */
     int totalRegistrations(const QString &affiliation) const;
 

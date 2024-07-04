@@ -46,7 +46,7 @@ double RegistrationList::totalFee(const QString &type) const
     foreach (Registration *r, m_AttendeeList)
     {
         // Calculate total fees for given registration type
-        if (type == "All" || QString(r->metaObject()->className()) == type)
+        if (type.toLower() == "all" || QString(r->metaObject()->className()) == type)
         {
             total += r->calculateFee();
         }
@@ -59,7 +59,7 @@ int RegistrationList::totalRegistrations(const QString &affiliation) const
     int totalRegistrationsForAffiliation = 0;
     foreach (Registration *r, m_AttendeeList)
     {
-        if (r->getAttendee().getAffiliation() == affiliation)
+        if (r->getAttendee().getAffiliation().toLower() == affiliation.toLower())
         {
             totalRegistrationsForAffiliation++;
         }
