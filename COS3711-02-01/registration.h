@@ -20,6 +20,8 @@ public:
     virtual double calculateFee() const = 0;
     virtual QString toString() const;
 
+    void setBookingDate(const QDate &newBookingDate);
+
 protected:
     Registration(const Person &attendee);
 

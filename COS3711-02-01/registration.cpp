@@ -7,6 +7,11 @@ Registration::Registration(const Person &attendee)
 
 }
 
+void Registration::setBookingDate(const QDate &newBookingDate)
+{
+    m_BookingDate = newBookingDate;
+}
+
 Person Registration::getAttendee() const
 {
     return m_Attendee;
