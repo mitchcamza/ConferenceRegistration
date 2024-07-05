@@ -8,10 +8,18 @@
 #include <QPushButton>
 #include <QLabel>
 
-#include <QMetaObject>
-#include <QMetaProperty>
+// #include <QMetaObject>
+// #include <QMetaProperty>
 
-NewRegistrationDialog::NewRegistrationDialog(QDialog *parent)
+// #include "person.h"
+// #include "registration.h"
+
+#include "registrationlist.h"
+#include "standardregistration.h"
+#include "studentregistration.h"
+#include "guestregistration.h"
+
+NewRegistrationDialog::NewRegistrationDialog(RegistrationList *list, QDialog *parent)
     : QDialog(parent),
     mainLayout(new QGridLayout(this)),
     groupBoxRegistration(new QGroupBox("Registration")),
@@ -26,7 +34,8 @@ NewRegistrationDialog::NewRegistrationDialog(QDialog *parent)
     pushButtonRegister(new QPushButton("Register")),
     pushButtonCancel(new QPushButton("Cancel")),
     labelStudentQualification(new QLabel("Student Qualification: ")),
-    labelGuestCategory(new QLabel("Guest Category: "))
+    labelGuestCategory(new QLabel("Guest Category: ")),
+    registrationList(list)
 {
     setupUI();
 
@@ -43,7 +52,39 @@ NewRegistrationDialog::~NewRegistrationDialog()
 
 void NewRegistrationDialog::on_pushButtonRegister_clicked()
 {
-    // TODO: call helper function to add applicant to registration model
+    // Collect registration details
+    QString registrationType = comboBoxRegistrationType->currentText();
+    QString name = lineEditName->text();
+    QString affiliation = lineEditAffiliation->text();
+    QString email = lineEditEmail->text();
+    QString qualification = lineEditStudentQualification->text();
+    QString category = lineEditGuestCategory->text();
+    QDate bookingDate = dateEditBookingDate->date();
+
+    Person person(name, affiliation, email);
+    Registration *newRegistration = nullptr;
+
+    if (registrationType.toLower() == "standard")
+    {
+        newRegistration = new StandardRegistration(person);
+    }
+    else if (registrationType.toLower() == "student")
+    {
+        newRegistration = new StudentRegistration(person, qualification);
+    }
+    else if (registrationType.toLower() == "guest")
+    {
+        newRegistration = new GuestRegistration(person, category);
+    }
+
+    if (newRegistration)
+    {
+        newRegistration->setBookingDate(bookingDate);
+        registrationList->addRegistration(newRegistration);
+    }
+
+    // TODO: add QMessageBox to indicate success
+    this->close();
 }
 
 void NewRegistrationDialog::on_pushButtonCancel_clicked()

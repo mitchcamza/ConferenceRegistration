@@ -10,12 +10,13 @@ class QPushButton;
 class QGridLayout;
 class QGroupBox;
 class QLabel;
+class RegistrationList;
 
 class NewRegistrationDialog : public QDialog
 {
     Q_OBJECT
 public:
-    explicit NewRegistrationDialog(QDialog *parent = nullptr);
+    explicit NewRegistrationDialog(RegistrationList *list, QDialog *parent = nullptr);
     ~NewRegistrationDialog();
 
 private slots:
@@ -46,6 +47,7 @@ private:
     QGroupBox *groupBoxApplicant;
     QLabel *labelStudentQualification;
     QLabel *labelGuestCategory;
+    RegistrationList *registrationList;
 };
 
 #endif // NEWREGISTRATIONDIALOG_H
