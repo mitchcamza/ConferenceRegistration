@@ -66,3 +66,8 @@ int RegistrationList::totalRegistrations(const QString &affiliation) const
     }
     return totalRegistrationsForAffiliation;
 }
+
+QList<Registration *> RegistrationList::getAttendeeList() const
+{
+    return m_AttendeeList;
+}

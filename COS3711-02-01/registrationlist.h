@@ -54,6 +54,8 @@ public:
      */
     int totalRegistrations(const QString &affiliation) const;
 
+    QList<Registration *> getAttendeeList() const;
+
 private:
     QList<Registration*> m_AttendeeList; ///< List of registrations.
 };
