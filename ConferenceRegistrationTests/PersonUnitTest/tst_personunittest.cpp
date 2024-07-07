@@ -1,6 +1,6 @@
-#include <QtTest>
+#include <QTest>
 
-#include "../COS3711-02-01/person.h"
+#include "../../COS3711-02-01/person.h"
 
 class PersonUnitTest : public QObject
 {
@@ -24,10 +24,7 @@ PersonUnitTest::PersonUnitTest() {}
 
 PersonUnitTest::~PersonUnitTest() {}
 
-void PersonUnitTest::test_case1()
-{
-
-}
+void PersonUnitTest::test_case1() {}
 
 void PersonUnitTest::testConstructor()
 {
@@ -105,6 +102,5 @@ void PersonUnitTest::testToStringSpecialCharacters()
 }
 
 
-QTEST_APPLESS_MAIN(PersonUnitTest)
-
+QTEST_MAIN(PersonUnitTest)
 #include "tst_personunittest.moc"
