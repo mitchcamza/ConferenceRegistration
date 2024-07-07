@@ -47,19 +47,18 @@ void StandardRegistrationUnitTest::testToString()
     Registration *standardRegistration = new StandardRegistration(*attendee, bookingDate);
 
     QString expectedString = QString(
-                                 "Registration Type: %1\n"
-                                 "Name: %2\n"
-                                 "Affiliation: %3\n"
-                                 "Email: %4\n"
-                                 "Booking Date: %5\n"
-                                 "Registration Fee: %6"
-                                 )
-                                 .arg(standardRegistration->metaObject()->className())
-                                 .arg(attendee->getName())
-                                 .arg(attendee->getAffiliation())
-                                 .arg(attendee->getEmail())
-                                 .arg(bookingDate.toString())
-                                 .arg(Registration::STANDARD_FEE);
+        "Registration Type: %1\n"
+        "Name: %2\n"
+        "Affiliation: %3\n"
+        "Email: %4\n"
+        "Booking Date: %5\n"
+        "Registration Fee: %6\n")
+        .arg(standardRegistration->metaObject()->className())
+        .arg(attendee->getName())
+        .arg(attendee->getAffiliation())
+        .arg(attendee->getEmail())
+        .arg(bookingDate.toString())
+        .arg(Registration::STANDARD_FEE);
 
     QCOMPARE(standardRegistration->toString(), expectedString);
 }
@@ -92,19 +91,18 @@ void StandardRegistrationUnitTest::testSpecialCharacters()
     Registration *standardRegistration = new StandardRegistration(*attendee, bookingDate);
 
     QString expectedString = QString(
-                                 "Registration Type: %1\n"
-                                 "Name: %2\n"
-                                 "Affiliation: %3\n"
-                                 "Email: %4\n"
-                                 "Booking Date: %5\n"
-                                 "Registration Fee: %6"
-                                 )
-                                 .arg(standardRegistration->metaObject()->className())
-                                 .arg(attendee->getName())
-                                 .arg(attendee->getAffiliation())
-                                 .arg(attendee->getEmail())
-                                 .arg(bookingDate.toString())
-                                 .arg(Registration::STANDARD_FEE);
+        "Registration Type: %1\n"
+        "Name: %2\n"
+        "Affiliation: %3\n"
+        "Email: %4\n"
+        "Booking Date: %5\n"
+        "Registration Fee: %6\n")
+        .arg(standardRegistration->metaObject()->className())
+        .arg(attendee->getName())
+        .arg(attendee->getAffiliation())
+        .arg(attendee->getEmail())
+        .arg(bookingDate.toString())
+        .arg(Registration::STANDARD_FEE);
 
     QCOMPARE(standardRegistration->toString(), expectedString);
 }
