@@ -4,6 +4,7 @@
 #include "totalfeesdialog.h"
 #include "totalregistereddialog.h"
 #include "registrationmodel.h"
+#include "registrationlist.h"
 
 #include <QTableView>
 #include <QStandardItem>
@@ -14,10 +15,10 @@
 #include <QIcon>
 
 
-
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent),
-    registrationModel(new RegistrationModel()),
+    registrationModel(new RegistrationModel(this)),
+    registrationList(new RegistrationList(*registrationModel)),
     tableViewRegistrations(new QTableView(this)),
     actionAddAttendee(new QAction(QIcon(":/icons/add"), tr("New Registration"), this)),
     actionSearchAttendee(new QAction(QIcon(":/icons/search"), tr("Search"), this)),
@@ -84,15 +85,15 @@ void MainWindow::setupUI(QMainWindow *mainApplicationWindow)
     toolBar->addAction(actionGetNumberOfAttendeesForAffiliation);
 
     // Registration table
-    mainApplicationWindow->setCentralWidget(tableViewRegistrations);
     tableViewRegistrations->setModel(registrationModel);
+    mainApplicationWindow->setCentralWidget(tableViewRegistrations);
     tableViewRegistrations->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     tableViewRegistrations->setSortingEnabled(true);
 }
 
 void MainWindow::on_actionAddAttendee_triggered()
 {
-    NewRegistrationDialog *newRegistrationDialog = new NewRegistrationDialog();
+    NewRegistrationDialog *newRegistrationDialog = new NewRegistrationDialog(registrationList);
     newRegistrationDialog->show();
 }
 

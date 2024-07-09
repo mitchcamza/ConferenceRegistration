@@ -1,7 +1,7 @@
 #include "standardregistration.h"
 
-StandardRegistration::StandardRegistration(const Person &attendee)
-    : Registration(attendee)
+StandardRegistration::StandardRegistration(const Person &attendee, const QDate &bookingDate)
+    : Registration(attendee, bookingDate)
 {
 
 }
@@ -13,7 +13,8 @@ double StandardRegistration::calculateFee() const
 
 QString StandardRegistration::toString() const
 {
-    return Registration::toString() + QString("Registration Fee: %1")
+    return Registration::toString().append(
+        "Registration Fee: %1\n")
         .arg(calculateFee());
 }
 

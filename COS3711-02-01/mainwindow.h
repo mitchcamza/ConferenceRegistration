@@ -5,6 +5,7 @@
 
 class QTableView;
 class RegistrationModel;
+class RegistrationList;
 
 class MainWindow : public QMainWindow
 {
@@ -25,6 +26,7 @@ private slots:
 private:
     QTableView *tableViewRegistrations;
     RegistrationModel *registrationModel;
+    RegistrationList *registrationList;
     QMenuBar *menuBar;
     QStatusBar *statusBar;
     QToolBar *toolBar;

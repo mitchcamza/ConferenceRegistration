@@ -1,10 +1,8 @@
 #include "registrationmodel.h"
-
-#include "registration.h"
-#include "standardregistration.h"
-#include "studentregistration.h"
 #include "guestregistration.h"
-
+#include "registration.h"
+#include "registrationlist.h"
+#include "studentregistration.h"
 
 void RegistrationModel::setHeaders()
 {
@@ -21,7 +19,7 @@ void RegistrationModel::setHeaders()
 RegistrationModel::RegistrationModel(QObject *parent)
     : QStandardItemModel{parent}
 {
-    setHeaders();
+    initializeModel();   // Initialize model with existing registrations
 }
 
 bool RegistrationModel::setData(const QModelIndex &index, const QVariant &value, int role)
@@ -36,36 +34,39 @@ void RegistrationModel::sort(int column, Qt::SortOrder order)
     QStandardItemModel::sort(column, order);
 }
 
-void RegistrationModel::addRegistration(Registration *registration)
+void RegistrationModel::initializeModel()
+{
+    this->clear();
+    setHeaders();
+}
+
+void RegistrationModel::addItem(Registration *registration)
 {
     QList<QStandardItem*> row;
-    QStandardItem *registrationTypeItem = new QStandardItem(registration->metaObject()->className());
-    QStandardItem *bookingDateItem = new QStandardItem(registration->getBookingDate().toString());
-    QStandardItem *nameItem = new QStandardItem(registration->getAttendee().getName());
-    QStandardItem *affiliationItem = new QStandardItem(registration->getAttendee().getAffiliation());
-    QStandardItem *emailItem = new QStandardItem(registration->getAttendee().getEmail());
-    QStandardItem *studentQualificationItem = new QStandardItem();
-    QStandardItem *guestCategoryItem = new QStandardItem();
-    QStandardItem *registrationFeeItem = new QStandardItem(registration->calculateFee());
+    row.append(new QStandardItem(registration->getAttendee().getName()));
+    row.append(new QStandardItem(registration->getAttendee().getAffiliation()));
+    row.append(new QStandardItem(registration->getAttendee().getEmail()));
+    row.append(new QStandardItem(registration->getBookingDate().toString()));
+    row.append(new QStandardItem(registration->metaObject()->className()));
+    row.append(new QStandardItem(QString::number(registration->calculateFee())));
 
-    if (StudentRegistration *studentRegistration = dynamic_cast<StudentRegistration*>(registration))
+    if (StudentRegistration *student = dynamic_cast<StudentRegistration*>(registration))
     {
-        studentQualificationItem->setText(studentRegistration->getQualification());
+        row.append(new QStandardItem(student->getQualification()));
+    }
+    else
+    {
+        row.append(new QStandardItem("N/A"));
     }
 
-    if (GuestRegistration *guestRegistration = dynamic_cast<GuestRegistration*>(registration))
+    if (GuestRegistration *guest = dynamic_cast<GuestRegistration*>(registration))
     {
-        guestCategoryItem->setText(guestRegistration->getCategory());
+        row.append(new QStandardItem(guest->getCategory()));
     }
-
-    row << nameItem
-        << affiliationItem
-        << emailItem
-        << bookingDateItem
-        << registrationTypeItem
-        << registrationFeeItem
-        << studentQualificationItem
-        << guestCategoryItem;
+    else
+    {
+        row.append(new QStandardItem("N/A"));
+    }
 
     appendRow(row);
     row.clear();
@@ -81,4 +82,3 @@ void RegistrationModel::clear()
     QStandardItemModel::clear();
     setHeaders();
 }
-
