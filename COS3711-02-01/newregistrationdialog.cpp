@@ -8,12 +8,6 @@
 #include <QPushButton>
 #include <QLabel>
 
-// #include <QMetaObject>
-// #include <QMetaProperty>
-
-// #include "person.h"
-// #include "registration.h"
-
 #include "registrationlist.h"
 #include "standardregistration.h"
 #include "studentregistration.h"
@@ -54,10 +48,10 @@ void NewRegistrationDialog::on_pushButtonRegister_clicked()
 {
     // Collect registration details
     QString registrationType = comboBoxRegistrationType->currentText();
-    QString name = lineEditName->text();
-    QString affiliation = lineEditAffiliation->text();
-    QString email = lineEditEmail->text();
-    QString qualification = lineEditStudentQualification->text();
+    QString name = lineEditName->text().toUpper();
+    QString affiliation = lineEditAffiliation->text().toUpper();
+    QString email = lineEditEmail->text().toUpper();
+    QString qualification = lineEditStudentQualification->text().toUpper();
     QString category = lineEditGuestCategory->text();
     QDate bookingDate = dateEditBookingDate->date();
 
@@ -66,15 +60,15 @@ void NewRegistrationDialog::on_pushButtonRegister_clicked()
 
     if (registrationType.toLower() == "standard")
     {
-        newRegistration = new StandardRegistration(person);
+        newRegistration = new StandardRegistration(person, dateEditBookingDate->date());
     }
     else if (registrationType.toLower() == "student")
     {
-        newRegistration = new StudentRegistration(person, qualification);
+        newRegistration = new StudentRegistration(person, dateEditBookingDate->date(), qualification);
     }
     else if (registrationType.toLower() == "guest")
     {
-        newRegistration = new GuestRegistration(person, category);
+        newRegistration = new GuestRegistration(person, dateEditBookingDate->date(), category);
     }
 
     if (newRegistration)
@@ -82,8 +76,6 @@ void NewRegistrationDialog::on_pushButtonRegister_clicked()
         newRegistration->setBookingDate(bookingDate);
         registrationList->addRegistration(newRegistration);
     }
-
-    // TODO: add QMessageBox to indicate success
     this->close();
 }
 

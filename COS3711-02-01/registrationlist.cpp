@@ -1,9 +1,12 @@
 #include "registrationlist.h"
+#include "registrationmodel.h"
+
 #include <QMetaObject>
 
 
-RegistrationList::RegistrationList(QObject *parent)
-    : QObject(nullptr)
+RegistrationList::RegistrationList(RegistrationModel &model, QObject *parent)
+    : QObject(nullptr),
+    m_RegistrationModel(&model)
 {
 
 }
@@ -15,24 +18,43 @@ RegistrationList::~RegistrationList()
 }
 
 bool RegistrationList::addRegistration(Registration *registration)
-{    
-    // If email address is already registered, only add new registration if names differ
-    foreach (Registration *existingRegistration, m_AttendeeList)
+{
+    if (!isRegistered(registration->getAttendee()))
     {
-        if (!(existingRegistration->getAttendee().getEmail() == registration->getAttendee().getEmail() && existingRegistration->getAttendee().getName() == registration->getAttendee().getName()))
-        {
-            m_AttendeeList.append(registration);
-            return true;
-        }
+        m_AttendeeList.append(registration);
+        m_RegistrationModel->addItem(registration);
+        return true;
+    }
+    return false;
+}
+
+bool RegistrationList::removeRegistration(Registration *registration)
+{
+    if (m_AttendeeList.removeOne(registration))
+    {
+        return true;
     }
     return false;
 }
 
 bool RegistrationList::isRegistered(const QString &name) const
 {
-    foreach (Registration *r, m_AttendeeList)
+    foreach (Registration *existingRegistration, m_AttendeeList)
     {
-        if (r->getAttendee().getName() == name)
+        if (existingRegistration->getAttendee().getName().toLower() == name.toLower())
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
+// FIXME
+bool RegistrationList::isRegistered(const Person &person) const
+{
+    foreach (Registration *existingRegistration, m_AttendeeList)
+    {
+        if (existingRegistration->getAttendee().getEmail().toLower() == person.getEmail().toLower() && existingRegistration->getAttendee().getName().toLower() == person.getName().toLower())
         {
             return true;
         }
@@ -45,7 +67,6 @@ double RegistrationList::totalFee(const QString &type) const
     double total = 0;
     foreach (Registration *r, m_AttendeeList)
     {
-        // Calculate total fees for given registration type
         if (type.toLower() == "all" || QString(r->metaObject()->className()) == type)
         {
             total += r->calculateFee();
