@@ -7,6 +7,11 @@ Registration::Registration(const Person &attendee)
 
 }
 
+void Registration::setBookingDate(const QDate &newBookingDate)
+{
+    m_BookingDate = newBookingDate;
+}
+
 Person Registration::getAttendee() const
 {
     return m_Attendee;
@@ -19,7 +24,9 @@ QDate Registration::getBookingDate() const
 
 QString Registration::toString() const
 {
-    return QString("Attendee: %1\nBooking Date: %2")
+    QString typeName = metaObject()->className();
+    return QString("Registration Type: %1\nAttendee: %2\nBooking Date: %3")
+        .arg(typeName)
         .arg(m_Attendee.toString())
         .arg(m_BookingDate.toString());
 }
