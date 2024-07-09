@@ -8,7 +8,7 @@ class GuestRegistration : public Registration
     Q_OBJECT
 
 public:
-    GuestRegistration(const Person &attendee, const QString &category);
+    GuestRegistration(const Person &attendee, const QDate &bookingDate = QDate::currentDate(), const QString &category = "");
     virtual ~GuestRegistration() override = default;
     virtual double calculateFee() const override;
     virtual QString toString() const override;

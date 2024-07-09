@@ -8,7 +8,7 @@ class StandardRegistration : public Registration
     Q_OBJECT
 
 public:
-    StandardRegistration(const Person &attendee);
+    StandardRegistration(const Person &attendee, const QDate &bookingDate = QDate::currentDate());
     virtual ~StandardRegistration() override = default;
     virtual double calculateFee() const override;
     virtual QString toString() const override;

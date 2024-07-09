@@ -23,7 +23,7 @@ public:
     void setBookingDate(const QDate &newBookingDate);
 
 protected:
-    Registration(const Person &attendee);
+    Registration(const Person &attendee, const QDate &bookingDate);
 
 private:
     Person m_Attendee;

@@ -1,8 +1,8 @@
 #include "registration.h"
 
 
-Registration::Registration(const Person &attendee)
-    : QObject(nullptr), m_Attendee(attendee), m_BookingDate(QDate::currentDate())
+Registration::Registration(const Person &attendee, const QDate &bookingDate = QDate::currentDate())
+    : QObject(nullptr), m_Attendee(attendee), m_BookingDate(bookingDate)
 {
 
 }
@@ -25,7 +25,9 @@ QDate Registration::getBookingDate() const
 QString Registration::toString() const
 {
     QString typeName = metaObject()->className();
-    return QString("Registration Type: %1\nAttendee: %2\nBooking Date: %3")
+    return QString("Registration Type: %1\n"
+                   "%2\n"
+                   "Booking Date: %3\n")
         .arg(typeName)
         .arg(m_Attendee.toString())
         .arg(m_BookingDate.toString());

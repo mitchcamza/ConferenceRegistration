@@ -1,7 +1,8 @@
 #include "studentregistration.h"
 
-StudentRegistration::StudentRegistration(const Person &attendee, const QString &qualification)
-    : Registration(attendee), m_Qualification(qualification)
+StudentRegistration::StudentRegistration(const Person &attendee, const QDate &bookingDate, const QString &qualification)
+    : Registration(attendee, QDate::currentDate()),
+    m_Qualification(qualification)
 {
 
 }
@@ -13,7 +14,10 @@ double StudentRegistration::calculateFee() const
 
 QString StudentRegistration::toString() const
 {
-    return Registration::toString() + QString("Registration Fee: %1")
+    return Registration::toString().append(
+        "Qualification: %1\n"
+        "Registration Fee: %2\n")
+        .arg(m_Qualification)
         .arg(calculateFee());
 }
 
