@@ -19,7 +19,7 @@ void StudentRegistrationUnitTest::testConstructor()
     Person attendee("Jane Doe", "University X", "jane.doe@example.com");
     QString qualification = "BSc Computer Science";
 
-    StudentRegistration studentRegistration(attendee, qualification);
+    StudentRegistration studentRegistration(attendee, QDate::currentDate(), qualification);
 
     QCOMPARE(studentRegistration.getAttendee().getName(), attendee.getName());
     QCOMPARE(studentRegistration.getAttendee().getAffiliation(), attendee.getAffiliation());
@@ -32,7 +32,7 @@ void StudentRegistrationUnitTest::testCalculateFee()
     Person attendee("Jane Doe", "University X", "jane.doe@example.com");
     QString qualification = "BSc Computer Science";
 
-    StudentRegistration studentRegistration(attendee, qualification);
+    StudentRegistration studentRegistration(attendee, QDate::currentDate(), qualification);
 
     QCOMPARE(studentRegistration.calculateFee(), Registration::STANDARD_FEE * 0.5);
 }
@@ -43,7 +43,7 @@ void StudentRegistrationUnitTest::testToString()
     QString qualification = "BSc Computer Science";
     QDate bookingDate = QDate::currentDate();
 
-    Registration *studentRegistration = new StudentRegistration(attendee, qualification);
+    Registration *studentRegistration = new StudentRegistration(attendee, QDate::currentDate(), qualification);
 
     QString expectedString = QString(
         "Registration Type: %1\n"
@@ -69,7 +69,7 @@ void StudentRegistrationUnitTest::testGetQualification()
     Person attendee("Jane Doe", "University X", "jane.doe@example.com");
     QString qualification = "BSc Computer Science";
 
-    StudentRegistration studentRegistration(attendee, qualification);
+    StudentRegistration studentRegistration(attendee, QDate::currentDate(), qualification);
 
     QCOMPARE(studentRegistration.getQualification(), qualification);
 }
@@ -79,7 +79,7 @@ void StudentRegistrationUnitTest::testConstructorSpecialCharacters()
     Person attendee("Jane & John Doe", "University X & Co.", "jane.doe@example.com");
     QString qualification = "BSc & MSc Computer Science";
 
-    StudentRegistration studentRegistration(attendee, qualification);
+    StudentRegistration studentRegistration(attendee, QDate::currentDate(), qualification);
 
     QCOMPARE(studentRegistration.getAttendee().getName(), attendee.getName());
     QCOMPARE(studentRegistration.getAttendee().getAffiliation(), attendee.getAffiliation());

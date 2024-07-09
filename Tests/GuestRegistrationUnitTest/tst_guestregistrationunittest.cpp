@@ -19,7 +19,7 @@ void GuestRegistrationUnitTest::testConstructor()
     Person attendee("Alice Smith", "Company Y", "alice.smith@example.com");
     QString category = "VIP";
 
-    GuestRegistration guestRegistration(attendee, category);
+    GuestRegistration guestRegistration(attendee, QDate::currentDate(), category);
 
     QCOMPARE(guestRegistration.getAttendee().getName(), attendee.getName());
     QCOMPARE(guestRegistration.getAttendee().getAffiliation(), attendee.getAffiliation());
@@ -32,7 +32,7 @@ void GuestRegistrationUnitTest::testCalculateFee()
     Person attendee("Alice Smith", "Company Y", "alice.smith@example.com");
     QString category = "VIP";
 
-    GuestRegistration guestRegistration(attendee, category);
+    GuestRegistration guestRegistration(attendee, QDate::currentDate(), category);
 
     QCOMPARE(guestRegistration.calculateFee(), Registration::STANDARD_FEE * 0.1);
 }
@@ -43,7 +43,7 @@ void GuestRegistrationUnitTest::testToString()
     QString category = "VIP";
     QDate bookingDate = QDate::currentDate();
 
-    Registration *guestRegistration = new GuestRegistration(attendee, category);
+    Registration *guestRegistration = new GuestRegistration(attendee, QDate::currentDate(),  category);
 
     QString expectedString = QString(
                                  "Registration Type: %1\n"
@@ -69,7 +69,7 @@ void GuestRegistrationUnitTest::testGetCategory()
     Person attendee("Alice Smith", "Company Y", "alice.smith@example.com");
     QString category = "VIP";
 
-    GuestRegistration guestRegistration(attendee, category);
+    GuestRegistration guestRegistration(attendee, QDate::currentDate(), category);
 
     QCOMPARE(guestRegistration.getCategory(), category);
 }
@@ -79,7 +79,7 @@ void GuestRegistrationUnitTest::testConstructorSpecialCharacters()
     Person attendee("Alice & Bob Smith", "Company Y & Co.", "alice.smith@example.com");
     QString category = "VIP & Special";
 
-    GuestRegistration guestRegistration(attendee, category);
+    GuestRegistration guestRegistration(attendee, QDate::currentDate(), category);
 
     QCOMPARE(guestRegistration.getAttendee().getName(), attendee.getName());
     QCOMPARE(guestRegistration.getAttendee().getAffiliation(), attendee.getAffiliation());
