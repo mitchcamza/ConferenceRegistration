@@ -1,3 +1,12 @@
+/**
+ * @file totalregistereddialog.cpp
+ * @author Mitch Campbell
+ * @date 2024-07-11
+ * @copyright Copyright (c) Mitch Campbell
+ * @brief Implementation file for the TotalRegisteredDialog class.
+ */
+
+
 #include "totalregistereddialog.h"
 #include "registrationlist.h"
 
@@ -7,11 +16,15 @@
 #include <QPushButton>
 
 
+/**
+ * @brief Constructs a TotalRegisteredDialog object.
+ * @param registrationList Pointer to the RegistrationList object.
+ */
 TotalRegisteredDialog::TotalRegisteredDialog(RegistrationList *registrationList)
     : gridLayout(new QGridLayout(this)),
     labelAffiliation(new QLabel("Affiliation", this)),
     lineEditAffiliation(new QLineEdit(this)),
-    labelTotalAttendees(new QLabel("Total Attentees: ", this)),
+    labelTotalAttendees(new QLabel("Total Attendees: ", this)),
     lineEditTotalAttendees(new QLineEdit(this)),
     registrationList(registrationList),
     pushButtonClose(new QPushButton("Close", this))
@@ -24,6 +37,9 @@ TotalRegisteredDialog::TotalRegisteredDialog(RegistrationList *registrationList)
     calculateTotalAttendeesEvent();
 }
 
+/**
+ * @brief Calculates the total number of attendees for a given affiliation.
+ */
 void TotalRegisteredDialog::calculateTotalAttendeesEvent()
 {
     QString affiliation = lineEditAffiliation->text();
@@ -31,6 +47,9 @@ void TotalRegisteredDialog::calculateTotalAttendeesEvent()
     lineEditTotalAttendees->setText(QString("%1").arg(totalAttendees));
 }
 
+/**
+ * @brief Sets up the user interface for the dialog.
+ */
 void TotalRegisteredDialog::setupUI()
 {
     setWindowTitle("Total Attendees from Affiliation");
