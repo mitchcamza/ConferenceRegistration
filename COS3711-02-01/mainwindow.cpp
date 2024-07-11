@@ -105,7 +105,7 @@ void MainWindow::on_actionSearchAttendee_triggered()
 
 void MainWindow::on_actionGetTotalFees_triggered()
 {
-    TotalFeesDialog *totalFeesDialog = new TotalFeesDialog();
+    TotalFeesDialog *totalFeesDialog = new TotalFeesDialog(registrationList);
     totalFeesDialog->show();
 }
 

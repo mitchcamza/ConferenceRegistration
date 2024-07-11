@@ -1,7 +1,9 @@
 #include "registrationlist.h"
 #include "registrationmodel.h"
+#include "registrationtypes.h"
 
 #include <QMetaObject>
+#include <QMetaEnum>
 
 
 RegistrationList::RegistrationList(RegistrationModel &model, QObject *parent)
@@ -49,7 +51,6 @@ bool RegistrationList::isRegistered(const QString &name) const
     return false;
 }
 
-// FIXME
 bool RegistrationList::isRegistered(const Person &person) const
 {
     foreach (Registration *existingRegistration, m_AttendeeList)
@@ -62,12 +63,18 @@ bool RegistrationList::isRegistered(const Person &person) const
     return false;
 }
 
-double RegistrationList::totalFee(const QString &type) const
+double RegistrationList::totalFee(const QString &typeString) const
 {
     double total = 0;
+    // TODO: use enum to get type
+    // QMetaEnum metaEnum = QMetaEnum::fromType<RegistrationTypes::Type>();
+    // RegistrationTypes::Type type = RegistrationTypes::fromString(typeString);
+
     foreach (Registration *r, m_AttendeeList)
     {
-        if (type.toLower() == "all" || QString(r->metaObject()->className()) == type)
+        QString className = r->metaObject()->className();
+        // if (type == RegistrationTypes::All || className == metaEnum.valueToKey(type))
+        if (typeString.toLower() == "all" || typeString.toLower() == className.toLower())
         {
             total += r->calculateFee();
         }
