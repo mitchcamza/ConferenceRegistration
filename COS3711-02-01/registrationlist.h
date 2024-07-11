@@ -8,6 +8,7 @@
 #include <QList>
 
 class RegistrationModel;
+class RegistrationTypes;
 
 
 /**
@@ -40,33 +41,43 @@ public:
      */
     bool addRegistration(Registration* registration);
 
+    /** @brief Removes the selected registration from the list.
+     *  @param registration The registration.
+     */
     bool removeRegistration(Registration *registration);
 
     /** @brief Returns true if the attendee (person) is already registered (by name).
      *  Returns false if the attendee's name is not on the list.
-     *  @note Since a uniqueness check is only performed on names, duplicate Email addresses may exist.
+     *  @note An email address may appear more than once in the registration list, but only if it is associated with a different name.
+     *  eg. admin@companyx.com may be used by multiple attendees.
      *  @param name The attendee's name.
      */
     bool isRegistered(const QString &name) const;
 
-
+    /** @brief Returns true if the attendee (person) is already registered.
+     *  Returns false if the attendee's name is not on the list.
+     *  @note This overloaded version checks the attendee's email address and name.
+     *  @note An email address may appear more than once in the registration list, but only if it is associated with a different name.
+     *  eg. admin@companyx.com may be used by multiple attendees.
+     *  @param person The Person object (attendee).
+     */
     bool isRegistered(const Person &person) const;
 
     /** @brief Returns the total registration fees for a type of registration
      *  @note Registration types may include "StandardRegistration", "StudentRegistration", "GuestRegistration", or "All".
      *  @param type The type of Registration.
      */
-    double totalFee(const QString &type) const;
+    double totalFee(const QString &typeString) const;
 
     /** @brief Returns the number of attendees that are registered for the conference from an institution.
      *  @param affiliation The affiliation (institution).
      */
     int totalRegistrations(const QString &affiliation) const;
 
+
     QList<Registration *> getAttendeeList() const;
 
 signals:
-    // void listUpdated(QList<Registration*> list);
     void registrationAdded(Registration *registration);
     void registrationRemoved(Registration *registration);
 
