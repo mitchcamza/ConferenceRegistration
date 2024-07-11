@@ -11,9 +11,9 @@
 
 TotalFeesDialog::TotalFeesDialog(RegistrationList *registrationList)
     : gridLayout(new QGridLayout(this)),
-    labelRegistrationType(new QLabel("Registration Type: ")),
+    labelRegistrationType(new QLabel("Registration Type: ", this)),
     comboBoxRegistrationType(new QComboBox(this)),
-    labelTotalFees(new QLabel("Total Fees: ")),
+    labelTotalFees(new QLabel("Total Fees: ", this)),
     lineEditTotalFees(new QLineEdit(this)),
     pushButtonClose(new QPushButton("Close", this)),
     registrationList(registrationList)
@@ -30,8 +30,7 @@ void TotalFeesDialog::calculateTotalFeesEvent()
 {
     QString typeString = comboBoxRegistrationType->currentText();
     double totalFee = registrationList->totalFee(typeString);
-    QString result = QString("%1").arg(totalFee);
-    lineEditTotalFees->setText(result);
+    lineEditTotalFees->setText(QString("%1").arg(totalFee));
 }
 
 void TotalFeesDialog::setupUI()

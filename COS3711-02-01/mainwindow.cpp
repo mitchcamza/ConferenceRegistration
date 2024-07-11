@@ -111,6 +111,6 @@ void MainWindow::on_actionGetTotalFees_triggered()
 
 void MainWindow::on_actionGetNumberOfAttendeesForAffiliation_triggered()
 {
-    TotalRegisteredDialog *totalRegisteredDialog = new TotalRegisteredDialog();
+    TotalRegisteredDialog *totalRegisteredDialog = new TotalRegisteredDialog(registrationList);
     totalRegisteredDialog->show();
 }
