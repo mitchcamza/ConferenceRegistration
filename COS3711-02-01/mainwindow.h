@@ -9,6 +9,7 @@ class RegistrationList;
 class QGridLayout;
 class QLineEdit;
 class QPushButton;
+class RegistrationFilterProxyModel;
 
 class MainWindow : public QMainWindow
 {
@@ -22,7 +23,6 @@ private:
 
 private slots:
     void on_actionAddAttendee_triggered();
-    void on_actionSearchAttendee_triggered();
     void on_actionGetTotalFees_triggered();
     void on_actionGetNumberOfAttendeesForAffiliation_triggered();
     void on_actionClearFilter_triggered();
@@ -42,6 +42,7 @@ private:
     QGridLayout *gridLayout;
     QLineEdit *lineEditSearch;
     QPushButton *pushButtonClear;
+    RegistrationFilterProxyModel *proxyModel;
 };
 
 #endif // MAINWINDOW_H
