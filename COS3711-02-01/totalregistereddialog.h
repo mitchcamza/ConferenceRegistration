@@ -40,7 +40,7 @@ private slots:
      * 
      * This function calculates the total number of registered attendees and updates the UI accordingly.
      */
-    void calculateTotalAttendeesEvent();
+    void on_lineEditAffiliation_textChanged();
 
 private:
     /**
