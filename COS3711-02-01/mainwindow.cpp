@@ -1,3 +1,13 @@
+/**
+ * @file mainwindow.cpp
+ * @author Mitch Campbell
+ * @date 2024-07-11
+ * @copyright Copyright (c) Mitch Campbell 2024
+ * @brief Implementation file for the MainWindow class.
+ * @details This file contains the implementation of the MainWindow class, which represents the main application window for a conference registration system. It includes the setup of the user interface, menu actions, toolbar, and signal-slot connections for various actions.
+ */
+
+
 #include "mainwindow.h"
 #include "newregistrationdialog.h"
 #include "totalfeesdialog.h"
@@ -17,6 +27,11 @@
 #include <QLineEdit>
 #include <QPushButton>
 
+
+/**
+ * @brief Constructs a MainWindow object.
+ * @param parent The parent widget.
+ */
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent),
     registrationModel(new RegistrationModel(this)),
@@ -30,7 +45,6 @@ MainWindow::MainWindow(QWidget *parent)
     lineEditSearch(new QLineEdit(this)),
     pushButtonClear(new QPushButton("Clear Filter", this)),
     proxyModel(new RegistrationFilterProxyModel(this))
-
 {
     // Connect signals and slots
     connect(actionAddAttendee, &QAction::triggered, this, &MainWindow::on_actionAddAttendee_triggered);
@@ -44,11 +58,18 @@ MainWindow::MainWindow(QWidget *parent)
     setupUI(this);
 }
 
+/**
+ * @brief Destroys the MainWindow object.
+ */
 MainWindow::~MainWindow()
 {
 
 }
 
+/**
+ * @brief Sets up the user interface for the main application window.
+ * @param mainApplicationWindow The main application window.
+ */
 void MainWindow::setupUI(QMainWindow *mainApplicationWindow)
 {
     // Main Application window
@@ -115,24 +136,40 @@ void MainWindow::setupUI(QMainWindow *mainApplicationWindow)
     gridLayout->addWidget(tableViewRegistrations, 1, 0, 1, 4);
 }
 
+/**
+ * @brief Slot for the "New Registration" action.
+ * Opens the dialog for adding a new registration.
+ */
 void MainWindow::on_actionAddAttendee_triggered()
 {
     NewRegistrationDialog *newRegistrationDialog = new NewRegistrationDialog(registrationList);
     newRegistrationDialog->show();
 }
 
+/**
+ * @brief Slot for the "Total Fees" action.
+ * Opens the dialog for displaying the total fees.
+ */
 void MainWindow::on_actionGetTotalFees_triggered()
 {
     TotalFeesDialog *totalFeesDialog = new TotalFeesDialog(registrationList);
     totalFeesDialog->show();
 }
 
+/**
+ * @brief Slot for the "Registration per Affiliation" action.
+ * Opens the dialog for displaying the total number of attendees per affiliation.
+ */
 void MainWindow::on_actionGetNumberOfAttendeesForAffiliation_triggered()
 {
     TotalRegisteredDialog *totalRegisteredDialog = new TotalRegisteredDialog(registrationList);
     totalRegisteredDialog->show();
 }
 
+/**
+ * @brief Slot for the "Clear Filter" action.
+ * Clears the search filter and sets focus to the search bar.
+ */
 void MainWindow::on_actionClearFilter_triggered()
 {
     lineEditSearch->clear();
