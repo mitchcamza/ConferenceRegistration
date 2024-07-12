@@ -63,7 +63,7 @@ private slots:
     /**
      * @brief Slot function called when the "Get Number of Attendees for Affiliation" action is triggered.
      */
-    void on_actionGetNumberOfAttendeesForAffiliation_triggered();
+    void on_actionGetNumberOfAttendeesFromAffiliation_triggered();
 
     /**
      * @brief Slot function called when the "Clear Filter" action is triggered.
