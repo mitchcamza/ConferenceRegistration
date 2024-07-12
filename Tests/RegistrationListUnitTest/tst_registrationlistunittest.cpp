@@ -12,6 +12,7 @@ class RegistrationListUnitTest : public QObject
 
 private slots:
     void testAddRegistration_data();
+    void testTotalFee_data();
     void testAddRegistration();
     void testIsRegistered();
     void testTotalFee();
@@ -26,11 +27,11 @@ void RegistrationListUnitTest::testAddRegistration_data()
     QTest::addColumn<QString>("type");
     QTest::addColumn<bool>("expectedResult");
 
-    // QTest::newRow("Standard Registration") << "John Doe" << "Company X" << "john.doe@example.com" << "standard" << true;
-    // QTest::newRow("Duplicate Email Different Name") << "Jane Doe" << "Company X" << "john.doe@example.com" << "standard" << true;
+    QTest::newRow("Standard Registration") << "John Doe" << "Company X" << "john.doe@example.com" << "standard" << true;
+    QTest::newRow("Duplicate Email Different Name") << "Jane Doe" << "Company X" << "john.doe@example.com" << "standard" << true;
     QTest::newRow("Duplicate Registration") << "John Doe" << "Company X" << "john.doe@example.com" << "standard" << false;
-    // QTest::newRow("Student Registration") << "Student A" << "University Y" << "student.a@example.com" << "student" << true;
-    // QTest::newRow("Guest Registration") << "Guest B" << "Organization Z" << "guest.b@example.com" << "guest" << true;
+    QTest::newRow("Student Registration") << "Student A" << "University Y" << "student.a@example.com" << "student" << true;
+    QTest::newRow("Guest Registration") << "Guest B" << "Organization Z" << "guest.b@example.com" << "guest" << true;
 }
 
 void RegistrationListUnitTest::testAddRegistration()
@@ -88,21 +89,54 @@ void RegistrationListUnitTest::testIsRegistered()
     QVERIFY(!registrationList.isRegistered("Jane Doe"));
 }
 
+void RegistrationListUnitTest::testTotalFee_data()
+{
+    QTest::addColumn<QString>("name");
+    QTest::addColumn<QString>("affiliation");
+    QTest::addColumn<QString>("email");
+    QTest::addColumn<QString>("type");
+    QTest::addColumn<double>("expectedFee");
+
+    QTest::newRow("Standard Registration") << "John Doe" << "Company X" << "john.doe@example.com" << "standard" << Registration::STANDARD_FEE;
+    QTest::newRow("Student Registration") << "Jane Doe" << "University Y" << "jane.doe@example.com" << "student" << (Registration::STANDARD_FEE * 0.5);
+    QTest::newRow("Guest Registration") << "Guest B" << "Organization Z" << "guest.b@example.com" << "guest" << (Registration::STANDARD_FEE * 0.1);
+}
+
 void RegistrationListUnitTest::testTotalFee()
 {
+    QFETCH(QString, name);
+    QFETCH(QString, affiliation);
+    QFETCH(QString, email);
+    QFETCH(QString, type);
+    QFETCH(double, expectedFee);
+
     RegistrationModel model;
     RegistrationList registrationList(model);
 
-    Person attendee1("John Doe", "Company X", "john.doe@example.com");
-    Registration *standardRegistration = new StandardRegistration(attendee1, QDate::currentDate());
+    // Create a Registration object based on the type
+    Person attendee(name, affiliation, email);
+    Registration *registration = nullptr;
 
-    Person attendee2("Jane Doe", "University Y", "jane.doe@example.com");
-    Registration *studentRegistration = new StudentRegistration(attendee2, QDate::currentDate(), "BSc Computer Science");
+    if (type == "standard")
+    {
+        registration = new StandardRegistration(attendee, QDate::currentDate());
+    }
+    else if (type == "student")
+    {
+        registration = new StudentRegistration(attendee, QDate::currentDate(), "Computer Science");
+    }
+    else if (type == "guest")
+    {
+        registration = new GuestRegistration(attendee, QDate::currentDate(), "VIP");
+    }
 
-    registrationList.addRegistration(standardRegistration);
-    registrationList.addRegistration(studentRegistration);
+    QVERIFY(registration != nullptr); // Ensure registration is created successfully
+    registrationList.addRegistration(registration);
 
-    QCOMPARE(registrationList.totalFee("all"), Registration::STANDARD_FEE + (Registration::STANDARD_FEE * 0.5));
+    QCOMPARE(registrationList.totalFee("all"), expectedFee);
+    QCOMPARE(registrationList.totalFee("StandardRegistration"), type == "standard" ? expectedFee : 0.0);
+    QCOMPARE(registrationList.totalFee("StudentRegistration"), type == "student" ? expectedFee : 0.0);
+    QCOMPARE(registrationList.totalFee("GuestRegistration"), type == "guest" ? expectedFee : 0.0);
 }
 
 void RegistrationListUnitTest::testTotalRegistrations()
