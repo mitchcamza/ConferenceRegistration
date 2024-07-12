@@ -103,6 +103,10 @@ signals:
      */
     void registrationRemoved(Registration *registration);
 
+private slots:
+    void on_registrationAdded(Registration *registration);
+    void on_registrationRemoved(Registration *registration);
+
 private:
     QList<Registration*> m_AttendeeList; ///< List of registrations.
     RegistrationModel *m_RegistrationModel;

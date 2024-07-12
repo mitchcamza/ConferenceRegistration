@@ -24,7 +24,8 @@ RegistrationList::RegistrationList(RegistrationModel &model, QObject *parent)
     : QObject(nullptr),
     m_RegistrationModel(&model)
 {
-
+    connect(this, &RegistrationList::registrationAdded, this, &RegistrationList::on_registrationAdded);
+    connect(this, &RegistrationList::registrationRemoved, this, &RegistrationList::on_registrationRemoved);
 }
 
 /**
@@ -46,7 +47,8 @@ bool RegistrationList::addRegistration(Registration *registration)
     if (!isRegistered(registration->getAttendee()))
     {
         m_AttendeeList.append(registration);
-        m_RegistrationModel->addItem(registration);
+        // m_RegistrationModel->addItem(registration);
+        emit(registrationAdded(registration));
         return true;
     }
     return false;
@@ -61,6 +63,7 @@ bool RegistrationList::removeRegistration(Registration *registration)
 {
     if (m_AttendeeList.removeOne(registration))
     {
+        emit registrationRemoved(registration);
         return true;
     }
     return false;
@@ -149,4 +152,14 @@ int RegistrationList::totalRegistrations(const QString &affiliation) const
 QList<Registration *> RegistrationList::getAttendeeList() const
 {
     return m_AttendeeList;
+}
+
+void RegistrationList::on_registrationAdded(Registration *registration)
+{
+    m_RegistrationModel->addItem(registration);
+}
+
+void RegistrationList::on_registrationRemoved(Registration *registration)
+{
+    // TODO: Remove registration from model
 }
