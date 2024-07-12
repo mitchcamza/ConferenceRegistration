@@ -44,7 +44,6 @@ MainWindow::MainWindow(QWidget *parent)
     actionClose(new QAction(QIcon(":/icons/close"), tr("&Close"), this)),
     lineEditSearch(new QLineEdit(this)),
     pushButtonClear(new QPushButton("Clear Filter", this)),
-    gridLayout(new QGridLayout(this)),
     proxyModel(new RegistrationFilterProxyModel(this))
 {
     // Connect signals and slots
@@ -75,7 +74,7 @@ void MainWindow::setupUI(QMainWindow *mainApplicationWindow)
 {
     // Main Application window
     setWindowTitle("Conference Registration");
-    mainApplicationWindow->resize(1200, 600);
+    mainApplicationWindow->resize(1000, 600);
 
     // Menubar
     menuBar = new QMenuBar(mainApplicationWindow);
@@ -115,13 +114,15 @@ void MainWindow::setupUI(QMainWindow *mainApplicationWindow)
 
     // Central widget and layout
     QWidget *centralWidget = new QWidget(this);
-    centralWidget->setLayout(gridLayout);
+    QGridLayout *gridLayout = new QGridLayout(centralWidget);
     mainApplicationWindow->setCentralWidget(centralWidget);
 
     // Searchbar
     lineEditSearch->setPlaceholderText("Search name");
     gridLayout->addWidget(lineEditSearch, 0, 0, 1, 3);
     gridLayout->addWidget(pushButtonClear, 0, 3, 1, 1);
+    centralWidget->layout()->addWidget(lineEditSearch);
+    centralWidget->layout()->addWidget(pushButtonClear);
 
     // Proxy model
     proxyModel->setSourceModel(registrationModel);

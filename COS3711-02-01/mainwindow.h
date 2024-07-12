@@ -82,7 +82,6 @@ private:
     QAction *actionGetTotalFees; /**< The action for getting the total fees. */
     QAction *actionGetNumberOfAttendeesForAffiliation; /**< The action for getting the number of attendees for an affiliation. */
     QAction *actionClose; /**< The action for closing the application. */
-    QGridLayout *gridLayout; /**< The grid layout for arranging widgets. */
     QLineEdit *lineEditSearch; /**< The line edit widget for searching. */
     QPushButton *pushButtonClear; /**< The push button widget for clearing the filter. */
     RegistrationFilterProxyModel *proxyModel; /**< The proxy model for filtering registrations. */
