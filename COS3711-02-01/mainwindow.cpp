@@ -49,7 +49,7 @@ MainWindow::MainWindow(QWidget *parent)
     // Connect signals and slots
     connect(actionAddAttendee, &QAction::triggered, this, &MainWindow::on_actionAddAttendee_triggered);
     connect(actionGetTotalFees, &QAction::triggered, this, &MainWindow::on_actionGetTotalFees_triggered);
-    connect(actionGetNumberOfAttendeesForAffiliation, &QAction::triggered, this, &MainWindow::on_actionGetNumberOfAttendeesForAffiliation_triggered);
+    connect(actionGetNumberOfAttendeesForAffiliation, &QAction::triggered, this, &MainWindow::on_actionGetNumberOfAttendeesFromAffiliation_triggered);
     connect(actionClose, &QAction::triggered, this, &MainWindow::close);
     connect(pushButtonClear, &QPushButton::clicked, this, &MainWindow::on_actionClearFilter_triggered);
     connect(lineEditSearch, &QLineEdit::textEdited, proxyModel, &RegistrationFilterProxyModel::setFilterText);
@@ -121,8 +121,6 @@ void MainWindow::setupUI(QMainWindow *mainApplicationWindow)
     lineEditSearch->setPlaceholderText("Search name");
     gridLayout->addWidget(lineEditSearch, 0, 0, 1, 3);
     gridLayout->addWidget(pushButtonClear, 0, 3, 1, 1);
-    centralWidget->layout()->addWidget(lineEditSearch);
-    centralWidget->layout()->addWidget(pushButtonClear);
 
     // Proxy model
     proxyModel->setSourceModel(registrationModel);
@@ -160,7 +158,7 @@ void MainWindow::on_actionGetTotalFees_triggered()
  * @brief Slot for the "Registration per Affiliation" action.
  * Opens the dialog for displaying the total number of attendees per affiliation.
  */
-void MainWindow::on_actionGetNumberOfAttendeesForAffiliation_triggered()
+void MainWindow::on_actionGetNumberOfAttendeesFromAffiliation_triggered()
 {
     TotalRegisteredDialog *totalRegisteredDialog = new TotalRegisteredDialog(registrationList);
     totalRegisteredDialog->show();

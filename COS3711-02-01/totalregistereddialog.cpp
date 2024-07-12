@@ -32,15 +32,13 @@ TotalRegisteredDialog::TotalRegisteredDialog(RegistrationList *registrationList)
     setupUI();
 
     connect(pushButtonClose, &QPushButton::clicked, this, &TotalRegisteredDialog::close);
-    connect(lineEditAffiliation, &QLineEdit::textChanged, this, &TotalRegisteredDialog::calculateTotalAttendeesEvent);
-
-    calculateTotalAttendeesEvent();
+    connect(lineEditAffiliation, &QLineEdit::textChanged, this, &TotalRegisteredDialog::on_lineEditAffiliation_textChanged);
 }
 
 /**
  * @brief Calculates the total number of attendees for a given affiliation.
  */
-void TotalRegisteredDialog::calculateTotalAttendeesEvent()
+void TotalRegisteredDialog::on_lineEditAffiliation_textChanged()
 {
     QString affiliation = lineEditAffiliation->text();
     int totalAttendees = registrationList->totalRegistrations(affiliation);

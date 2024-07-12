@@ -36,9 +36,9 @@ public:
 
 private slots:
     /**
-     * @brief Slot function that is called when the calculate total fees button is clicked.
+     * @brief Slot function that is called when the registration type is changed.
      */
-    void calculateTotalFeesEvent();
+    void on_comboBoxRegistrationType_currentIndexChanged();
 
 private:
     /**
