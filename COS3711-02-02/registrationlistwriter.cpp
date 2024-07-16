@@ -54,10 +54,9 @@ bool RegistrationListWriter::write(const QList<Registration*> registrations)
 QDomElement RegistrationListWriter::createRegistrationElement(QDomDocument &doc, const Registration *registration)
 {
     QDomElement registrationElement = doc.createElement("registration");
-
     addCommonElements(doc, registrationElement, registration);
 
-    if (const StandardRegistration *standardRegistration = dynamic_cast<const StandardRegistration*>(registration))
+    if (const StandardRegistration *standardRegistration = qobject_cast<const StandardRegistration*>(registration))
     {
         registrationElement.setAttribute("type", "standard");
 
@@ -66,7 +65,7 @@ QDomElement RegistrationListWriter::createRegistrationElement(QDomDocument &doc,
         registrationElement.appendChild(feeElement);
     }
 
-    else if (const StudentRegistration *studentRegistration = dynamic_cast<const StudentRegistration*>(registration))
+    else if (const StudentRegistration *studentRegistration = qobject_cast<const StudentRegistration*>(registration))
     {
         registrationElement.setAttribute("type", "student");
 
@@ -79,7 +78,7 @@ QDomElement RegistrationListWriter::createRegistrationElement(QDomDocument &doc,
         registrationElement.appendChild(feeElement);
     }
 
-    else if (const GuestRegistration *guestRegistration = dynamic_cast<const GuestRegistration*>(registration))
+    else if (const GuestRegistration *guestRegistration = qobject_cast<const GuestRegistration*>(registration))
     {
         registrationElement.setAttribute("type", "guest");
 
