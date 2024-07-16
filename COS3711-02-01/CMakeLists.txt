@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(COS3711-02-02 VERSION 0.1 LANGUAGES CXX)
+project(COS3711-02-01 VERSION 0.1 LANGUAGES CXX)
 
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
@@ -9,15 +9,15 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets Xml)
-find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Xml)
+find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 
 set(PROJECT_SOURCES
         main.cpp
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
-    qt_add_executable(COS3711-02-02
+    qt_add_executable(COS3711-02-01
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
         person.h person.cpp
@@ -35,37 +35,34 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         registrationmodel.h registrationmodel.cpp
         registrationtypes.h registrationtypes.cpp
         registrationfilterproxymodel.h registrationfilterproxymodel.cpp
-        registrationlistwriter.h registrationlistwriter.cpp
-        filewriter.h filewriter.cpp
     )
 # Define target properties for Android with Qt 6 as:
-#    set_property(TARGET COS3711-02-02 APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
+#    set_property(TARGET COS3711-02-01 APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
 #                 ${CMAKE_CURRENT_SOURCE_DIR}/android)
 # For more information, see https://doc.qt.io/qt-6/qt-add-executable.html#target-creation
 else()
     if(ANDROID)
-        add_library(COS3711-02-02 SHARED
+        add_library(COS3711-02-01 SHARED
             ${PROJECT_SOURCES}
         )
 # Define properties for Android with Qt 5 after find_package() calls as:
 #    set(ANDROID_PACKAGE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/android")
     else()
-        add_executable(COS3711-02-02
+        add_executable(COS3711-02-01
             ${PROJECT_SOURCES}
         )
     endif()
 endif()
 
-target_link_libraries(COS3711-02-02 PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
-target_link_libraries(COS3711-02-02 PRIVATE Qt6::Xml)
+target_link_libraries(COS3711-02-01 PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an
 # explicit, fixed bundle identifier manually though.
 if(${QT_VERSION} VERSION_LESS 6.1.0)
-  set(BUNDLE_ID_OPTION MACOSX_BUNDLE_GUI_IDENTIFIER com.example.COS3711-02-02)
+  set(BUNDLE_ID_OPTION MACOSX_BUNDLE_GUI_IDENTIFIER com.example.COS3711-02-01)
 endif()
-set_target_properties(COS3711-02-02 PROPERTIES
+set_target_properties(COS3711-02-01 PROPERTIES
     ${BUNDLE_ID_OPTION}
     MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
     MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
@@ -74,12 +71,12 @@ set_target_properties(COS3711-02-02 PROPERTIES
 )
 
 include(GNUInstallDirs)
-install(TARGETS COS3711-02-02
+install(TARGETS COS3711-02-01
     BUNDLE DESTINATION .
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
 )
 
 if(QT_VERSION_MAJOR EQUAL 6)
-    qt_finalize_executable(COS3711-02-02)
+    qt_finalize_executable(COS3711-02-01)
 endif()
