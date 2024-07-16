@@ -9,8 +9,8 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
-find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
+find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets Xml)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Xml)
 
 set(PROJECT_SOURCES
         main.cpp
@@ -35,6 +35,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         registrationmodel.h registrationmodel.cpp
         registrationtypes.h registrationtypes.cpp
         registrationfilterproxymodel.h registrationfilterproxymodel.cpp
+        registrationlistwriter.h registrationlistwriter.cpp
+        filewriter.h filewriter.cpp
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET COS3711-02-02 APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
@@ -55,6 +57,7 @@ else()
 endif()
 
 target_link_libraries(COS3711-02-02 PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+target_link_libraries(COS3711-02-02 PRIVATE Qt6::Xml)
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an
