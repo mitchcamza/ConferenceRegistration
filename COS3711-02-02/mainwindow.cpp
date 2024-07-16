@@ -15,6 +15,8 @@
 #include "registrationmodel.h"
 #include "registrationlist.h"
 #include "registrationfilterproxymodel.h"
+#include "registrationlistwriter.h"
+#include "registration.h"
 
 #include <QTableView>
 #include <QStandardItem>
@@ -26,6 +28,8 @@
 #include <QGridLayout>
 #include <QLineEdit>
 #include <QPushButton>
+#include <QFileDialog>
+#include <QMessageBox>
 
 
 /**
@@ -38,6 +42,7 @@ MainWindow::MainWindow(QWidget *parent)
     registrationList(new RegistrationList(*registrationModel)),
     tableViewRegistrations(new QTableView(this)),
     actionAddAttendee(new QAction(QIcon(":/icons/add"), tr("New Registration"), this)),
+    actionExportRegistrationList(new QAction(QIcon(":/icons/export"), tr("Export Registration List"), this)),
     actionSearchAttendee(new QAction(QIcon(":/icons/search"), tr("Search"), this)),
     actionGetTotalFees(new QAction(QIcon(":/icons/fees"), tr("Total Fees"), this)),
     actionGetNumberOfAttendeesForAffiliation(new QAction(QIcon(":/icons/affiliation"), tr("Registration per Affiliation"), this)),
@@ -48,6 +53,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     // Connect signals and slots
     connect(actionAddAttendee, &QAction::triggered, this, &MainWindow::on_actionAddAttendee_triggered);
+    connect(actionExportRegistrationList, &QAction::triggered, this, &MainWindow::on_actionExportRegistrationList_triggered);
     connect(actionGetTotalFees, &QAction::triggered, this, &MainWindow::on_actionGetTotalFees_triggered);
     connect(actionGetNumberOfAttendeesForAffiliation, &QAction::triggered, this, &MainWindow::on_actionGetNumberOfAttendeesFromAffiliation_triggered);
     connect(actionClose, &QAction::triggered, this, &MainWindow::close);
@@ -89,6 +95,8 @@ void MainWindow::setupUI(QMainWindow *mainApplicationWindow)
     // Edit Menu
     QMenu *editMenu = menuBar->addMenu(tr("&Edit"));
     editMenu->addAction(actionAddAttendee);
+    editMenu->addSeparator();
+    editMenu->addAction(actionExportRegistrationList);
 
     // View Menu
     QMenu *viewMenu = menuBar->addMenu(tr("&View"));
@@ -108,6 +116,8 @@ void MainWindow::setupUI(QMainWindow *mainApplicationWindow)
     toolBar = new QToolBar(mainApplicationWindow);
     mainApplicationWindow->addToolBar(Qt::TopToolBarArea, toolBar);
     toolBar->addAction(actionAddAttendee);
+    toolBar->addSeparator();
+    toolBar->addAction(actionExportRegistrationList);
     toolBar->addSeparator();
     toolBar->addAction(actionGetTotalFees);
     toolBar->addAction(actionGetNumberOfAttendeesForAffiliation);
@@ -173,4 +183,20 @@ void MainWindow::on_actionClearFilter_triggered()
     lineEditSearch->clear();
     lineEditSearch->setFocus();
     proxyModel->setFilterText(lineEditSearch->text());
+}
+
+void MainWindow::on_actionExportRegistrationList_triggered()
+{
+    QString fileName = QFileDialog::getSaveFileName(this, tr("Save Registration List"), "", tr("XML Files (*.xml);;All Files (*)"));
+    if (fileName.isEmpty()) { return; }
+
+    RegistrationListWriter writer(fileName);
+    if (writer.write(registrationList->getAttendeeList()))
+    {
+        QMessageBox::information(this, tr("Export Successful"), tr("The registration list was successfully exported."));
+    }
+    else
+    {
+        QMessageBox::warning(this, tr("Export Failed"), tr("Failed to export the registration list."));
+    }
 }

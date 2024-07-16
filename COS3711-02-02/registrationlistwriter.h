@@ -2,6 +2,7 @@
 #define REGISTRATIONLISTWRITER_H
 
 #include "registration.h"
+#include "registrationlist.h"
 #include "filewriter.h"
 
 #include <QDomDocument>
@@ -13,7 +14,7 @@ class RegistrationListWriter
 {
 public:
     RegistrationListWriter(const QString &fileName);
-    bool write(const QList<Registration*> &registrations);
+    bool write(const QList<Registration*> registrations);
 
 private:
     QDomElement createRegistrationElement(QDomDocument &doc, const Registration *registration);

@@ -13,10 +13,10 @@ RegistrationListWriter::RegistrationListWriter(const QString &filename)
 
 }
 
-bool RegistrationListWriter::write(const QList<Registration*> &registrations)
+bool RegistrationListWriter::write(const QList<Registration*> registrations)
 {
     QDomDocument doc;
-    QDomElement root = doc.createElement("Registrations");
+    QDomElement root = doc.createElement("registrationlist");
     doc.appendChild(root);
 
     for (const Registration *registration : registrations)
@@ -31,41 +31,41 @@ bool RegistrationListWriter::write(const QList<Registration*> &registrations)
 
 QDomElement RegistrationListWriter::createRegistrationElement(QDomDocument &doc, const Registration *registration)
 {
-    QDomElement registrationElement = doc.createElement("Registration");
+    QDomElement registrationElement = doc.createElement("registration");
 
     addCommonElements(doc, registrationElement, registration);
 
     if (const StandardRegistration *standardRegistration = dynamic_cast<const StandardRegistration*>(registration))
     {
-        registrationElement.setAttribute("type", "Standard");
+        registrationElement.setAttribute("type", "standard");
 
-        QDomElement feeElement = doc.createElement("Fee");
+        QDomElement feeElement = doc.createElement("registrationfee");
         feeElement.appendChild(doc.createTextNode(QString::number(standardRegistration->calculateFee())));
         registrationElement.appendChild(feeElement);
     }
 
     else if (const StudentRegistration *studentRegistration = dynamic_cast<const StudentRegistration*>(registration))
     {
-        registrationElement.setAttribute("type", "Student");
+        registrationElement.setAttribute("type", "student");
 
-        QDomElement qualificationElement = doc.createElement("Qualification");
+        QDomElement qualificationElement = doc.createElement("qualification");
         qualificationElement.appendChild(doc.createTextNode(studentRegistration->getQualification()));
         registrationElement.appendChild(qualificationElement);
 
-        QDomElement feeElement = doc.createElement("Fee");
+        QDomElement feeElement = doc.createElement("registrationfee");
         feeElement.appendChild(doc.createTextNode(QString::number(studentRegistration->calculateFee())));
         registrationElement.appendChild(feeElement);
     }
 
     else if (const GuestRegistration *guestRegistration = dynamic_cast<const GuestRegistration*>(registration))
     {
-        registrationElement.setAttribute("type", "Guest");
+        registrationElement.setAttribute("type", "guest");
 
-        QDomElement categoryElement = doc.createElement("Category");
+        QDomElement categoryElement = doc.createElement("category");
         categoryElement.appendChild(doc.createTextNode(guestRegistration->getCategory()));
         registrationElement.appendChild(categoryElement);
 
-        QDomElement feeElement = doc.createElement("Fee");
+        QDomElement feeElement = doc.createElement("registrationfee");
         feeElement.appendChild(doc.createTextNode(QString::number(guestRegistration->calculateFee())));
         registrationElement.appendChild(feeElement);
     }
@@ -77,19 +77,23 @@ void RegistrationListWriter::addCommonElements(QDomDocument &doc, QDomElement &r
 {
     const Person& attendee = registration->getAttendee();
 
-    QDomElement nameElement = doc.createElement("Name");
+    QDomElement attendeeElement = doc.createElement("attendee");
+
+    QDomElement nameElement = doc.createElement("name");
     nameElement.appendChild(doc.createTextNode(attendee.getName()));
-    registrationElement.appendChild(nameElement);
+    attendeeElement.appendChild(nameElement);
 
-    QDomElement affiliationElement = doc.createElement("Affiliation");
+    QDomElement affiliationElement = doc.createElement("affiliation");
     affiliationElement.appendChild(doc.createTextNode(attendee.getAffiliation()));
-    registrationElement.appendChild(affiliationElement);
+    attendeeElement.appendChild(affiliationElement);
 
-    QDomElement emailElement = doc.createElement("Email");
+    QDomElement emailElement = doc.createElement("email");
     emailElement.appendChild(doc.createTextNode(attendee.getEmail()));
-    registrationElement.appendChild(emailElement);
+    attendeeElement.appendChild(emailElement);
 
-    QDomElement bookingDateElement = doc.createElement("BookingDate");
+    registrationElement.appendChild(attendeeElement);
+
+    QDomElement bookingDateElement = doc.createElement("bookingDate");
     bookingDateElement.appendChild(doc.createTextNode(registration->getBookingDate().toString(Qt::ISODate)));
     registrationElement.appendChild(bookingDateElement);
 }

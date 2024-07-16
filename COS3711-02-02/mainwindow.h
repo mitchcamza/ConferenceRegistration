@@ -70,6 +70,8 @@ private slots:
      */
     void on_actionClearFilter_triggered();
 
+    void on_actionExportRegistrationList_triggered();
+
 private:
     QTableView *tableViewRegistrations; /**< The table view widget for displaying registrations. */
     RegistrationModel *registrationModel; /**< The model for managing registrations. */
@@ -78,6 +80,7 @@ private:
     QStatusBar *statusBar; /**< The status bar widget. */
     QToolBar *toolBar; /**< The tool bar widget. */
     QAction *actionAddAttendee; /**< The action for adding an attendee. */
+    QAction *actionExportRegistrationList; /**< The action for exporting the registrationList. */
     QAction *actionSearchAttendee; /**< The action for searching an attendee. */
     QAction *actionGetTotalFees; /**< The action for getting the total fees. */
     QAction *actionGetNumberOfAttendeesForAffiliation; /**< The action for getting the number of attendees for an affiliation. */
