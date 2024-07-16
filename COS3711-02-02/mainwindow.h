@@ -70,6 +70,9 @@ private slots:
      */
     void on_actionClearFilter_triggered();
 
+    /**
+     * @brief Slot function called when the "Export" action is triggered.
+     */
     void on_actionExportRegistrationList_triggered();
 
 private:

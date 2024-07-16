@@ -185,6 +185,10 @@ void MainWindow::on_actionClearFilter_triggered()
     proxyModel->setFilterText(lineEditSearch->text());
 }
 
+/**
+ * @brief Slot for the "Export Registration List" action.
+ * Opens a file dialog to export the registration list to an XML file.
+ */
 void MainWindow::on_actionExportRegistrationList_triggered()
 {
     QString fileName = QFileDialog::getSaveFileName(this, tr("Save Registration List"), "", tr("XML Files (*.xml);;All Files (*)"));
