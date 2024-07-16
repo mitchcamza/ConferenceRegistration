@@ -19,7 +19,8 @@ QString FileReader::read() const
     }
 
     QTextStream in(&file);
+    QString contents = in.readAll();
     file.close();
 
-    return in.readAll();
+    return contents;
 }

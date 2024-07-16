@@ -16,6 +16,7 @@
 #include "registrationlist.h"
 #include "registrationfilterproxymodel.h"
 #include "registrationlistwriter.h"
+#include "registrationlistreader.h"
 #include "registration.h"
 
 #include <QTableView>
@@ -43,6 +44,7 @@ MainWindow::MainWindow(QWidget *parent)
     tableViewRegistrations(new QTableView(this)),
     actionAddAttendee(new QAction(QIcon(":/icons/add"), tr("New Registration"), this)),
     actionExportRegistrationList(new QAction(QIcon(":/icons/export"), tr("Export Registration List"), this)),
+    actionImportRegistrationList(new QAction(QIcon(":/icons/import"), tr("Import Registration List. Appends to existing list."), this)),
     actionSearchAttendee(new QAction(QIcon(":/icons/search"), tr("Search"), this)),
     actionGetTotalFees(new QAction(QIcon(":/icons/fees"), tr("Total Fees"), this)),
     actionGetNumberOfAttendeesForAffiliation(new QAction(QIcon(":/icons/affiliation"), tr("Registration per Affiliation"), this)),
@@ -54,6 +56,7 @@ MainWindow::MainWindow(QWidget *parent)
     // Connect signals and slots
     connect(actionAddAttendee, &QAction::triggered, this, &MainWindow::on_actionAddAttendee_triggered);
     connect(actionExportRegistrationList, &QAction::triggered, this, &MainWindow::on_actionExportRegistrationList_triggered);
+    connect(actionImportRegistrationList, &QAction::triggered, this, &MainWindow::on_actionImportRegistrationList_triggered);
     connect(actionGetTotalFees, &QAction::triggered, this, &MainWindow::on_actionGetTotalFees_triggered);
     connect(actionGetNumberOfAttendeesForAffiliation, &QAction::triggered, this, &MainWindow::on_actionGetNumberOfAttendeesFromAffiliation_triggered);
     connect(actionClose, &QAction::triggered, this, &MainWindow::close);
@@ -96,6 +99,7 @@ void MainWindow::setupUI(QMainWindow *mainApplicationWindow)
     QMenu *editMenu = menuBar->addMenu(tr("&Edit"));
     editMenu->addAction(actionAddAttendee);
     editMenu->addSeparator();
+    editMenu->addAction(actionImportRegistrationList);
     editMenu->addAction(actionExportRegistrationList);
 
     // View Menu
@@ -117,6 +121,7 @@ void MainWindow::setupUI(QMainWindow *mainApplicationWindow)
     mainApplicationWindow->addToolBar(Qt::TopToolBarArea, toolBar);
     toolBar->addAction(actionAddAttendee);
     toolBar->addSeparator();
+    toolBar->addAction(actionImportRegistrationList);
     toolBar->addAction(actionExportRegistrationList);
     toolBar->addSeparator();
     toolBar->addAction(actionGetTotalFees);
@@ -191,9 +196,11 @@ void MainWindow::on_actionClearFilter_triggered()
  */
 void MainWindow::on_actionExportRegistrationList_triggered()
 {
+    // Open a file dialog to save the XML file
     QString fileName = QFileDialog::getSaveFileName(this, tr("Save Registration List"), "", tr("XML Files (*.xml);;All Files (*)"));
     if (fileName.isEmpty()) { return; }
 
+    // Serialize to XML and write to file
     RegistrationListWriter writer(fileName);
     if (writer.write(registrationList->getAttendeeList()))
     {
@@ -203,4 +210,35 @@ void MainWindow::on_actionExportRegistrationList_triggered()
     {
         QMessageBox::warning(this, tr("Export Failed"), tr("Failed to export the registration list."));
     }
+}
+
+/**
+ * @brief Slot for the "Import Registration List" action.
+ * Opens a file dialog to import an existing registration list from an XML file and appends it to the current registration list.
+ */
+void MainWindow::on_actionImportRegistrationList_triggered()
+{
+    // Open a file dialog to select the XML file
+    QString fileName = QFileDialog::getOpenFileName(this, tr("Import Registration List"), "", tr("XML Files (*.xml);;All Files (*)"));
+    if (fileName.isEmpty()) { return; }
+
+    // Read the file, deserialize XML, and store registrations in a new QList
+    RegistrationListReader reader(fileName);
+    QList<Registration*> importedRegistrations = reader.read();
+
+    // If there is nothing to import, return
+    if (importedRegistrations.isEmpty())
+    {
+        QMessageBox::warning(this, tr("Import Failed"), tr("Failed to import the registration list. Check that the file exists, and that the XML structure is well-formed."));
+        return;
+    }
+
+    // Append imported registrations to current registration list
+    for (Registration *registration : importedRegistrations)
+    {
+        registrationList->addRegistration(registration);
+    }
+    QMessageBox::information(this, tr("Import Successful"), tr("The registration list was imported successfully."));
+
+    // TODO: check that registrationList::addRegistration() updates the model and view
 }

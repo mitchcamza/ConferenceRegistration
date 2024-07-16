@@ -1,8 +1,12 @@
 #include "registrationlistreader.h"
 #include "person.h"
+#include "standardregistration.h"
+#include "studentregistration.h"
+#include "guestregistration.h"
 
 #include <QString>
 #include <QFile>
+#include <QDomNodeList>
 
 
 RegistrationListReader::RegistrationListReader(const QString &fileName)
@@ -21,87 +25,78 @@ QList<Registration *> RegistrationListReader::read()
         return registrations;
     }
 
-    QXmlStreamReader xml(xmlContent);
-
-    while (!xml.atEnd() && !xml.hasError())
+    QDomDocument doc;
+    if (!doc.setContent(xmlContent))
     {
-        QXmlStreamReader::TokenType token = xml.readNext();
-
-        if (token == QXmlStreamReader::StartElement)
-        {
-            if (xml.name() == QString("registration"))
-            {
-                Registration *registration = parseRegistrationElement(xml);
-                if (registration)
-                {
-                    registrations.append(registration);
-                }
-            }
-        }
+        qWarning() << "Failed to parse XML file.";
+        return registrations;
     }
 
-    if (xml.hasError())
+    QDomElement root = doc.documentElement();
+    QDomNodeList registrationNodes = root.elementsByTagName("registration");
+
+    for (int i = 0; i < registrationNodes.count(); i++)
     {
-        qWarning() << "XML error: " << xml.errorString();
+        QDomElement registrationElement = registrationNodes.at(i).toElement();
+        Registration *registration = parseRegistrationElement(registrationElement);
+        if (registration)
+        {
+            registrations.append(registration);
+        }
     }
 
     return registrations;
 }
 
-Registration *RegistrationListReader::parseRegistrationElement(QXmlStreamReader &xml)
+Registration *RegistrationListReader::parseRegistrationElement(const QDomElement &element)
 {
-    QString type;
+    QString type = element.attribute("type", "");
+
     QString name, affiliation, email;
     QDate bookingDate;
     QString qualification;
     QString category;
 
-    while (!(xml.tokenType() == QXmlStreamReader::EndElement && xml.name() == QString("registration")))
+    QDomNodeList attendeeNodes = element.elementsByTagName("attendee");
+    if (!attendeeNodes.isEmpty())
     {
-        xml.readNext();
+        QDomElement attendeeElement = attendeeNodes.at(0).toElement();
 
-        if (xml.tokenType() == QXmlStreamReader::StartElement)
+        QDomNodeList nameNodes = attendeeElement.elementsByTagName("name");
+        if (!nameNodes.isEmpty())
         {
-            if (xml.name() == QString("type"))
-            {
-                type = xml.readElementText();
-            }
-            else if (xml.name() == QString("attendee"))
-            {
-                while (!(xml.tokenType() == QXmlStreamReader::EndElement && xml.name() == QString("attendee")))
-                {
-                    xml.readNext();
-
-                    if (xml.tokenType() == QXmlStreamReader::StartElement)
-                    {
-                        if (xml.name() == QString("name"))
-                        {
-                            name = xml.readElementText();
-                        }
-                        else if (xml.name() == QString("affiliation"))
-                        {
-                            affiliation = xml.readElementText();
-                        }
-                        else if (xml.name() == QString("email"))
-                        {
-                            email = xml.readElementText();
-                        }
-                    }
-                }
-            }
-            else if (xml.name() == QString("bookingdate"))
-            {
-                bookingDate = QDate::fromString(xml.readElementText(), Qt::ISODate);
-            }
-            else if (xml.name() == QString("qualification"))
-            {
-                qualification = xml.readElementText();
-            }
-            else if (xml.name() == QString("category"))
-            {
-                category = xml.readElementText();
-            }
+            name = nameNodes.at(0).toElement().text();
         }
+
+        QDomNodeList affiliationNodes = attendeeElement.elementsByTagName("affiliation");
+        if (!affiliationNodes.isEmpty())
+        {
+            affiliation = affiliationNodes.at(0).toElement().text();
+        }
+
+        QDomNodeList emailNodes = attendeeElement.elementsByTagName("email");
+        if (!emailNodes.isEmpty())
+        {
+            email = emailNodes.at(0).toElement().text();
+        }
+    }
+
+    QDomNodeList bookingDateNodes = element.elementsByTagName("bookingdate");
+    if (!bookingDateNodes.isEmpty())
+    {
+        bookingDate = QDate::fromString(bookingDateNodes.at(0).toElement().text(), Qt::ISODate);
+    }
+
+    QDomNodeList qualificationNodes = element.elementsByTagName("qualification");
+    if (!qualificationNodes.isEmpty())
+    {
+        qualification = qualificationNodes.at(0).toElement().text();
+    }
+
+    QDomNodeList categoryNodes = element.elementsByTagName("category");
+    if (!categoryNodes.isEmpty())
+    {
+        category = categoryNodes.at(0).toElement().text();
     }
 
     Person attendee(name, affiliation, email);
@@ -118,6 +113,9 @@ Registration *RegistrationListReader::parseRegistrationElement(QXmlStreamReader 
     {
         return new GuestRegistration(attendee, bookingDate, category);
     }
-
+    else
+    {
+        qWarning() << "Unknown registration type:" << type;
+    }
     return nullptr;
 }

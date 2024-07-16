@@ -2,23 +2,21 @@
 #define REGISTRATIONLISTREADER_H
 
 #include "registration.h"
-#include "standardregistration.h"
-#include "studentregistration.h"
-#include "guestregistration.h"
 #include "filereader.h"
 
 #include <QList>
 #include <QXmlStreamReader>
+#include <QDomDocument>
 
 
 class RegistrationListReader
 {
 public:
-    RegistrationListReader(const QString &fileName);
+    explicit RegistrationListReader(const QString &fileName);
     QList<Registration*> read();
 
 private:
-    Registration *parseRegistrationElement(QXmlStreamReader &xml);
+    Registration *parseRegistrationElement(const QDomElement &element);
 
 private:
     QString m_FileName;
