@@ -1,4 +1,4 @@
-# COS3711-02-01
+# COS3711-02-02
 A Conference Registration Application
 
 ## Project Overview
@@ -15,12 +15,14 @@ This project is a Qt-based application designed to manage different types of reg
 - **Fee Calculation**: Calculate registration fees based on the type of registration.
 - **Attendee Numbers**: Display the number of attendees registered per affilaition.
 - **Filter Registrations**: Filter registrations based on attendee name.
+- **Export Registration List**: Exports (serializes) the registration list to an XML file.
 - **User Interface**: Intuitive GUI for interacting with the registration system.
-<img width="1312" alt="Screenshot 2024-07-11 at 16 57 13" src="https://github.com/user-attachments/assets/9d061f63-47ad-472e-9d9c-c7773dfb07aa">
-<img width="1312" alt="Screenshot 2024-07-11 at 16 57 21" src="https://github.com/user-attachments/assets/d1472679-bcf3-4d5e-80c4-a7b5f6fa6215">
+<img width="1112" alt="Screenshot 2024-07-16 at 07 05 57" src="https://github.com/user-attachments/assets/64c11bfa-b731-43a9-80eb-b804ca4d325a">
+<img width="1112" alt="Screenshot 2024-07-16 at 07 06 05" src="https://github.com/user-attachments/assets/7756bb5b-ed70-4eb3-9a97-03b80fcb238f">
 <img width="540" alt="Screenshot 2024-07-11 at 17 01 35" src="https://github.com/user-attachments/assets/bf47b5af-9967-478f-814b-2ea132827e2a">
 <img width="464" alt="Screenshot 2024-07-11 at 16 57 34" src="https://github.com/user-attachments/assets/80b83476-91c6-43be-80f6-0a6d9f531fd0">
 <img width="424" alt="Screenshot 2024-07-11 at 16 57 48" src="https://github.com/user-attachments/assets/eeaa6e2f-baf0-4321-9cc5-80f43f6dba05">
+<img width="912" alt="Screenshot 2024-07-16 at 07 13 04" src="https://github.com/user-attachments/assets/f56a82d7-ef0a-481f-87a8-ea947c12fdd5">
 
 ## Getting Started
 
@@ -31,26 +33,55 @@ This project is a Qt-based application designed to manage different types of reg
 - **C++ Compiler**: Ensure you have a C++17 compatible compiler.
 
 ### Building the Project
+You can either download the release (recommended for users new to git), or clone the repository and follow the instructions below.
 
-1. **Clone the Repository**:
+#### Option 1: Download the Release
+1. **Download the Release**: Navigate to the [Releases](https://github.com/mitchcamza/COS3711-02/releases) page of this repository.
+2. **Select the Latest Release**: Download the release with the version number formatted as `yyyy-mm-dd`.
+3. **Extract the Files**: Extract the downloaded archive to your desired location.
+4. **Navigate to the Project Directory**: Open a terminal or command prompt and navigate to the extracted project directory.
+5. **Create a Build Directory**:
     ```bash
-    git clone https://github.com/mitchcamza/COS3711-02-01
-    cd COS3711-02-01
+    mkdir build
+    cd build
+    ```
+6. **Run CMake**:
+    ```bash
+    cmake ..
+    ```
+7. **Build the Project**:
+    ```bash
+    make
+    ```
+8. **Run the Application**:
+    ```bash
+    ./yourapplication
     ```
 
-2. **Configure the Project**:
+#### Option 2: Clone the Repository
+1. **Clone the Repository**:
+    ```bash
+    git clone https://github.com/mitchcamza/COS3711-02
+    cd COS3711-02
+    ```
+2. **Checkout the COS3711-02-02 branch**
+   ```bash
+   git checkout COS3711-02-02
+   ```
+
+4. **Configure the Project**:
     ```bash
     cmake -B build
     ```
 
-3. **Build the Project**:
+5. **Build the Project**:
     ```bash
     cmake --build build
     ```
 
-4. **Run the Application**:
+6. **Run the Application**:
     ```bash
-    ./build/COS3711-02-01
+    ./build/COS3711-02
     ```
 
 ## Project Structure
@@ -71,6 +102,8 @@ This project is a Qt-based application designed to manage different types of reg
   - `newregistrationdialog.h`, `newregistrationdialog.cpp`: Dialog for adding new registrations.
   - `totalfeesdialog.h`, `totalfeesdialog.cpp`: Dialog for displaying total fees.
   - `totalregistereddialog.h`, `totalregistereddialog.cpp`: Dialog for displaying total registrations.
+  - `filewriter.h`, `filewriter.cpp`: Class for writing provided text to file.
+  - `registrationlistwriter.h`, `registrationlistwriter.cpp`: Class for serializing Registration objects to XML.
   - `resources.qrc`: A resource file containing resources used.
   
 ## Usage
@@ -101,9 +134,3 @@ The application allows users to manage different types of registrations. The mai
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Acknowledgments
-
-- COS3711 course materials and lecturers for guidance on this assignment.
-- Qt Documentation.
-# COS3711-02-02
