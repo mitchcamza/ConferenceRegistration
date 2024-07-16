@@ -57,7 +57,7 @@ private:
 
 private:
     QString m_FileName;         /**< The name of the file to write to. */
-    FileWriter m_FileWriter;     /**< The FileWriter object to write to the file. */
+    FileWriter m_FileWriter;    /**< The FileWriter object to write to the file. */
 };
 
 #endif // REGISTRATIONLISTWRITER_H
