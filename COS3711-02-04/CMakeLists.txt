@@ -39,6 +39,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         filewriter.h filewriter.cpp
         filereader.h filereader.cpp
         registrationlistreader.h registrationlistreader.cpp
+        registrationfactory.h registrationfactory.cpp
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET COS3711-02-04 APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
