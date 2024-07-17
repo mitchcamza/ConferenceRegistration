@@ -17,6 +17,7 @@
 #include <QDateEdit>
 #include <QPushButton>
 #include <QLabel>
+#include <QMessageBox>
 
 #include "registrationlist.h"
 #include "standardregistration.h"
@@ -71,7 +72,7 @@ NewRegistrationDialog::~NewRegistrationDialog()
 void NewRegistrationDialog::on_pushButtonRegister_clicked()
 {
     // Collect registration details
-    QString registrationType = comboBoxRegistrationType->currentText();
+    QString type = comboBoxRegistrationType->currentText();
     QString name = lineEditName->text().toUpper();
     QString affiliation = lineEditAffiliation->text().toUpper();
     QString email = lineEditEmail->text().toUpper();
@@ -80,28 +81,35 @@ void NewRegistrationDialog::on_pushButtonRegister_clicked()
     QDate bookingDate = dateEditBookingDate->date();
 
     Person person(name, affiliation, email);
-    Registration *newRegistration = nullptr;
+    Registration *registration = nullptr;
 
-    if (registrationType.toLower() == "standard")
+    if (type.toLower() == "standard")
     {
-        newRegistration = new StandardRegistration(person, dateEditBookingDate->date());
+        registration = new StandardRegistration(person, dateEditBookingDate->date());
     }
-    else if (registrationType.toLower() == "student")
+    else if (type.toLower() == "student")
     {
-        newRegistration = new StudentRegistration(person, dateEditBookingDate->date(), qualification);
+        registration = new StudentRegistration(person, dateEditBookingDate->date(), qualification);
     }
-    else if (registrationType.toLower() == "guest")
+    else if (type.toLower() == "guest")
     {
-        newRegistration = new GuestRegistration(person, dateEditBookingDate->date(), category);
+        registration = new GuestRegistration(person, dateEditBookingDate->date(), category);
     }
 
-    if (newRegistration)
+    if (registration)
     {
-        newRegistration->setBookingDate(bookingDate);
-        registrationList->addRegistration(newRegistration);
+        if (registrationList->addRegistration(registration))
+        {
+            QMessageBox::information(this, "Success", "Registration added successfully.");
+        }
+        else
+        {
+            QMessageBox::warning(this, "Error", "Failed to add registration.");
+        }
     }
     this->close();
 }
+
 
 /**
  * @brief Slot function called when the Cancel button is clicked.
