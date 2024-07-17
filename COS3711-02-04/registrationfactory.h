@@ -15,8 +15,6 @@ public:
 
 private:
     RegistrationFactory();
-
-    // Delete copy constructor and assignment operator to prevent copying of RegistrationFactory
     RegistrationFactory(const RegistrationFactory&) = delete;
     RegistrationFactory &operator=(const RegistrationFactory&) = delete;
 };

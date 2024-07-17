@@ -8,9 +8,7 @@
 
 #include "registrationlistreader.h"
 #include "person.h"
-#include "standardregistration.h"
-#include "studentregistration.h"
-#include "guestregistration.h"
+#include "registrationfactory.h"
 
 #include <QString>
 #include <QFile>
@@ -75,8 +73,7 @@ Registration *RegistrationListReader::parseRegistrationElement(const QDomElement
 
     QString name, affiliation, email;
     QDate bookingDate;
-    QString qualification;
-    QString category;
+    QString additionalInfo;
 
     QDomNodeList attendeeNodes = element.elementsByTagName("attendee");
     if (!attendeeNodes.isEmpty())
@@ -111,32 +108,23 @@ Registration *RegistrationListReader::parseRegistrationElement(const QDomElement
     QDomNodeList qualificationNodes = element.elementsByTagName("qualification");
     if (!qualificationNodes.isEmpty())
     {
-        qualification = qualificationNodes.at(0).toElement().text();
+        additionalInfo = qualificationNodes.at(0).toElement().text();
     }
 
     QDomNodeList categoryNodes = element.elementsByTagName("category");
     if (!categoryNodes.isEmpty())
     {
-        category = categoryNodes.at(0).toElement().text();
+        additionalInfo = categoryNodes.at(0).toElement().text();
     }
 
-    Person attendee(name, affiliation, email);
+    // Use RegistrationFactory to create registrations
+    RegistrationFactory &factory = RegistrationFactory::getInstance();
+    Registration *registration = factory.createRegistration(type, name, affiliation, email, bookingDate, additionalInfo);
 
-    if (type == "standard")
+    if (!registration)
     {
-        return new StandardRegistration(attendee, bookingDate);
+        qWarning() << "Failed to create registration for type: " << type << ". Make sure that the type exists.";
     }
-    else if (type == "student")
-    {
-        return new StudentRegistration(attendee, bookingDate, qualification);
-    }
-    else if (type == "guest")
-    {
-        return new GuestRegistration(attendee, bookingDate, category);
-    }
-    else
-    {
-        qWarning() << "Unknown registration type:" << type;
-    }
-    return nullptr;
+
+    return registration;
 }

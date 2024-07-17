@@ -17,15 +17,15 @@ Registration *RegistrationFactory::createRegistration(const QString &type, const
 {
     Person attendee(name, affiliation, email);
 
-    if (type == "standard")
+    if (type.toLower() == "standard")
     {
         return new StandardRegistration(attendee, bookingDate);
     }
-    else if (type == "student")
+    else if (type.toLower() == "student")
     {
         return new StudentRegistration(attendee, bookingDate, additionalInfo);
     }
-    else if (type == "guest")
+    else if (type.toLower() == "guest")
     {
         return new GuestRegistration(attendee, bookingDate, additionalInfo);
     }
