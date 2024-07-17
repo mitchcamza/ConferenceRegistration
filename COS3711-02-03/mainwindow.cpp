@@ -44,7 +44,7 @@ MainWindow::MainWindow(QWidget *parent)
     tableViewRegistrations(new QTableView(this)),
     actionAddAttendee(new QAction(QIcon(":/icons/add"), tr("New Registration"), this)),
     actionExportRegistrationList(new QAction(QIcon(":/icons/export"), tr("Export Registration List"), this)),
-    actionImportRegistrationList(new QAction(QIcon(":/icons/import"), tr("Import Registration List. Appends to existing list."), this)),
+    actionImportRegistrationList(new QAction(QIcon(":/icons/import"), tr("Import Registration List"), this)),
     actionSearchAttendee(new QAction(QIcon(":/icons/search"), tr("Search"), this)),
     actionGetTotalFees(new QAction(QIcon(":/icons/fees"), tr("Total Fees"), this)),
     actionGetNumberOfAttendeesForAffiliation(new QAction(QIcon(":/icons/affiliation"), tr("Registration per Affiliation"), this)),
@@ -92,21 +92,21 @@ void MainWindow::setupUI(QMainWindow *mainApplicationWindow)
 
     // File Menu
     QMenu *fileMenu = menuBar->addMenu(tr("&File"));
+    fileMenu->addAction(actionImportRegistrationList);
+    fileMenu->addAction(actionExportRegistrationList);
+    actionExportRegistrationList->setToolTip("Exports current registration list to file.");
+    actionImportRegistrationList->setToolTip("Imports registrations from file and appends to existing registration list.");
+    fileMenu->addSeparator();
     fileMenu->addAction(actionClose);
-    // TODO: add file menu actions
 
     // Edit Menu
     QMenu *editMenu = menuBar->addMenu(tr("&Edit"));
     editMenu->addAction(actionAddAttendee);
-    editMenu->addSeparator();
-    editMenu->addAction(actionImportRegistrationList);
-    editMenu->addAction(actionExportRegistrationList);
 
-    // View Menu
-    QMenu *viewMenu = menuBar->addMenu(tr("&View"));
-    viewMenu->addAction(actionSearchAttendee);
-    viewMenu->addAction(actionGetTotalFees);
-    viewMenu->addAction(actionGetNumberOfAttendeesForAffiliation);
+    // Reports Menu
+    QMenu *reports = menuBar->addMenu(tr("&Reports"));
+    reports->addAction(actionGetTotalFees);
+    reports->addAction(actionGetNumberOfAttendeesForAffiliation);
 
     // Help Menu
     QMenu *helpMenu = menuBar->addMenu(tr("&Help"));
