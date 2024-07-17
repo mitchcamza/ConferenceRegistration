@@ -17,11 +17,10 @@
 #include <QDateEdit>
 #include <QPushButton>
 #include <QLabel>
+#include <QMessageBox>
 
 #include "registrationlist.h"
-#include "standardregistration.h"
-#include "studentregistration.h"
-#include "guestregistration.h"
+#include "registrationfactory.h"
 
 
 /** @brief Constructs a NewRegistrationDialog object.
@@ -71,35 +70,30 @@ NewRegistrationDialog::~NewRegistrationDialog()
 void NewRegistrationDialog::on_pushButtonRegister_clicked()
 {
     // Collect registration details
-    QString registrationType = comboBoxRegistrationType->currentText();
+    QString type = comboBoxRegistrationType->currentText();
     QString name = lineEditName->text().toUpper();
     QString affiliation = lineEditAffiliation->text().toUpper();
     QString email = lineEditEmail->text().toUpper();
     QString qualification = lineEditStudentQualification->text().toUpper();
     QString category = lineEditGuestCategory->text();
+    QString additionalInfo = qualification + category;
     QDate bookingDate = dateEditBookingDate->date();
 
-    Person person(name, affiliation, email);
-    Registration *newRegistration = nullptr;
+    RegistrationFactory &factory = RegistrationFactory::getInstance();
+    Registration *registration = factory.createRegistration(type, name, affiliation, email, bookingDate, additionalInfo);
 
-    if (registrationType.toLower() == "standard")
+    if (registration)
     {
-        newRegistration = new StandardRegistration(person, dateEditBookingDate->date());
+        if (registrationList->addRegistration(registration))
+        {
+            QMessageBox::information(this, "Success", "Registration added successfully.");
+        }
     }
-    else if (registrationType.toLower() == "student")
+    else
     {
-        newRegistration = new StudentRegistration(person, dateEditBookingDate->date(), qualification);
-    }
-    else if (registrationType.toLower() == "guest")
-    {
-        newRegistration = new GuestRegistration(person, dateEditBookingDate->date(), category);
+        QMessageBox::warning(this, "Error", "Failed to add registration.");
     }
 
-    if (newRegistration)
-    {
-        newRegistration->setBookingDate(bookingDate);
-        registrationList->addRegistration(newRegistration);
-    }
     this->close();
 }
 
