@@ -89,20 +89,19 @@ void MainWindow::setupUI(QMainWindow *mainApplicationWindow)
 
     // File Menu
     QMenu *fileMenu = menuBar->addMenu(tr("&File"));
+    fileMenu->addAction(actionExportRegistrationList);
+    actionExportRegistrationList->setToolTip("Exports current registration list to file.");
+    fileMenu->addSeparator();
     fileMenu->addAction(actionClose);
-    // TODO: add file menu actions
 
     // Edit Menu
     QMenu *editMenu = menuBar->addMenu(tr("&Edit"));
     editMenu->addAction(actionAddAttendee);
-    editMenu->addSeparator();
-    editMenu->addAction(actionExportRegistrationList);
 
-    // View Menu
-    QMenu *viewMenu = menuBar->addMenu(tr("&View"));
-    viewMenu->addAction(actionSearchAttendee);
-    viewMenu->addAction(actionGetTotalFees);
-    viewMenu->addAction(actionGetNumberOfAttendeesForAffiliation);
+    // Reports Menu
+    QMenu *reports = menuBar->addMenu(tr("&Reports"));
+    reports->addAction(actionGetTotalFees);
+    reports->addAction(actionGetNumberOfAttendeesForAffiliation);
 
     // Help Menu
     QMenu *helpMenu = menuBar->addMenu(tr("&Help"));
