@@ -17,7 +17,6 @@
 #include <QDateEdit>
 #include <QPushButton>
 #include <QLabel>
-#include <QMessageBox>
 
 #include "registrationlist.h"
 #include "standardregistration.h"
@@ -72,7 +71,7 @@ NewRegistrationDialog::~NewRegistrationDialog()
 void NewRegistrationDialog::on_pushButtonRegister_clicked()
 {
     // Collect registration details
-    QString type = comboBoxRegistrationType->currentText();
+    QString registrationType = comboBoxRegistrationType->currentText();
     QString name = lineEditName->text().toUpper();
     QString affiliation = lineEditAffiliation->text().toUpper();
     QString email = lineEditEmail->text().toUpper();
@@ -81,33 +80,26 @@ void NewRegistrationDialog::on_pushButtonRegister_clicked()
     QDate bookingDate = dateEditBookingDate->date();
 
     Person person(name, affiliation, email);
-    Registration *registration = nullptr;
+    Registration *newRegistration = nullptr;
 
-    if (type.toLower() == "standard")
+    if (registrationType.toLower() == "standard")
     {
-        registration = new StandardRegistration(person, dateEditBookingDate->date());
+        newRegistration = new StandardRegistration(person, dateEditBookingDate->date());
     }
-    else if (type.toLower() == "student")
+    else if (registrationType.toLower() == "student")
     {
-        registration = new StudentRegistration(person, dateEditBookingDate->date(), qualification);
+        newRegistration = new StudentRegistration(person, dateEditBookingDate->date(), qualification);
     }
-    else if (type.toLower() == "guest")
+    else if (registrationType.toLower() == "guest")
     {
-        registration = new GuestRegistration(person, dateEditBookingDate->date(), category);
-    }
-
-    if (registration)
-    {
-        if (registrationList->addRegistration(registration))
-        {
-            QMessageBox::information(this, "Success", "Registration added successfully.");
-        }
-        else
-        {
-            QMessageBox::warning(this, "Error", "Failed to add registration.");
-        }
+        newRegistration = new GuestRegistration(person, dateEditBookingDate->date(), category);
     }
 
+    if (newRegistration)
+    {
+        newRegistration->setBookingDate(bookingDate);
+        registrationList->addRegistration(newRegistration);
+    }
     this->close();
 }
 
