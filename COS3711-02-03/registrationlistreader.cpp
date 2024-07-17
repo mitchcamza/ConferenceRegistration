@@ -1,3 +1,11 @@
+/**
+ * @file registrationlistreader.cpp
+ * @author Mitch Campbell
+ * @date 2024-07-16
+ * @copyright Copyright (c) 2024 Mitch Campbell
+ */
+
+
 #include "registrationlistreader.h"
 #include "person.h"
 #include "standardregistration.h"
@@ -9,12 +17,20 @@
 #include <QDomNodeList>
 
 
+/**
+ * @brief Construct a new Registration List Reader object with the specified file name.
+ * @param fileName 
+ */
 RegistrationListReader::RegistrationListReader(const QString &fileName)
     : m_FileName(fileName), m_FileReader(fileName)
 {
 
 }
 
+/**
+ * @brief Reads the list of registrations from the XML file.
+ * @return A list of Registration objects.
+ */
 QList<Registration *> RegistrationListReader::read()
 {
     QList<Registration*> registrations;
@@ -48,6 +64,11 @@ QList<Registration *> RegistrationListReader::read()
     return registrations;
 }
 
+/**
+ * @brief Parses a registration element from the XML document.
+ * @param element The XML element to parse.
+ * @return A Registration object.
+ */
 Registration *RegistrationListReader::parseRegistrationElement(const QDomElement &element)
 {
     QString type = element.attribute("type", "");

@@ -239,6 +239,4 @@ void MainWindow::on_actionImportRegistrationList_triggered()
         registrationList->addRegistration(registration);
     }
     QMessageBox::information(this, tr("Import Successful"), tr("The registration list was imported successfully."));
-
-    // TODO: check that registrationList::addRegistration() updates the model and view
 }
