@@ -2,7 +2,7 @@
  * @file registrationlistwriter.cpp
  * @author Mitch Campbell
  * @date 2024-07-15
- * @copyright Copyright (c) 2024 Mitch Campbell 
+ * @copyright Copyright (c) 2024 Mitch Campbell
  */
 
 
@@ -16,7 +16,7 @@
 
 /**
  * @brief Construct a new Registration List Writer:: Registration List Writer object
- * @param filename 
+ * @param filename
  */
 RegistrationListWriter::RegistrationListWriter(const QString &filename)
     : m_FileName(filename), m_FileWriter(filename)
@@ -120,7 +120,7 @@ void RegistrationListWriter::addCommonElements(QDomDocument &doc, QDomElement &r
 
     registrationElement.appendChild(attendeeElement);
 
-    QDomElement bookingDateElement = doc.createElement("bookingDate");
+    QDomElement bookingDateElement = doc.createElement("bookingdate");
     bookingDateElement.appendChild(doc.createTextNode(registration->getBookingDate().toString(Qt::ISODate)));
     registrationElement.appendChild(bookingDateElement);
 }
