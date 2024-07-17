@@ -120,7 +120,7 @@ void RegistrationListWriter::addCommonElements(QDomDocument &doc, QDomElement &r
 
     registrationElement.appendChild(attendeeElement);
 
-    QDomElement bookingDateElement = doc.createElement("bookingDate");
+    QDomElement bookingDateElement = doc.createElement("bookingdate");
     bookingDateElement.appendChild(doc.createTextNode(registration->getBookingDate().toString(Qt::ISODate)));
     registrationElement.appendChild(bookingDateElement);
 }
