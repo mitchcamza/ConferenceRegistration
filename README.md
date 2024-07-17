@@ -1,9 +1,10 @@
-# COS3711-02-02
+# COS3711-02-03
 A Conference Registration Application
 
 ## Project Overview
 
-This project is a Qt-based application designed to manage different types of registrations. It includes the following main components:
+This project extends COS3711-02-02. It adds a registration list reader to deserialize `Registration` objects from an XML file. 
+It contains the following functionality:
 
 - **Registration Classes**: An abstract base class `Registration` and derived classes representing various registration types (`StandardRegistration`, `StudentRegistration`, `GuestRegistration`).
 - **Graphical User Interface**: A Qt Widgets-based GUI to interact with the application.
@@ -16,13 +17,15 @@ This project is a Qt-based application designed to manage different types of reg
 - **Attendee Numbers**: Display the number of attendees registered per affilaition.
 - **Filter Registrations**: Filter registrations based on attendee name.
 - **Export Registration List**: Exports (serializes) the registration list to an XML file.
+- **Import Registration List**: Imports (deserializes) a registration list from an XML file and appends the contents to the current registration list.
 - **User Interface**: Intuitive GUI for interacting with the registration system.
-<img width="1112" alt="Screenshot 2024-07-16 at 07 05 57" src="https://github.com/user-attachments/assets/64c11bfa-b731-43a9-80eb-b804ca4d325a">
-<img width="1112" alt="Screenshot 2024-07-16 at 07 06 05" src="https://github.com/user-attachments/assets/7756bb5b-ed70-4eb3-9a97-03b80fcb238f">
+<img width="1112" alt="Screenshot 2024-07-16 at 18 43 00" src="https://github.com/user-attachments/assets/3f972a05-0744-4f37-a1ad-db6616388b1a">
+<img width="1112" alt="Screenshot 2024-07-16 at 18 43 08" src="https://github.com/user-attachments/assets/6ea16e03-a629-49c4-b512-337289cd9080">
+<img width="952" alt="Screenshot 2024-07-16 at 18 42 21" src="https://github.com/user-attachments/assets/aff71448-a1bf-44b3-865a-9acf8fdec458">
 <img width="540" alt="Screenshot 2024-07-11 at 17 01 35" src="https://github.com/user-attachments/assets/bf47b5af-9967-478f-814b-2ea132827e2a">
 <img width="464" alt="Screenshot 2024-07-11 at 16 57 34" src="https://github.com/user-attachments/assets/80b83476-91c6-43be-80f6-0a6d9f531fd0">
 <img width="424" alt="Screenshot 2024-07-11 at 16 57 48" src="https://github.com/user-attachments/assets/eeaa6e2f-baf0-4321-9cc5-80f43f6dba05">
-<img width="912" alt="Screenshot 2024-07-16 at 07 13 04" src="https://github.com/user-attachments/assets/f56a82d7-ef0a-481f-87a8-ea947c12fdd5">
+
 
 ## Getting Started
 
@@ -103,7 +106,9 @@ You can either download the release (recommended for users new to git), or clone
   - `totalfeesdialog.h`, `totalfeesdialog.cpp`: Dialog for displaying total fees.
   - `totalregistereddialog.h`, `totalregistereddialog.cpp`: Dialog for displaying total registrations.
   - `filewriter.h`, `filewriter.cpp`: Class for writing provided text to file.
+  - `filereader.h`, `filereader.cpp`: Class for reading XML file.
   - `registrationlistwriter.h`, `registrationlistwriter.cpp`: Class for serializing Registration objects to XML.
+  - `registrationlistreader.h`, `registrationlistreader.cpp`: Class for deserializing Registration objects from XML.
   - `resources.qrc`: A resource file containing resources used.
   
 ## Usage
@@ -126,6 +131,18 @@ The application allows users to manage different types of registrations. The mai
 
 - Begin typing the first or last name of an attendee in the search bar and the displayed results will update accordingly.
 - Clear the filter by removing the text, or using the 'Clear Filter' pushbutton.
+
+### Exporting Registrations
+1. Click on "Export Registrations" in the edit menu or tool bar.
+2. Browse to the desired directory using the file dialog and provide a file name to save the file.
+3. Click on the "save" and the registration list will be saved to file.
+
+**Note that selecting an existing file will overwrite its contents.**
+
+### Importing Registrations
+1. Click on "Import Registrations" in the edit menu or tool bar.
+2. Browse for the XML file containing the registration list to be imported.
+3. Once the file has been selected, the imported registrations will be appended to the existing registration list.
 
 ## Authors
 
