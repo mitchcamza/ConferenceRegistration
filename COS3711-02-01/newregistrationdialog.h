@@ -11,13 +11,13 @@
 
 #include <QDialog>
 
-class QLineEdit;
 class QComboBox;
 class QDateEdit;
-class QPushButton;
 class QGridLayout;
 class QGroupBox;
 class QLabel;
+class QLineEdit;
+class QPushButton;
 class RegistrationList;
 
 
@@ -32,7 +32,6 @@ class NewRegistrationDialog : public QDialog
 public:
     /**
      * @brief Constructs a NewRegistrationDialog object.
-     * 
      * @param list A pointer to the RegistrationList object.
      * @param parent The parent widget of the dialog.
      */
@@ -84,6 +83,17 @@ private:
      * @brief Updates the registration form based on the selected registration type.
      */
     void updateRegistrationFormBasedOnRegistrationType();
+
+    /**
+     * @brief Sets up validation for input fields for new registrations.
+     */
+    void setupInputValidation();
+
+    /**
+     * @brief Checks that each input is valid.
+     * @return true if input is valid, otherwise return false.
+     */
+    bool isValidInput(const QString &type, const QString &name, const QString &affiliation, const QString &email, const QString &qualification, const QString &category);
 
 private:
     QComboBox *comboBoxRegistrationType;

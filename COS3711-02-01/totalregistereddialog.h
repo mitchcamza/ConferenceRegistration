@@ -18,18 +18,12 @@ class QPushButton;
 class RegistrationList;
 
 
-/**
- * @class TotalRegisteredDialog
- * @brief The TotalRegisteredDialog class represents a dialog window that displays the total number of registered attendees.
- * @details This class inherits from QDialog and provides functionality to calculate and display the total number of registered attendees. It includes UI elements such as labels, line edits, and buttons for user interaction.
- */
 class TotalRegisteredDialog : public QDialog
 {
     Q_OBJECT
 public:
     /**
      * @brief Constructs a TotalRegisteredDialog object.
-     * 
      * @param registrationList A pointer to the RegistrationList object that contains the list of registered attendees.
      */
     TotalRegisteredDialog(RegistrationList *registrationList);
@@ -37,7 +31,6 @@ public:
 private slots:
     /**
      * @brief Slot function triggered when the "Calculate Total Attendees" button is clicked.
-     * 
      * This function calculates the total number of registered attendees and updates the UI accordingly.
      */
     void on_lineEditAffiliation_textChanged();
@@ -45,7 +38,6 @@ private slots:
 private:
     /**
      * @brief Sets up the user interface of the dialog.
-     * 
      * This function creates and configures the necessary UI elements such as labels, line edits, and buttons.
      */
     void setupUI();
