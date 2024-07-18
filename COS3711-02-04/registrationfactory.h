@@ -29,7 +29,7 @@ public:
     static RegistrationFactory &getInstance();
 
     /**
-     * @brief createRegistration
+     * @brief Creates Registration objects based on the arguments provided.
      * @param type The type of registration to create.
      * @param name The name of the person registering.
      * @param affiliation The affiliation of the person registering.
