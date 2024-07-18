@@ -1,10 +1,7 @@
-# COS3711-02-04
+# COS3711-02
 A Conference Registration Application
 
 ## Project Overview
-
-This project extends COS3711-02-03. It adds a factory class named `RegistrationFactory` that creates and returns `Registration` objects based on provided arguments. 
-It contains the following functionality:
 
 - **Registration Classes**: An abstract base class `Registration` and derived classes representing various registration types (`StandardRegistration`, `StudentRegistration`, `GuestRegistration`).
 - **Graphical User Interface**: A Qt Widgets-based GUI to interact with the application.
