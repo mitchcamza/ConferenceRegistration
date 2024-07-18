@@ -108,8 +108,8 @@ private slots:
     void on_registrationRemoved(Registration *registration);
 
 private:
-    QList<Registration*> m_AttendeeList; ///< List of registrations.
-    RegistrationModel *m_RegistrationModel;
+    QList<Registration*> m_AttendeeList;    ///< List of registrations.
+    RegistrationModel *m_RegistrationModel; ///< The registration model
 };
 
 #endif // REGISTRATIONLIST_H
