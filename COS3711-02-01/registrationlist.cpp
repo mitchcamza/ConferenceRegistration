@@ -9,10 +9,9 @@
 
 #include "registrationlist.h"
 #include "registrationmodel.h"
-#include "registrationtypes.h"
 
-#include <QMetaObject>
 #include <QMetaEnum>
+#include <QMetaObject>
 
 
 /**
@@ -47,7 +46,6 @@ bool RegistrationList::addRegistration(Registration *registration)
     if (!isRegistered(registration->getAttendee()))
     {
         m_AttendeeList.append(registration);
-        // m_RegistrationModel->addItem(registration);
         emit(registrationAdded(registration));
         return true;
     }
