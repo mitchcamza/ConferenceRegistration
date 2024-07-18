@@ -1,11 +1,20 @@
-#include "registrationfactory.h"
-#include "registration.h"
-#include "standardregistration.h"
-#include "studentregistration.h"
+/**
+ * @file registrationfactory.cpp
+ * @author Mitch Campbell
+ * @date 2024-07-17
+ * @copyright Copyright (c) 2024 Mitch Campbell
+ */
+
+
 #include "guestregistration.h"
 #include "person.h"
+#include "registration.h"
+#include "registrationfactory.h"
+#include "standardregistration.h"
+#include "studentregistration.h"
 
 #include <QDate>
+
 
 RegistrationFactory &RegistrationFactory::getInstance()
 {

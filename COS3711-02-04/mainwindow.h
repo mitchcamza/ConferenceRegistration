@@ -11,13 +11,13 @@
 
 #include <QMainWindow>
 
-class QTableView;
-class RegistrationModel;
-class RegistrationList;
 class QGridLayout;
 class QLineEdit;
 class QPushButton;
+class QTableView;
 class RegistrationFilterProxyModel;
+class RegistrationList;
+class RegistrationModel;
 
 
 /**
@@ -31,7 +31,6 @@ class MainWindow : public QMainWindow
 public:
     /**
      * @brief Constructs a MainWindow object.
-     * 
      * @param parent The parent widget (default is nullptr).
      */
     explicit MainWindow(QWidget *parent = nullptr);
@@ -44,7 +43,6 @@ public:
 private:
     /**
      * @brief Sets up the user interface for the main application window.
-     * 
      * @param mainApplicationWindow The main application window.
      */
     void setupUI(QMainWindow *mainApplicationWindow);

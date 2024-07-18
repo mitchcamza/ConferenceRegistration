@@ -25,7 +25,6 @@ class GuestRegistration : public Registration
 public:
     /**
      * @brief Constructs a GuestRegistration object with the given attendee, booking date, and category.
-     * 
      * @param attendee The person attending the event.
      * @param bookingDate The date of the booking. Defaults to the current date.
      * @param category The category of the guest registration.
@@ -39,21 +38,18 @@ public:
 
     /**
      * @brief Calculates the registration fee for the guest registration.
-     * 
      * @return The calculated registration fee.
      */
     virtual double calculateFee() const override;
 
     /**
      * @brief Converts the guest registration details to a string format.
-     * 
      * @return The guest registration details as a string.
      */
     virtual QString toString() const override;
 
     /**
      * @brief Gets the category of the guest registration.
-     * 
      * @return The category of the guest registration.
      */
     QString getCategory() const;

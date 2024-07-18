@@ -3,31 +3,23 @@
  * @author Mitch Campbell
  * @date 2024-07-11
  * @copyright Copyright (c) Mitch Campbell
- * @brief Implementation file for the NewRegistrationDialog class.
- * @details This file contains the implementation of the NewRegistrationDialog class, which is a dialog window used for creating new registrations. It includes the necessary UI setup, signal-slot connections, and functions for handling user interactions.
  */
 
 
 #include "newregistrationdialog.h"
+#include "registrationfactory.h"
+#include "registrationlist.h"
 
-#include <QGridLayout>
-#include <QGroupBox>
-#include <QLineEdit>
 #include <QComboBox>
 #include <QDateEdit>
-#include <QPushButton>
+#include <QGridLayout>
+#include <QGroupBox>
 #include <QLabel>
+#include <QLineEdit>
 #include <QMessageBox>
-
-#include "registrationlist.h"
-#include "registrationfactory.h"
+#include <QPushButton>
 
 
-/** @brief Constructs a NewRegistrationDialog object.
- * @details This constructor initializes the NewRegistrationDialog with the given registration list and parent dialog. It also creates and sets up the necessary UI elements, such as group boxes, labels, line edits, and buttons. Signal-slot connections are established to handle user interactions.
- * @param list The registration list to add the new registration to.
- * @param parent The parent dialog of the NewRegistrationDialog.
- */
 NewRegistrationDialog::NewRegistrationDialog(RegistrationList *list, QDialog *parent)
     : QDialog(parent),
     mainLayout(new QGridLayout(this)),
@@ -54,19 +46,13 @@ NewRegistrationDialog::NewRegistrationDialog(RegistrationList *list, QDialog *pa
     connect(comboBoxRegistrationType, &QComboBox::currentIndexChanged, this, &NewRegistrationDialog::on_comboBoxRegistrationType_changed);
 }
 
-/**
- * @brief Destroys the NewRegistrationDialog object. 
- * @details This destructor cleans up any dynamically allocated memory used by the NewRegistrationDialog.
- */
+
 NewRegistrationDialog::~NewRegistrationDialog()
 {
 
 }
 
-/**
- * @brief Slot function called when the Register button is clicked.
- * @details This function collects the registration details entered by the user, creates a new Registration object based on the selected registration type, and adds it to the registration list. The dialog is then closed.
- */
+
 void NewRegistrationDialog::on_pushButtonRegister_clicked()
 {
     // Collect registration details
@@ -97,19 +83,13 @@ void NewRegistrationDialog::on_pushButtonRegister_clicked()
     this->close();
 }
 
-/**
- * @brief Slot function called when the Cancel button is clicked.
- * @details This function simply closes the dialog when the Cancel button is clicked.
- */
+
 void NewRegistrationDialog::on_pushButtonCancel_clicked()
 {
     this->close();
 }
 
-/**
- * @brief Updates the registration form based on the selected registration type.
- * @details This function updates the visibility of certain fields in the registration form based on the selected registration type. For example, if the registration type is "Student", the student qualification field will be visible, while the guest category field will be hidden.
- */
+
 void NewRegistrationDialog::updateRegistrationFormBasedOnRegistrationType()
 {
     QString registrationType = comboBoxRegistrationType->currentText().toLower();
@@ -158,19 +138,13 @@ void NewRegistrationDialog::updateRegistrationFormBasedOnRegistrationType()
     lineEditGuestCategory->clear();
 }
 
-/**
- * @brief Slot function called when the registration type is changed.
- * @details This function is called when the user selects a different registration type from the combo box. It updates the registration form based on the selected registration type.
- */
+
 void NewRegistrationDialog::on_comboBoxRegistrationType_changed()
 {
     updateRegistrationFormBasedOnRegistrationType();
 }
 
-/**
- * @brief Sets up the UI elements of the dialog.
- * @details This function sets up the main layout, registration group box, applicant group box, and buttons. It also sets the window title, modality, size, and tooltip of the dialog.
- */
+
 void NewRegistrationDialog::setupUI()
 {
     this->setWindowTitle("New Registration");
@@ -185,10 +159,7 @@ void NewRegistrationDialog::setupUI()
     setLayout(mainLayout);
 }
 
-/**
- * @brief Sets up the registration group box and its contents.
- * @details This function creates the registration group box, registration type label, registration type combo box, booking date label, and booking date date edit. It also sets the layout of the registration group box.
- */
+
 void NewRegistrationDialog::setupRegistrationGroup()
 {
     QGridLayout *gridLayoutRegistration = new QGridLayout();
@@ -216,10 +187,7 @@ void NewRegistrationDialog::setupRegistrationGroup()
     mainLayout->addWidget(groupBoxRegistration, 0, 0);
 }
 
-/**
- * @brief Sets up the applicant group box and its contents.
- * @details This function creates the applicant group box, name label, name line edit, affiliation label, affiliation line edit, email label, email line edit, student qualification label, student qualification line edit, guest category label, and guest category line edit. It also sets the layout of the applicant group box.
- */
+
 void NewRegistrationDialog::setupApplicantGroup()
 {
     QGridLayout *gridLayoutApplicant = new QGridLayout();
@@ -260,9 +228,6 @@ void NewRegistrationDialog::setupApplicantGroup()
 }
 
 
-/** @brief Sets up the buttons in the new registration dialog.
- *  @details This function adds the register and cancel buttons to the main layout of the dialog. It also sets the tooltips for the buttons and adjusts their size policies.
- */
 void NewRegistrationDialog::setupButtons()
 {
     mainLayout->addWidget(pushButtonRegister, 2, 0);

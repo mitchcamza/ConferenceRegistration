@@ -12,8 +12,8 @@
 #include "registration.h"
 
 
-#include <QObject>
 #include <QList>
+#include <QObject>
 
 class RegistrationModel;
 class RegistrationTypes;

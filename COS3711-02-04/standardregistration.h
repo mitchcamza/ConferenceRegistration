@@ -24,7 +24,6 @@ class StandardRegistration : public Registration
 public:
     /**
      * @brief Constructs a StandardRegistration object with the given attendee and booking date.
-     * 
      * @param attendee The person attending the event.
      * @param bookingDate The date of the booking. Defaults to the current date.
      */
@@ -37,14 +36,12 @@ public:
 
     /**
      * @brief Calculates the fee for the standard registration.
-     * 
      * @return The fee for the standard registration.
      */
     virtual double calculateFee() const override;
 
     /**
      * @brief Returns a string representation of the StandardRegistration object.
-     * 
      * @return A string representation of the StandardRegistration object.
      */
     virtual QString toString() const override;

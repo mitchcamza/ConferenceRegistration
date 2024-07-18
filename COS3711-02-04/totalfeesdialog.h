@@ -11,9 +11,9 @@
 
 #include <QDialog>
 
+class QComboBox;
 class QGridLayout;
 class QLabel;
-class QComboBox;
 class QLineEdit;
 class QPushButton;
 class RegistrationList;

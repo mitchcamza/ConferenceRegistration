@@ -34,7 +34,7 @@ public:
     bool write(const QString &contents) const;
 
 private:
-    QString m_FileName;
+    QString m_FileName; /// < The name of the file to be written to.
 };
 
 #endif // FILEWRITER_H

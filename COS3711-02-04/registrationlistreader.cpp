@@ -6,29 +6,22 @@
  */
 
 
-#include "registrationlistreader.h"
 #include "person.h"
 #include "registrationfactory.h"
+#include "registrationlistreader.h"
 
-#include <QString>
-#include <QFile>
 #include <QDomNodeList>
+#include <QFile>
+#include <QString>
 
 
-/**
- * @brief Construct a new Registration List Reader object with the specified file name.
- * @param fileName 
- */
 RegistrationListReader::RegistrationListReader(const QString &fileName)
     : m_FileName(fileName), m_FileReader(fileName)
 {
 
 }
 
-/**
- * @brief Reads the list of registrations from the XML file.
- * @return A list of Registration objects.
- */
+
 QList<Registration *> RegistrationListReader::read()
 {
     QList<Registration*> registrations;
@@ -62,11 +55,7 @@ QList<Registration *> RegistrationListReader::read()
     return registrations;
 }
 
-/**
- * @brief Parses a registration element from the XML document.
- * @param element The XML element to parse.
- * @return A Registration object.
- */
+
 Registration *RegistrationListReader::parseRegistrationElement(const QDomElement &element)
 {
     QString type = element.attribute("type", "");
@@ -117,7 +106,7 @@ Registration *RegistrationListReader::parseRegistrationElement(const QDomElement
         additionalInfo = categoryNodes.at(0).toElement().text();
     }
 
-    // Use RegistrationFactory to create registrations
+    /// Use RegistrationFactory to create registrations
     RegistrationFactory &factory = RegistrationFactory::getInstance();
     Registration *registration = factory.createRegistration(type, name, affiliation, email, bookingDate, additionalInfo);
 
