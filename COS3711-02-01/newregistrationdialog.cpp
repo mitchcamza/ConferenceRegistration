@@ -106,13 +106,18 @@ void NewRegistrationDialog::on_pushButtonRegister_clicked()
     {
         if (registrationList->addRegistration(registration))
         {
-            QMessageBox::information(this, "Success", "Registration added successfully.");
+            QMessageBox::information(this, "Registration Added", "Registration added successfully.");
         }
         else
         {
-            QMessageBox::warning(this, "Error", "Failed to add registration.");
+            QMessageBox::warning(this, "Registration Failed", "A registration with this email address and name already exists.");
         }
     }
+    else
+    {
+        QMessageBox::warning(this, "Registration Failed", "Could not add registration. Check that the registration details are correct.");
+    }
+    
     this->close();
 }
 
