@@ -1,0 +1,44 @@
+\doxysection{registration.\+h}
+\hypertarget{registration_8h_source}{}\label{registration_8h_source}\index{COS3711-\/02-\/04/registration.h@{COS3711-\/02-\/04/registration.h}}
+\mbox{\hyperlink{registration_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ REGISTRATION\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ REGISTRATION\_H}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{person_8h}{person.h}}"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <QDate>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_registration}{Registration}}\ :\ \textcolor{keyword}{public}\ QObject}
+\DoxyCodeLine{00024\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{double}\ STANDARD\_FEE\ =\ 100.00;}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_registration_a0f41c886533cc6c8bb7ee9c25894cef3}{\string~Registration}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{class_person}{Person}}\ \mbox{\hyperlink{class_registration_ab860828dd1b6daccdb69ef8fe0d5c940}{getAttendee}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00045\ \ \ \ \ QDate\ \mbox{\hyperlink{class_registration_a6028d1c0ff3157f2c4f4f576887300e0}{getBookingDate}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_registration_a8bfe40ec7a11f065ca52abf2038d1dbc}{calculateFee}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{virtual}\ QString\ \mbox{\hyperlink{class_registration_a4beebaa803320e0199dea52c006d6f3d}{toString}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_registration_a6998764a819079e2f212ddd2b2f0bd4a}{setBookingDate}}(\textcolor{keyword}{const}\ QDate\ \&newBookingDate);}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00073\ \ \ \ \ \mbox{\hyperlink{class_registration_a2b58620b40b700ffd40b22b9f3b7960e}{Registration}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_person}{Person}}\ \&attendee,\ \textcolor{keyword}{const}\ QDate\ \&bookingDate);}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00076\ \ \ \ \ \mbox{\hyperlink{class_person}{Person}}\ m\_Attendee;\ \ \ \ \ \ }
+\DoxyCodeLine{00077\ \ \ \ \ QDate\ m\_BookingDate;\ \ \ \ }
+\DoxyCodeLine{00078\ \};}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ REGISTRATION\_H}}
+
+\end{DoxyCode}

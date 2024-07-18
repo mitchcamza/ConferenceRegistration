@@ -1,0 +1,153 @@
+\doxysection{Registration Class Reference}
+\hypertarget{class_registration}{}\label{class_registration}\index{Registration@{Registration}}
+
+
+The \doxylink{class_registration}{Registration} class represents a registration for an event.  
+
+
+
+
+{\ttfamily \#include $<$registration.\+h$>$}
+
+Inheritance diagram for Registration\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_registration}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_registration_a0f41c886533cc6c8bb7ee9c25894cef3}\label{class_registration_a0f41c886533cc6c8bb7ee9c25894cef3} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Registration} ()=default
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_person}{Person}} \mbox{\hyperlink{class_registration_ab860828dd1b6daccdb69ef8fe0d5c940}{get\+Attendee}} () const
+\begin{DoxyCompactList}\small\item\em Get the attendee associated with the registration. \end{DoxyCompactList}\item 
+QDate \mbox{\hyperlink{class_registration_a6028d1c0ff3157f2c4f4f576887300e0}{get\+Booking\+Date}} () const
+\begin{DoxyCompactList}\small\item\em Get the booking date of the registration. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{class_registration_a8bfe40ec7a11f065ca52abf2038d1dbc}{calculate\+Fee}} () const =0
+\begin{DoxyCompactList}\small\item\em Calculate the fee for the registration. \end{DoxyCompactList}\item 
+virtual QString \mbox{\hyperlink{class_registration_a4beebaa803320e0199dea52c006d6f3d}{to\+String}} () const
+\begin{DoxyCompactList}\small\item\em Convert the registration information to a string representation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_registration_a6998764a819079e2f212ddd2b2f0bd4a}{set\+Booking\+Date}} (const QDate \&new\+Booking\+Date)
+\begin{DoxyCompactList}\small\item\em Set the booking date of the registration. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_registration_a89b8d0d267dd642c03c9385f33f7edc5}\label{class_registration_a89b8d0d267dd642c03c9385f33f7edc5} 
+static constexpr double {\bfseries STANDARD\+\_\+\+FEE} = 100.\+00
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_registration_a2b58620b40b700ffd40b22b9f3b7960e}{Registration}} (const \mbox{\hyperlink{class_person}{Person}} \&attendee, const QDate \&booking\+Date)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \doxylink{class_registration}{Registration} class represents a registration for an event. 
+
+This class is an abstract base class that provides common functionality for event registrations. It contains information about the attendee, booking date, and fee calculation. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_registration_a2b58620b40b700ffd40b22b9f3b7960e}\index{Registration@{Registration}!Registration@{Registration}}
+\index{Registration@{Registration}!Registration@{Registration}}
+\doxysubsubsection{\texorpdfstring{Registration()}{Registration()}}
+{\footnotesize\ttfamily \label{class_registration_a2b58620b40b700ffd40b22b9f3b7960e} 
+Registration\+::\+Registration (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_person}{Person}} \&}]{attendee}{, }\item[{const QDate \&}]{booking\+Date}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em attendee} & The attendee associated with the registration. \\
+\hline
+{\em booking\+Date} & The booking date of the registration. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_registration_a8bfe40ec7a11f065ca52abf2038d1dbc}\index{Registration@{Registration}!calculateFee@{calculateFee}}
+\index{calculateFee@{calculateFee}!Registration@{Registration}}
+\doxysubsubsection{\texorpdfstring{calculateFee()}{calculateFee()}}
+{\footnotesize\ttfamily \label{class_registration_a8bfe40ec7a11f065ca52abf2038d1dbc} 
+virtual double Registration\+::calculate\+Fee (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Calculate the fee for the registration. 
+
+\begin{DoxyReturn}{Returns}
+The calculated fee.
+\end{DoxyReturn}
+This is a pure virtual function that must be implemented by derived classes. 
+
+Implemented in \mbox{\hyperlink{class_guest_registration_af9f1c9f2a56552d252441d2b992341c6}{Guest\+Registration}}, \mbox{\hyperlink{class_standard_registration_a5b3f36ac7527e2977a0536145d405fc4}{Standard\+Registration}}, and \mbox{\hyperlink{class_student_registration_acb7a07609b08ff968650af966f8aa439}{Student\+Registration}}.
+
+\Hypertarget{class_registration_ab860828dd1b6daccdb69ef8fe0d5c940}\index{Registration@{Registration}!getAttendee@{getAttendee}}
+\index{getAttendee@{getAttendee}!Registration@{Registration}}
+\doxysubsubsection{\texorpdfstring{getAttendee()}{getAttendee()}}
+{\footnotesize\ttfamily \label{class_registration_ab860828dd1b6daccdb69ef8fe0d5c940} 
+\mbox{\hyperlink{class_person}{Person}} Registration\+::get\+Attendee (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the attendee associated with the registration. 
+
+\begin{DoxyReturn}{Returns}
+The attendee. 
+\end{DoxyReturn}
+\Hypertarget{class_registration_a6028d1c0ff3157f2c4f4f576887300e0}\index{Registration@{Registration}!getBookingDate@{getBookingDate}}
+\index{getBookingDate@{getBookingDate}!Registration@{Registration}}
+\doxysubsubsection{\texorpdfstring{getBookingDate()}{getBookingDate()}}
+{\footnotesize\ttfamily \label{class_registration_a6028d1c0ff3157f2c4f4f576887300e0} 
+QDate Registration\+::get\+Booking\+Date (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the booking date of the registration. 
+
+\begin{DoxyReturn}{Returns}
+The booking date. 
+\end{DoxyReturn}
+\Hypertarget{class_registration_a6998764a819079e2f212ddd2b2f0bd4a}\index{Registration@{Registration}!setBookingDate@{setBookingDate}}
+\index{setBookingDate@{setBookingDate}!Registration@{Registration}}
+\doxysubsubsection{\texorpdfstring{setBookingDate()}{setBookingDate()}}
+{\footnotesize\ttfamily \label{class_registration_a6998764a819079e2f212ddd2b2f0bd4a} 
+void Registration\+::set\+Booking\+Date (\begin{DoxyParamCaption}\item[{const QDate \&}]{new\+Booking\+Date}{}\end{DoxyParamCaption})}
+
+
+
+Set the booking date of the registration. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Booking\+Date} & The new booking date. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_registration_a4beebaa803320e0199dea52c006d6f3d}\index{Registration@{Registration}!toString@{toString}}
+\index{toString@{toString}!Registration@{Registration}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily \label{class_registration_a4beebaa803320e0199dea52c006d6f3d} 
+QString Registration\+::to\+String (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Convert the registration information to a string representation. 
+
+\begin{DoxyReturn}{Returns}
+The string representation of the registration. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_guest_registration_af6c23ccdba5862369ca2022734343fa0}{Guest\+Registration}}, \mbox{\hyperlink{class_standard_registration_a15bc6c7c5d24a40ff151ad79a390bc1e}{Standard\+Registration}}, and \mbox{\hyperlink{class_student_registration_aa2f753217edc0a0b4408f3f9a4525abf}{Student\+Registration}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS3711-\/02-\/04/\mbox{\hyperlink{registration_8h}{registration.\+h}}\item 
+COS3711-\/02-\/04/\mbox{\hyperlink{registration_8cpp}{registration.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,136 @@
+\doxysection{Student\+Registration Class Reference}
+\hypertarget{class_student_registration}{}\label{class_student_registration}\index{StudentRegistration@{StudentRegistration}}
+
+
+The \doxylink{class_student_registration}{Student\+Registration} class represents a registration for a student attendee.  
+
+
+
+
+{\ttfamily \#include $<$studentregistration.\+h$>$}
+
+Inheritance diagram for Student\+Registration\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_student_registration}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_student_registration_ae76b8eb0e90d6417db7ef2e406a4135d}{Student\+Registration}} (const \mbox{\hyperlink{class_person}{Person}} \&attendee, const QDate \&booking\+Date=QDate\+::current\+Date(), const QString \&qualification="{}"{})
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_student_registration}{Student\+Registration} object with the given attendee, booking date, and qualification. \end{DoxyCompactList}\item 
+\Hypertarget{class_student_registration_a5a4b4097f9b829c72fbd3143a01b41f4}\label{class_student_registration_a5a4b4097f9b829c72fbd3143a01b41f4} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Student\+Registration} () override=default
+\begin{DoxyCompactList}\small\item\em Default destructor for the \doxylink{class_student_registration}{Student\+Registration} class. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{class_student_registration_acb7a07609b08ff968650af966f8aa439}{calculate\+Fee}} () const override
+\begin{DoxyCompactList}\small\item\em Calculates the fee for the student registration. \end{DoxyCompactList}\item 
+virtual QString \mbox{\hyperlink{class_student_registration_aa2f753217edc0a0b4408f3f9a4525abf}{to\+String}} () const override
+\begin{DoxyCompactList}\small\item\em Converts the \doxylink{class_student_registration}{Student\+Registration} object to a string representation. \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{class_student_registration_a1c794cb033f06b6fe94e123d8430d2e9}{get\+Qualification}} () const
+\begin{DoxyCompactList}\small\item\em Gets the qualification of the student. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_registration}{Registration}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Registration} ()=default
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_person}{Person}} \mbox{\hyperlink{class_registration_ab860828dd1b6daccdb69ef8fe0d5c940}{get\+Attendee}} () const
+\begin{DoxyCompactList}\small\item\em Get the attendee associated with the registration. \end{DoxyCompactList}\item 
+QDate \mbox{\hyperlink{class_registration_a6028d1c0ff3157f2c4f4f576887300e0}{get\+Booking\+Date}} () const
+\begin{DoxyCompactList}\small\item\em Get the booking date of the registration. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_registration_a6998764a819079e2f212ddd2b2f0bd4a}{set\+Booking\+Date}} (const QDate \&new\+Booking\+Date)
+\begin{DoxyCompactList}\small\item\em Set the booking date of the registration. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Attributes inherited from \mbox{\hyperlink{class_registration}{Registration}}}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr double {\bfseries STANDARD\+\_\+\+FEE} = 100.\+00
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_registration}{Registration}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_registration_a2b58620b40b700ffd40b22b9f3b7960e}{Registration}} (const \mbox{\hyperlink{class_person}{Person}} \&attendee, const QDate \&booking\+Date)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \doxylink{class_student_registration}{Student\+Registration} class represents a registration for a student attendee. 
+
+This class inherits from the \doxylink{class_registration}{Registration} class and adds additional functionality specific to student registrations. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_student_registration_ae76b8eb0e90d6417db7ef2e406a4135d}\index{StudentRegistration@{StudentRegistration}!StudentRegistration@{StudentRegistration}}
+\index{StudentRegistration@{StudentRegistration}!StudentRegistration@{StudentRegistration}}
+\doxysubsubsection{\texorpdfstring{StudentRegistration()}{StudentRegistration()}}
+{\footnotesize\ttfamily \label{class_student_registration_ae76b8eb0e90d6417db7ef2e406a4135d} 
+Student\+Registration\+::\+Student\+Registration (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_person}{Person}} \&}]{attendee}{, }\item[{const QDate \&}]{booking\+Date}{ = {\ttfamily QDate\+:\+:currentDate()}, }\item[{const QString \&}]{qualification}{ = {\ttfamily "{}"{}}}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{class_student_registration}{Student\+Registration} object with the given attendee, booking date, and qualification. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em attendee} & The person attending the registration. \\
+\hline
+{\em booking\+Date} & The date of the registration booking. Defaults to the current date. \\
+\hline
+{\em qualification} & The qualification of the student. Defaults to an empty string. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_student_registration_acb7a07609b08ff968650af966f8aa439}\index{StudentRegistration@{StudentRegistration}!calculateFee@{calculateFee}}
+\index{calculateFee@{calculateFee}!StudentRegistration@{StudentRegistration}}
+\doxysubsubsection{\texorpdfstring{calculateFee()}{calculateFee()}}
+{\footnotesize\ttfamily \label{class_student_registration_acb7a07609b08ff968650af966f8aa439} 
+double Student\+Registration\+::calculate\+Fee (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Calculates the fee for the student registration. 
+
+\begin{DoxyReturn}{Returns}
+The fee for the student registration. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_registration_a8bfe40ec7a11f065ca52abf2038d1dbc}{Registration}}.
+
+\Hypertarget{class_student_registration_a1c794cb033f06b6fe94e123d8430d2e9}\index{StudentRegistration@{StudentRegistration}!getQualification@{getQualification}}
+\index{getQualification@{getQualification}!StudentRegistration@{StudentRegistration}}
+\doxysubsubsection{\texorpdfstring{getQualification()}{getQualification()}}
+{\footnotesize\ttfamily \label{class_student_registration_a1c794cb033f06b6fe94e123d8430d2e9} 
+QString Student\+Registration\+::get\+Qualification (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the qualification of the student. 
+
+\begin{DoxyReturn}{Returns}
+The qualification of the student. 
+\end{DoxyReturn}
+\Hypertarget{class_student_registration_aa2f753217edc0a0b4408f3f9a4525abf}\index{StudentRegistration@{StudentRegistration}!toString@{toString}}
+\index{toString@{toString}!StudentRegistration@{StudentRegistration}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily \label{class_student_registration_aa2f753217edc0a0b4408f3f9a4525abf} 
+QString Student\+Registration\+::to\+String (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Converts the \doxylink{class_student_registration}{Student\+Registration} object to a string representation. 
+
+\begin{DoxyReturn}{Returns}
+The string representation of the \doxylink{class_student_registration}{Student\+Registration} object. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_registration_a4beebaa803320e0199dea52c006d6f3d}{Registration}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS3711-\/02-\/04/\mbox{\hyperlink{studentregistration_8h}{studentregistration.\+h}}\item 
+COS3711-\/02-\/04/\mbox{\hyperlink{studentregistration_8cpp}{studentregistration.\+cpp}}\end{DoxyCompactItemize}

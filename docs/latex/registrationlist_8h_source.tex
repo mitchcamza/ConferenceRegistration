@@ -1,0 +1,58 @@
+\doxysection{registrationlist.\+h}
+\hypertarget{registrationlist_8h_source}{}\label{registrationlist_8h_source}\index{COS3711-\/02-\/04/registrationlist.h@{COS3711-\/02-\/04/registrationlist.h}}
+\mbox{\hyperlink{registrationlist_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ REGISTRATIONLIST\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ REGISTRATIONLIST\_H}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{registration_8h}{registration.h}}"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <QList>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_registration_model}{RegistrationModel}};}
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_registration_types}{RegistrationTypes}};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_registration_list}{RegistrationList}}\ :\ \textcolor{keyword}{public}\ QObject}
+\DoxyCodeLine{00028\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{class_registration_list_ad70b3fde93819d33b5dd903eb2cfea4f}{RegistrationList}}(\mbox{\hyperlink{class_registration_model}{RegistrationModel}}\ \&model,\ QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{class_registration_list_a42ce94296e407d1f86c0503d6bcbad6b}{\string~RegistrationList}}();}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_registration_list_af4adb4980f25d2e0da1a53f515355ee2}{addRegistration}}(\mbox{\hyperlink{class_registration}{Registration}}*\ registration);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_registration_list_a25bd239839d297ac49cceab2170b618c}{removeRegistration}}(\mbox{\hyperlink{class_registration}{Registration}}\ *registration);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_registration_list_a8bffe1041f10fa5908725b5206312001}{isRegistered}}(\textcolor{keyword}{const}\ QString\ \&name)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_registration_list_a8bffe1041f10fa5908725b5206312001}{isRegistered}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_person}{Person}}\ \&person)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_registration_list_aaf6c4105a3e78895365099e53f2cfa4f}{totalFee}}(\textcolor{keyword}{const}\ QString\ \&typeString)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_registration_list_a902d9496b8f0eb5dca3c48ce4fdc15be}{totalRegistrations}}(\textcolor{keyword}{const}\ QString\ \&affiliation)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00091\ \ \ \ \ QList<Registration\ *>\ \mbox{\hyperlink{class_registration_list_afb35135cf50431ab658720d7f6da784c}{getAttendeeList}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ signals:}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_registration_list_a2a8ebee426587deab77815ad5c05f191}{registrationAdded}}(\mbox{\hyperlink{class_registration}{Registration}}\ *registration);}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_registration_list_a0280280a4f9375a54724734d7e3899e0}{registrationRemoved}}(\mbox{\hyperlink{class_registration}{Registration}}\ *registration);}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_registrationAdded(\mbox{\hyperlink{class_registration}{Registration}}\ *registration);}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_registrationRemoved(\mbox{\hyperlink{class_registration}{Registration}}\ *registration);}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00111\ \ \ \ \ QList<Registration*>\ m\_AttendeeList;\ }
+\DoxyCodeLine{00112\ \ \ \ \ \mbox{\hyperlink{class_registration_model}{RegistrationModel}}\ *m\_RegistrationModel;}
+\DoxyCodeLine{00113\ \};}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ REGISTRATIONLIST\_H}}
+
+\end{DoxyCode}
