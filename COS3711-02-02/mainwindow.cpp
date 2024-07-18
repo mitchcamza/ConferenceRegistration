@@ -3,39 +3,33 @@
  * @author Mitch Campbell
  * @date 2024-07-11
  * @copyright Copyright (c) Mitch Campbell 2024
- * @brief Implementation file for the MainWindow class.
- * @details This file contains the implementation of the MainWindow class, which represents the main application window for a conference registration system. It includes the setup of the user interface, menu actions, toolbar, and signal-slot connections for various actions.
  */
 
 
 #include "mainwindow.h"
 #include "newregistrationdialog.h"
+#include "registrationfilterproxymodel.h"
+#include "registrationlist.h"
+#include "registrationmodel.h"
 #include "totalfeesdialog.h"
 #include "totalregistereddialog.h"
-#include "registrationmodel.h"
-#include "registrationlist.h"
-#include "registrationfilterproxymodel.h"
 #include "registrationlistwriter.h"
 #include "registration.h"
 
-#include <QTableView>
-#include <QStandardItem>
-#include <QHeaderView>
-#include <QMenuBar>
-#include <QStatusBar>
-#include <QToolBar>
-#include <QIcon>
 #include <QGridLayout>
+#include <QHeaderView>
+#include <QIcon>
 #include <QLineEdit>
+#include <QMenuBar>
 #include <QPushButton>
+#include <QStandardItem>
+#include <QStatusBar>
+#include <QTableView>
+#include <QToolBar>
 #include <QFileDialog>
 #include <QMessageBox>
 
 
-/**
- * @brief Constructs a MainWindow object.
- * @param parent The parent widget.
- */
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent),
     registrationModel(new RegistrationModel(this)),
@@ -64,18 +58,13 @@ MainWindow::MainWindow(QWidget *parent)
     setupUI(this);
 }
 
-/**
- * @brief Destroys the MainWindow object.
- */
+
 MainWindow::~MainWindow()
 {
 
 }
 
-/**
- * @brief Sets up the user interface for the main application window.
- * @param mainApplicationWindow The main application window.
- */
+
 void MainWindow::setupUI(QMainWindow *mainApplicationWindow)
 {
     // Main Application window
@@ -99,13 +88,12 @@ void MainWindow::setupUI(QMainWindow *mainApplicationWindow)
     editMenu->addAction(actionAddAttendee);
 
     // Reports Menu
-    QMenu *reports = menuBar->addMenu(tr("&Reports"));
-    reports->addAction(actionGetTotalFees);
-    reports->addAction(actionGetNumberOfAttendeesForAffiliation);
+    QMenu *reportsMenu = menuBar->addMenu(tr("&Reports"));
+    reportsMenu->addAction(actionGetTotalFees);
+    reportsMenu->addAction(actionGetNumberOfAttendeesForAffiliation);
 
     // Help Menu
     QMenu *helpMenu = menuBar->addMenu(tr("&Help"));
-    // TODO: Add help actions
 
     // Statusbar
     statusBar = new QStatusBar(mainApplicationWindow);
@@ -143,40 +131,28 @@ void MainWindow::setupUI(QMainWindow *mainApplicationWindow)
     gridLayout->addWidget(tableViewRegistrations, 1, 0, 1, 4);
 }
 
-/**
- * @brief Slot for the "New Registration" action.
- * Opens the dialog for adding a new registration.
- */
+
 void MainWindow::on_actionAddAttendee_triggered()
 {
     NewRegistrationDialog *newRegistrationDialog = new NewRegistrationDialog(registrationList);
     newRegistrationDialog->show();
 }
 
-/**
- * @brief Slot for the "Total Fees" action.
- * Opens the dialog for displaying the total fees.
- */
+
 void MainWindow::on_actionGetTotalFees_triggered()
 {
     TotalFeesDialog *totalFeesDialog = new TotalFeesDialog(registrationList);
     totalFeesDialog->show();
 }
 
-/**
- * @brief Slot for the "Registration per Affiliation" action.
- * Opens the dialog for displaying the total number of attendees per affiliation.
- */
+
 void MainWindow::on_actionGetNumberOfAttendeesFromAffiliation_triggered()
 {
     TotalRegisteredDialog *totalRegisteredDialog = new TotalRegisteredDialog(registrationList);
     totalRegisteredDialog->show();
 }
 
-/**
- * @brief Slot for the "Clear Filter" action.
- * Clears the search filter and sets focus to the search bar.
- */
+
 void MainWindow::on_actionClearFilter_triggered()
 {
     lineEditSearch->clear();
