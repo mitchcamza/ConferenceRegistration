@@ -68,6 +68,8 @@ void NewRegistrationDialog::on_pushButtonRegister_clicked()
     RegistrationFactory &factory = RegistrationFactory::getInstance();
     Registration *registration = factory.createRegistration(type, name, affiliation, email, bookingDate, additionalInfo);
 
+    this->close();
+
     if (registration)
     {
         if (registrationList->addRegistration(registration))
@@ -78,9 +80,7 @@ void NewRegistrationDialog::on_pushButtonRegister_clicked()
     else
     {
         QMessageBox::warning(this, "Error", "Failed to add registration.");
-    }
-
-    this->close();
+    } 
 }
 
 
