@@ -3,7 +3,6 @@
  * @author Mitch Campbell
  * @date 2024-07-11
  * @copyright Copyright (c) Mitch Campbell
- * @brief Implementation file for the RegistrationList class.
  */
 
 
