@@ -32,31 +32,12 @@ A Conference Registration Application
 - **CMake**: Version 3.5 or higher.
 - **C++ Compiler**: Ensure you have a C++17 compatible compiler.
 
-### Building the Project
-You can either download the release (recommended for users new to git), or clone the repository and follow the instructions below.
+### Getting the source code:
 
 #### Option 1: Download the Release
 1. **Download the Release**: Navigate to the [Releases](https://github.com/mitchcamza/COS3711-02/releases) page of this repository.
-2. **Select the Latest Release**: Download the release with the version number formatted as `yyyy-mm-dd`.
+2. **Select the Latest Release**: Download the release with the version number formatted as `yyyy.mm.dd.<question_number>`.
 3. **Extract the Files**: Extract the downloaded archive to your desired location.
-4. **Navigate to the Project Directory**: Open a terminal or command prompt and navigate to the extracted project directory.
-5. **Create a Build Directory**:
-    ```bash
-    mkdir build
-    cd build
-    ```
-6. **Run CMake**:
-    ```bash
-    cmake ..
-    ```
-7. **Build the Project**:
-    ```bash
-    make
-    ```
-8. **Run the Application**:
-    ```bash
-    ./yourapplication
-    ```
 
 #### Option 2: Clone the Repository
 1. **Clone the Repository**:
@@ -69,21 +50,17 @@ You can either download the release (recommended for users new to git), or clone
    git checkout COS3711-02-04
    ```
 
-4. **Configure the Project**:
-    ```bash
-    cmake -B build
-    ```
-
-5. **Build the Project**:
-    ```bash
-    cmake --build build
-    ```
-
-6. **Run the Application**:
-    ```bash
-    ./build/COS3711-02
-    ```
-
+### Building the Project
+1. **Navigate to the Project Directory**: Open a terminal or command prompt and navigate to the extracted project directory.
+2. **Make sure the build script is executable**: On linux: 
+   ```bash
+   sudo chmod +x ./build_and_run.sh
+   ```
+4. **Run the build script**:
+   ```bash
+   sudo ./build_and_run.sh
+   ```
+    
 ## Project Structure
 
 - **CMakeLists.txt**: CMake configuration file for building the project.
