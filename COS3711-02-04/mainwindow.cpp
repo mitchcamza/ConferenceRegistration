@@ -93,9 +93,9 @@ void MainWindow::setupUI(QMainWindow *mainApplicationWindow)
     editMenu->addAction(actionAddAttendee);
 
     // Reports Menu
-    QMenu *reports = menuBar->addMenu(tr("&Reports"));
-    reports->addAction(actionGetTotalFees);
-    reports->addAction(actionGetNumberOfAttendeesForAffiliation);
+    QMenu *reportsMenu = menuBar->addMenu(tr("&Reports"));
+    reportsMenu->addAction(actionGetTotalFees);
+    reportsMenu->addAction(actionGetNumberOfAttendeesForAffiliation);
 
     // Help Menu
     QMenu *helpMenu = menuBar->addMenu(tr("&Help"));
