@@ -7,8 +7,8 @@
  */
 
 
-#include "totalregistereddialog.h"
 #include "registrationlist.h"
+#include "totalregistereddialog.h"
 
 #include <QGridLayout>
 #include <QLabel>
@@ -16,10 +16,6 @@
 #include <QPushButton>
 
 
-/**
- * @brief Constructs a TotalRegisteredDialog object.
- * @param registrationList Pointer to the RegistrationList object.
- */
 TotalRegisteredDialog::TotalRegisteredDialog(RegistrationList *registrationList)
     : gridLayout(new QGridLayout(this)),
     labelAffiliation(new QLabel("Affiliation", this)),
@@ -35,9 +31,7 @@ TotalRegisteredDialog::TotalRegisteredDialog(RegistrationList *registrationList)
     connect(lineEditAffiliation, &QLineEdit::textChanged, this, &TotalRegisteredDialog::on_lineEditAffiliation_textChanged);
 }
 
-/**
- * @brief Calculates the total number of attendees for a given affiliation.
- */
+
 void TotalRegisteredDialog::on_lineEditAffiliation_textChanged()
 {
     QString affiliation = lineEditAffiliation->text();
@@ -45,9 +39,7 @@ void TotalRegisteredDialog::on_lineEditAffiliation_textChanged()
     lineEditTotalAttendees->setText(QString("%1").arg(totalAttendees));
 }
 
-/**
- * @brief Sets up the user interface for the dialog.
- */
+
 void TotalRegisteredDialog::setupUI()
 {
     setWindowTitle("Total Attendees from Affiliation");

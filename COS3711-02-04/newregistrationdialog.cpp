@@ -3,32 +3,23 @@
  * @author Mitch Campbell
  * @date 2024-07-11
  * @copyright Copyright (c) Mitch Campbell
- * @brief Implementation file for the NewRegistrationDialog class.
- * @details This file contains the implementation of the NewRegistrationDialog class, which is a dialog window used for creating new registrations. It includes the necessary UI setup, signal-slot connections, and functions for handling user interactions.
  */
 
 
 #include "newregistrationdialog.h"
+#include "registrationfactory.h"
+#include "registrationlist.h"
 
-#include <QGridLayout>
-#include <QGroupBox>
-#include <QLineEdit>
 #include <QComboBox>
 #include <QDateEdit>
-#include <QPushButton>
+#include <QGridLayout>
+#include <QGroupBox>
 #include <QLabel>
-
-#include "registrationlist.h"
-#include "standardregistration.h"
-#include "studentregistration.h"
-#include "guestregistration.h"
+#include <QLineEdit>
+#include <QMessageBox>
+#include <QPushButton>
 
 
-/** @brief Constructs a NewRegistrationDialog object.
- * @details This constructor initializes the NewRegistrationDialog with the given registration list and parent dialog. It also creates and sets up the necessary UI elements, such as group boxes, labels, line edits, and buttons. Signal-slot connections are established to handle user interactions.
- * @param list The registration list to add the new registration to.
- * @param parent The parent dialog of the NewRegistrationDialog.
- */
 NewRegistrationDialog::NewRegistrationDialog(RegistrationList *list, QDialog *parent)
     : QDialog(parent),
     mainLayout(new QGridLayout(this)),
@@ -48,6 +39,7 @@ NewRegistrationDialog::NewRegistrationDialog(RegistrationList *list, QDialog *pa
     registrationList(list)
 {
     setupUI();
+    setupInputValidation();
 
     // Connect signals and slots
     connect(pushButtonRegister, &QPushButton::clicked, this, &NewRegistrationDialog::on_pushButtonRegister_clicked);
@@ -55,67 +47,59 @@ NewRegistrationDialog::NewRegistrationDialog(RegistrationList *list, QDialog *pa
     connect(comboBoxRegistrationType, &QComboBox::currentIndexChanged, this, &NewRegistrationDialog::on_comboBoxRegistrationType_changed);
 }
 
-/**
- * @brief Destroys the NewRegistrationDialog object. 
- * @details This destructor cleans up any dynamically allocated memory used by the NewRegistrationDialog.
- */
+
 NewRegistrationDialog::~NewRegistrationDialog()
 {
 
 }
 
-/**
- * @brief Slot function called when the Register button is clicked.
- * @details This function collects the registration details entered by the user, creates a new Registration object based on the selected registration type, and adds it to the registration list. The dialog is then closed.
- */
+
 void NewRegistrationDialog::on_pushButtonRegister_clicked()
 {
     // Collect registration details
-    QString registrationType = comboBoxRegistrationType->currentText();
+    QString type = comboBoxRegistrationType->currentText();
     QString name = lineEditName->text().toUpper();
     QString affiliation = lineEditAffiliation->text().toUpper();
     QString email = lineEditEmail->text().toUpper();
     QString qualification = lineEditStudentQualification->text().toUpper();
     QString category = lineEditGuestCategory->text();
+    QString additionalInfo = qualification + category;
     QDate bookingDate = dateEditBookingDate->date();
 
-    Person person(name, affiliation, email);
-    Registration *newRegistration = nullptr;
-
-    if (registrationType.toLower() == "standard")
+    if (!isValidInput(type, name, affiliation, email, qualification, category))
     {
-        newRegistration = new StandardRegistration(person, dateEditBookingDate->date());
-    }
-    else if (registrationType.toLower() == "student")
-    {
-        newRegistration = new StudentRegistration(person, dateEditBookingDate->date(), qualification);
-    }
-    else if (registrationType.toLower() == "guest")
-    {
-        newRegistration = new GuestRegistration(person, dateEditBookingDate->date(), category);
+        return;
     }
 
-    if (newRegistration)
-    {
-        newRegistration->setBookingDate(bookingDate);
-        registrationList->addRegistration(newRegistration);
-    }
+    RegistrationFactory &factory = RegistrationFactory::getInstance();
+    Registration *registration = factory.createRegistration(type, name, affiliation, email, bookingDate, additionalInfo);
+
     this->close();
+
+    if (registration)
+    {
+        if (registrationList->addRegistration(registration))
+        {
+            QMessageBox::information(this, "Registration Added", "Registration added successfully.");
+        }
+        else
+        {
+            QMessageBox::warning(this, "Registration Failed", "A registration with this email address and name already exists.");
+        }
+    }
+    else
+    {
+        QMessageBox::warning(this, "Registration Failed", "Could not add registration. Check that the registration details are correct.");
+    }
 }
 
-/**
- * @brief Slot function called when the Cancel button is clicked.
- * @details This function simply closes the dialog when the Cancel button is clicked.
- */
+
 void NewRegistrationDialog::on_pushButtonCancel_clicked()
 {
     this->close();
 }
 
-/**
- * @brief Updates the registration form based on the selected registration type.
- * @details This function updates the visibility of certain fields in the registration form based on the selected registration type. For example, if the registration type is "Student", the student qualification field will be visible, while the guest category field will be hidden.
- */
+
 void NewRegistrationDialog::updateRegistrationFormBasedOnRegistrationType()
 {
     QString registrationType = comboBoxRegistrationType->currentText().toLower();
@@ -164,19 +148,79 @@ void NewRegistrationDialog::updateRegistrationFormBasedOnRegistrationType()
     lineEditGuestCategory->clear();
 }
 
-/**
- * @brief Slot function called when the registration type is changed.
- * @details This function is called when the user selects a different registration type from the combo box. It updates the registration form based on the selected registration type.
- */
+
+void NewRegistrationDialog::setupInputValidation()
+{
+    QRegularExpression nameRegEx("[A-Za-z\\s]+");
+    QRegularExpressionValidator *nameValidator = new QRegularExpressionValidator(nameRegEx, this);
+    lineEditName->setValidator(nameValidator);
+
+    QRegularExpression affiliationRegEx("[A-Za-z0-9\\s]+");
+    QRegularExpressionValidator *affiliationValidator = new QRegularExpressionValidator(affiliationRegEx, this);
+    lineEditAffiliation->setValidator(affiliationValidator);
+
+    QRegularExpression emailRegEx("[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}");
+    QRegularExpressionValidator *emailValidator = new QRegularExpressionValidator(emailRegEx, this);
+    lineEditEmail->setValidator(emailValidator);
+
+    QRegularExpression qualificationRegEx("[A-Za-z\\s]+");
+    QRegularExpressionValidator *qualificationValidator = new QRegularExpressionValidator(qualificationRegEx, this);
+    lineEditStudentQualification->setValidator(qualificationValidator);
+
+    QRegularExpression categoryRegEx("[A-Za-z\\s]+");
+    QRegularExpressionValidator *categoryValidator = new QRegularExpressionValidator(categoryRegEx, this);
+    lineEditGuestCategory->setValidator(categoryValidator);
+}
+
+
+bool NewRegistrationDialog::isValidInput(const QString &type, const QString &name, const QString &affiliation, const QString &email, const QString &qualification, const QString &category)
+{
+    if (name.isEmpty())
+    {
+        QMessageBox::warning(this, "Input Error", "Name cannot be empty");
+        return false;
+    }
+
+    if (affiliation.isEmpty())
+    {
+        QMessageBox::warning(this, "Input Error", "Affiliation cannot be empty");
+        return false;
+    }
+
+    if (email.isEmpty())
+    {
+        QMessageBox::warning(this, "Input Error", "Email address cannot be empty");
+        return false;
+    }
+
+    if (!(email.contains("@") && email.contains(".")))
+    {
+        QMessageBox::warning(this, "Input Error", "Email format is incorrect.");
+        return false;
+    }
+
+    if (type.toLower() == "student" && qualification.isEmpty())
+    {
+        QMessageBox::warning(this, "Input Error", "Student qualification cannot be empty.");
+        return false;
+    }
+
+    if (type.toLower() == "guest" && category.isEmpty())
+    {
+        QMessageBox::warning(this, "Input Error", "Guest category cannot be empty.");
+        return false;
+    }
+
+    return true;
+}
+
+
 void NewRegistrationDialog::on_comboBoxRegistrationType_changed()
 {
     updateRegistrationFormBasedOnRegistrationType();
 }
 
-/**
- * @brief Sets up the UI elements of the dialog.
- * @details This function sets up the main layout, registration group box, applicant group box, and buttons. It also sets the window title, modality, size, and tooltip of the dialog.
- */
+
 void NewRegistrationDialog::setupUI()
 {
     this->setWindowTitle("New Registration");
@@ -191,10 +235,7 @@ void NewRegistrationDialog::setupUI()
     setLayout(mainLayout);
 }
 
-/**
- * @brief Sets up the registration group box and its contents.
- * @details This function creates the registration group box, registration type label, registration type combo box, booking date label, and booking date date edit. It also sets the layout of the registration group box.
- */
+
 void NewRegistrationDialog::setupRegistrationGroup()
 {
     QGridLayout *gridLayoutRegistration = new QGridLayout();
@@ -222,10 +263,7 @@ void NewRegistrationDialog::setupRegistrationGroup()
     mainLayout->addWidget(groupBoxRegistration, 0, 0);
 }
 
-/**
- * @brief Sets up the applicant group box and its contents.
- * @details This function creates the applicant group box, name label, name line edit, affiliation label, affiliation line edit, email label, email line edit, student qualification label, student qualification line edit, guest category label, and guest category line edit. It also sets the layout of the applicant group box.
- */
+
 void NewRegistrationDialog::setupApplicantGroup()
 {
     QGridLayout *gridLayoutApplicant = new QGridLayout();
@@ -266,9 +304,6 @@ void NewRegistrationDialog::setupApplicantGroup()
 }
 
 
-/** @brief Sets up the buttons in the new registration dialog.
- *  @details This function adds the register and cancel buttons to the main layout of the dialog. It also sets the tooltips for the buttons and adjusts their size policies.
- */
 void NewRegistrationDialog::setupButtons()
 {
     mainLayout->addWidget(pushButtonRegister, 2, 0);

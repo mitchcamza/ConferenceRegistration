@@ -11,13 +11,13 @@
 
 #include <QMainWindow>
 
-class QTableView;
-class RegistrationModel;
-class RegistrationList;
 class QGridLayout;
 class QLineEdit;
 class QPushButton;
+class QTableView;
 class RegistrationFilterProxyModel;
+class RegistrationList;
+class RegistrationModel;
 
 
 /**
@@ -31,7 +31,6 @@ class MainWindow : public QMainWindow
 public:
     /**
      * @brief Constructs a MainWindow object.
-     * 
      * @param parent The parent widget (default is nullptr).
      */
     explicit MainWindow(QWidget *parent = nullptr);
@@ -44,7 +43,6 @@ public:
 private:
     /**
      * @brief Sets up the user interface for the main application window.
-     * 
      * @param mainApplicationWindow The main application window.
      */
     void setupUI(QMainWindow *mainApplicationWindow);
@@ -70,6 +68,16 @@ private slots:
      */
     void on_actionClearFilter_triggered();
 
+    /**
+     * @brief Slot function called when the "Export" action is triggered.
+     */
+    void on_actionExportRegistrationList_triggered();
+
+    /**
+     * @brief Slot function called when the "Import" action is triggered.
+     */
+    void on_actionImportRegistrationList_triggered();
+
 private:
     QTableView *tableViewRegistrations; /**< The table view widget for displaying registrations. */
     RegistrationModel *registrationModel; /**< The model for managing registrations. */
@@ -78,6 +86,8 @@ private:
     QStatusBar *statusBar; /**< The status bar widget. */
     QToolBar *toolBar; /**< The tool bar widget. */
     QAction *actionAddAttendee; /**< The action for adding an attendee. */
+    QAction *actionExportRegistrationList; /**< The action for exporting the registrationList. */
+    QAction *actionImportRegistrationList; /**< The action for importing the registrationList. */
     QAction *actionSearchAttendee; /**< The action for searching an attendee. */
     QAction *actionGetTotalFees; /**< The action for getting the total fees. */
     QAction *actionGetNumberOfAttendeesForAffiliation; /**< The action for getting the number of attendees for an affiliation. */

@@ -29,7 +29,6 @@ class TotalRegisteredDialog : public QDialog
 public:
     /**
      * @brief Constructs a TotalRegisteredDialog object.
-     * 
      * @param registrationList A pointer to the RegistrationList object that contains the list of registered attendees.
      */
     TotalRegisteredDialog(RegistrationList *registrationList);
@@ -37,16 +36,14 @@ public:
 private slots:
     /**
      * @brief Slot function triggered when the "Calculate Total Attendees" button is clicked.
-     * 
-     * This function calculates the total number of registered attendees and updates the UI accordingly.
+     * @details This function calculates the total number of registered attendees and updates the UI accordingly.
      */
     void on_lineEditAffiliation_textChanged();
 
 private:
     /**
      * @brief Sets up the user interface of the dialog.
-     * 
-     * This function creates and configures the necessary UI elements such as labels, line edits, and buttons.
+     * @details This function creates and configures the necessary UI elements such as labels, line edits, and buttons.
      */
     void setupUI();
 
