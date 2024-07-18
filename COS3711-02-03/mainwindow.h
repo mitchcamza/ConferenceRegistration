@@ -11,13 +11,13 @@
 
 #include <QMainWindow>
 
-class QTableView;
-class RegistrationModel;
-class RegistrationList;
 class QGridLayout;
 class QLineEdit;
 class QPushButton;
+class QTableView;
 class RegistrationFilterProxyModel;
+class RegistrationList;
+class RegistrationModel;
 
 
 /**

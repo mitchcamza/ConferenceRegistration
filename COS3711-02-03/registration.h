@@ -73,8 +73,8 @@ protected:
     Registration(const Person &attendee, const QDate &bookingDate);
 
 private:
-    Person m_Attendee; /**< The attendee associated with the registration. */
-    QDate m_BookingDate; /**< The booking date of the registration. */
+    Person m_Attendee;      /**< The attendee associated with the registration. */
+    QDate m_BookingDate;    /**< The booking date of the registration. */
 };
 
 #endif // REGISTRATION_H

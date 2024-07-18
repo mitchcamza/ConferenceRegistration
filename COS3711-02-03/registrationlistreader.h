@@ -9,12 +9,12 @@
 #ifndef REGISTRATIONLISTREADER_H
 #define REGISTRATIONLISTREADER_H
 
-#include "registration.h"
 #include "filereader.h"
+#include "registration.h"
 
+#include <QDomDocument>
 #include <QList>
 #include <QXmlStreamReader>
-#include <QDomDocument>
 
 
 /**
