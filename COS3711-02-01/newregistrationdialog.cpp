@@ -49,6 +49,7 @@ NewRegistrationDialog::NewRegistrationDialog(RegistrationList *list, QDialog *pa
     registrationList(list)
 {
     setupUI();
+    setupInputValidation();
 
     // Connect signals and slots
     connect(pushButtonRegister, &QPushButton::clicked, this, &NewRegistrationDialog::on_pushButtonRegister_clicked);
@@ -79,6 +80,11 @@ void NewRegistrationDialog::on_pushButtonRegister_clicked()
     QString qualification = lineEditStudentQualification->text().toUpper();
     QString category = lineEditGuestCategory->text();
     QDate bookingDate = dateEditBookingDate->date();
+
+    if (!isValidInput(type, name, affiliation, email, qualification, category))
+    {
+        return;
+    }
 
     Person person(name, affiliation, email);
     Registration *registration = nullptr;
@@ -170,6 +176,72 @@ void NewRegistrationDialog::updateRegistrationFormBasedOnRegistrationType()
     // Clear line edits after updating their states
     lineEditStudentQualification->clear();
     lineEditGuestCategory->clear();
+}
+
+
+void NewRegistrationDialog::setupInputValidation()
+{
+    QRegularExpression nameRegEx("[A-Za-z\\s]+");
+    QRegularExpressionValidator *nameValidator = new QRegularExpressionValidator(nameRegEx, this);
+    lineEditName->setValidator(nameValidator);
+
+    QRegularExpression affiliationRegEx("[A-Za-z0-9\\s]+");
+    QRegularExpressionValidator *affiliationValidator = new QRegularExpressionValidator(affiliationRegEx, this);
+    lineEditAffiliation->setValidator(affiliationValidator);
+
+    QRegularExpression emailRegEx("[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}");
+    QRegularExpressionValidator *emailValidator = new QRegularExpressionValidator(emailRegEx, this);
+    lineEditEmail->setValidator(emailValidator);
+
+    QRegularExpression qualificationRegEx("[A-Za-z\\s]+");
+    QRegularExpressionValidator *qualificationValidator = new QRegularExpressionValidator(qualificationRegEx, this);
+    lineEditStudentQualification->setValidator(qualificationValidator);
+
+    QRegularExpression categoryRegEx("[A-Za-z\\s]+");
+    QRegularExpressionValidator *categoryValidator = new QRegularExpressionValidator(categoryRegEx, this);
+    lineEditGuestCategory->setValidator(categoryValidator);
+}
+
+
+bool NewRegistrationDialog::isValidInput(const QString &type, const QString &name, const QString &affiliation, const QString &email, const QString &qualification, const QString &category)
+{
+    if (name.isEmpty())
+    {
+        QMessageBox::warning(this, "Input Error", "Name cannot be empty");
+        return false;
+    }
+
+    if (affiliation.isEmpty())
+    {
+        QMessageBox::warning(this, "Input Error", "Affiliation cannot be empty");
+        return false;
+    }
+
+    if (email.isEmpty())
+    {
+        QMessageBox::warning(this, "Input Error", "Email address cannot be empty");
+        return false;
+    }
+
+    if (!(email.contains("@") && email.contains(".")))
+    {
+        QMessageBox::warning(this, "Input Error", "Email format is incorrect.");
+        return false;
+    }
+
+    if (type.toLower() == "student" && qualification.isEmpty())
+    {
+        QMessageBox::warning(this, "Input Error", "Student qualification cannot be empty.");
+        return false;
+    }
+
+    if (type.toLower() == "guest" && category.isEmpty())
+    {
+        QMessageBox::warning(this, "Input Error", "Guest category cannot be empty.");
+        return false;
+    }
+
+    return true;
 }
 
 /**

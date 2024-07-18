@@ -85,6 +85,17 @@ private:
      */
     void updateRegistrationFormBasedOnRegistrationType();
 
+    /**
+     * @brief Sets up validation for input fields for new registrations.
+     */
+    void setupInputValidation();
+
+    /**
+     * @brief Checks that each input is valid.
+     * @return true if input is valid, otherwise return false.
+     */
+    bool isValidInput(const QString &type, const QString &name, const QString &affiliation, const QString &email, const QString &qualification, const QString &category);
+
 private:
     QComboBox *comboBoxRegistrationType;
     QDateEdit *dateEditBookingDate;
