@@ -9,8 +9,8 @@
 #ifndef REGISTRATIONLISTWRITER_H
 #define REGISTRATIONLISTWRITER_H
 
-#include "registration.h"
 #include "filewriter.h"
+#include "registration.h"
 
 #include <QDomDocument>
 

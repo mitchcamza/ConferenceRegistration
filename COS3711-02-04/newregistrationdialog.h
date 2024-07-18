@@ -11,13 +11,13 @@
 
 #include <QDialog>
 
-class QLineEdit;
 class QComboBox;
 class QDateEdit;
-class QPushButton;
 class QGridLayout;
 class QGroupBox;
 class QLabel;
+class QLineEdit;
+class QPushButton;
 class RegistrationList;
 
 
@@ -32,7 +32,6 @@ class NewRegistrationDialog : public QDialog
 public:
     /**
      * @brief Constructs a NewRegistrationDialog object.
-     * 
      * @param list A pointer to the RegistrationList object.
      * @param parent The parent widget of the dialog.
      */

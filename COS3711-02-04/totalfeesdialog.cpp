@@ -3,27 +3,21 @@
  * @author Mitch Campbell
  * @date 2024-07-11
  * @copyright Copyright (c) 2024 Mitch Campbell
- * @brief Implementation file for the TotalFeesDialog class.
- * @details This file contains the implementation of the TotalFeesDialog class, which is a dialog window that displays the total fees for a selected registration type. It provides a dropdown menu to select the registration type and displays the corresponding total fees in a line edit field.
  */
 
 
-#include "totalfeesdialog.h"
 #include "registrationlist.h"
 #include "registrationtypes.h"
+#include "totalfeesdialog.h"
 
+#include <QComboBox>
 #include <QGridLayout>
 #include <QLabel>
-#include <QComboBox>
 #include <QLineEdit>
-#include <QPushButton>
 #include <QMetaEnum>
+#include <QPushButton>
 
 
-/**
- * @brief Constructs a TotalFeesDialog object with the given registration list.
- * @param registrationList A pointer to the RegistrationList object.
- */
 TotalFeesDialog::TotalFeesDialog(RegistrationList *registrationList)
     : gridLayout(new QGridLayout(this)),
     labelRegistrationType(new QLabel("Registration Type: ", this)),
@@ -42,9 +36,7 @@ TotalFeesDialog::TotalFeesDialog(RegistrationList *registrationList)
     on_comboBoxRegistrationType_currentIndexChanged();
 }
 
-/**
- * @brief Slot function that is called when the registration type is changed.
- */
+
 void TotalFeesDialog::on_comboBoxRegistrationType_currentIndexChanged()
 {
     QString typeString = comboBoxRegistrationType->currentText();
@@ -52,9 +44,7 @@ void TotalFeesDialog::on_comboBoxRegistrationType_currentIndexChanged()
     lineEditTotalFees->setText(QString("%1").arg(totalFee));
 }
 
-/**
- * @brief Sets up the user interface of the dialog window.
- */
+
 void TotalFeesDialog::setupUI()
 {
     setWindowTitle("Total Fees");
