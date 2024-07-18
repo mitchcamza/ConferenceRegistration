@@ -1,0 +1,119 @@
+\doxysection{Standard\+Registration Class Reference}
+\hypertarget{class_standard_registration}{}\label{class_standard_registration}\index{StandardRegistration@{StandardRegistration}}
+
+
+The \doxylink{class_standard_registration}{Standard\+Registration} class represents a standard registration for an event.  
+
+
+
+
+{\ttfamily \#include $<$standardregistration.\+h$>$}
+
+Inheritance diagram for Standard\+Registration\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_standard_registration}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_standard_registration_a987686472450f208449cf2b2c5c9ff93}{Standard\+Registration}} (const \mbox{\hyperlink{class_person}{Person}} \&attendee, const QDate \&booking\+Date=QDate\+::current\+Date())
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_standard_registration}{Standard\+Registration} object with the given attendee and booking date. \end{DoxyCompactList}\item 
+\Hypertarget{class_standard_registration_a5156f1e049eaea63055275e6c9c8dd8f}\label{class_standard_registration_a5156f1e049eaea63055275e6c9c8dd8f} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Standard\+Registration} () override=default
+\begin{DoxyCompactList}\small\item\em Destroys the \doxylink{class_standard_registration}{Standard\+Registration} object. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{class_standard_registration_a5b3f36ac7527e2977a0536145d405fc4}{calculate\+Fee}} () const override
+\begin{DoxyCompactList}\small\item\em Calculates the fee for the standard registration. \end{DoxyCompactList}\item 
+virtual QString \mbox{\hyperlink{class_standard_registration_a15bc6c7c5d24a40ff151ad79a390bc1e}{to\+String}} () const override
+\begin{DoxyCompactList}\small\item\em Returns a string representation of the \doxylink{class_standard_registration}{Standard\+Registration} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_registration}{Registration}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Registration} ()=default
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_person}{Person}} \mbox{\hyperlink{class_registration_ab860828dd1b6daccdb69ef8fe0d5c940}{get\+Attendee}} () const
+\begin{DoxyCompactList}\small\item\em Get the attendee associated with the registration. \end{DoxyCompactList}\item 
+QDate \mbox{\hyperlink{class_registration_a6028d1c0ff3157f2c4f4f576887300e0}{get\+Booking\+Date}} () const
+\begin{DoxyCompactList}\small\item\em Get the booking date of the registration. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_registration_a6998764a819079e2f212ddd2b2f0bd4a}{set\+Booking\+Date}} (const QDate \&new\+Booking\+Date)
+\begin{DoxyCompactList}\small\item\em Set the booking date of the registration. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Attributes inherited from \mbox{\hyperlink{class_registration}{Registration}}}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr double {\bfseries STANDARD\+\_\+\+FEE} = 100.\+00
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_registration}{Registration}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_registration_a2b58620b40b700ffd40b22b9f3b7960e}{Registration}} (const \mbox{\hyperlink{class_person}{Person}} \&attendee, const QDate \&booking\+Date)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \doxylink{class_standard_registration}{Standard\+Registration} class represents a standard registration for an event. 
+
+This class inherits from the \doxylink{class_registration}{Registration} class and provides additional functionality specific to standard registrations. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_standard_registration_a987686472450f208449cf2b2c5c9ff93}\index{StandardRegistration@{StandardRegistration}!StandardRegistration@{StandardRegistration}}
+\index{StandardRegistration@{StandardRegistration}!StandardRegistration@{StandardRegistration}}
+\doxysubsubsection{\texorpdfstring{StandardRegistration()}{StandardRegistration()}}
+{\footnotesize\ttfamily \label{class_standard_registration_a987686472450f208449cf2b2c5c9ff93} 
+Standard\+Registration\+::\+Standard\+Registration (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_person}{Person}} \&}]{attendee}{, }\item[{const QDate \&}]{booking\+Date}{ = {\ttfamily QDate\+:\+:currentDate()}}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{class_standard_registration}{Standard\+Registration} object with the given attendee and booking date. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em attendee} & The person attending the event. \\
+\hline
+{\em booking\+Date} & The date of the booking. Defaults to the current date. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_standard_registration_a5b3f36ac7527e2977a0536145d405fc4}\index{StandardRegistration@{StandardRegistration}!calculateFee@{calculateFee}}
+\index{calculateFee@{calculateFee}!StandardRegistration@{StandardRegistration}}
+\doxysubsubsection{\texorpdfstring{calculateFee()}{calculateFee()}}
+{\footnotesize\ttfamily \label{class_standard_registration_a5b3f36ac7527e2977a0536145d405fc4} 
+double Standard\+Registration\+::calculate\+Fee (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Calculates the fee for the standard registration. 
+
+\begin{DoxyReturn}{Returns}
+The fee for the standard registration. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_registration_a8bfe40ec7a11f065ca52abf2038d1dbc}{Registration}}.
+
+\Hypertarget{class_standard_registration_a15bc6c7c5d24a40ff151ad79a390bc1e}\index{StandardRegistration@{StandardRegistration}!toString@{toString}}
+\index{toString@{toString}!StandardRegistration@{StandardRegistration}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily \label{class_standard_registration_a15bc6c7c5d24a40ff151ad79a390bc1e} 
+QString Standard\+Registration\+::to\+String (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Returns a string representation of the \doxylink{class_standard_registration}{Standard\+Registration} object. 
+
+\begin{DoxyReturn}{Returns}
+A string representation of the \doxylink{class_standard_registration}{Standard\+Registration} object. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_registration_a4beebaa803320e0199dea52c006d6f3d}{Registration}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS3711-\/02-\/04/\mbox{\hyperlink{standardregistration_8h}{standardregistration.\+h}}\item 
+COS3711-\/02-\/04/\mbox{\hyperlink{standardregistration_8cpp}{standardregistration.\+cpp}}\end{DoxyCompactItemize}

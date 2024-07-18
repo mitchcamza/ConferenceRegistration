@@ -1,0 +1,154 @@
+\doxysection{Registration\+Model Class Reference}
+\hypertarget{class_registration_model}{}\label{class_registration_model}\index{RegistrationModel@{RegistrationModel}}
+
+
+The \doxylink{class_registration_model}{Registration\+Model} class is a custom model that extends QStandard\+Item\+Model.  
+
+
+
+
+{\ttfamily \#include $<$registrationmodel.\+h$>$}
+
+Inheritance diagram for Registration\+Model\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_registration_model}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_registration_model_af1f3dfd8f63ffe02b032c19636e89ce2}{data\+Updated}} (const QModel\+Index \&index)
+\begin{DoxyCompactList}\small\item\em Signal emitted when the data in the model is updated. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_registration_model_a6791abe6ed126f07aa5c7892baa5965f}{Registration\+Model}} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_registration_model}{Registration\+Model} object. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_registration_model_a6ad773658019ad6c86f7f62f4123b245}{set\+Data}} (const QModel\+Index \&index, const QVariant \&value, int role=Qt\+::\+Edit\+Role) override
+\begin{DoxyCompactList}\small\item\em Sets the data for the specified index in the model. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_registration_model_aa68957f232891fd73dbc8b6a7a668823}{sort}} (int column, Qt\+::\+Sort\+Order order=Qt\+::\+Ascending\+Order) override
+\begin{DoxyCompactList}\small\item\em Sorts the model based on the specified column and order. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_registration_model_a7e8d8bdc0ac39c851c25217dec10d4ed}{add\+Item}} (\mbox{\hyperlink{class_registration}{Registration}} \texorpdfstring{$\ast$}{*}registration)
+\begin{DoxyCompactList}\small\item\em Adds a \doxylink{class_registration}{Registration} object to the model. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_registration_model_a43e74e2ea33a5068109327bbdafa95fa}{remove\+Registration}} (int row)
+\begin{DoxyCompactList}\small\item\em Removes the \doxylink{class_registration}{Registration} at the specified row from the model. \end{DoxyCompactList}\item 
+\Hypertarget{class_registration_model_a8712ea144744f5215885f3dab9d1baa4}\label{class_registration_model_a8712ea144744f5215885f3dab9d1baa4} 
+void {\bfseries clear} ()
+\begin{DoxyCompactList}\small\item\em Clears the model, removing all Registrations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \doxylink{class_registration_model}{Registration\+Model} class is a custom model that extends QStandard\+Item\+Model. 
+
+This class provides additional functionality for managing \doxylink{class_registration}{Registration} objects in a model. It allows adding, removing, and sorting registrations, as well as updating the data in the model. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_registration_model_a6791abe6ed126f07aa5c7892baa5965f}\index{RegistrationModel@{RegistrationModel}!RegistrationModel@{RegistrationModel}}
+\index{RegistrationModel@{RegistrationModel}!RegistrationModel@{RegistrationModel}}
+\doxysubsubsection{\texorpdfstring{RegistrationModel()}{RegistrationModel()}}
+{\footnotesize\ttfamily \label{class_registration_model_a6791abe6ed126f07aa5c7892baa5965f} 
+Registration\+Model\+::\+Registration\+Model (\begin{DoxyParamCaption}\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructs a \doxylink{class_registration_model}{Registration\+Model} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & The parent object. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_registration_model_a7e8d8bdc0ac39c851c25217dec10d4ed}\index{RegistrationModel@{RegistrationModel}!addItem@{addItem}}
+\index{addItem@{addItem}!RegistrationModel@{RegistrationModel}}
+\doxysubsubsection{\texorpdfstring{addItem()}{addItem()}}
+{\footnotesize\ttfamily \label{class_registration_model_a7e8d8bdc0ac39c851c25217dec10d4ed} 
+void Registration\+Model\+::add\+Item (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_registration}{Registration}} \texorpdfstring{$\ast$}{*}}]{registration}{}\end{DoxyParamCaption})}
+
+
+
+Adds a \doxylink{class_registration}{Registration} object to the model. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em registration} & The \doxylink{class_registration}{Registration} object to add. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_registration_model_af1f3dfd8f63ffe02b032c19636e89ce2}\index{RegistrationModel@{RegistrationModel}!dataUpdated@{dataUpdated}}
+\index{dataUpdated@{dataUpdated}!RegistrationModel@{RegistrationModel}}
+\doxysubsubsection{\texorpdfstring{dataUpdated}{dataUpdated}}
+{\footnotesize\ttfamily \label{class_registration_model_af1f3dfd8f63ffe02b032c19636e89ce2} 
+void Registration\+Model\+::data\+Updated (\begin{DoxyParamCaption}\item[{const QModel\+Index \&}]{index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Signal emitted when the data in the model is updated. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of the updated data. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_registration_model_a43e74e2ea33a5068109327bbdafa95fa}\index{RegistrationModel@{RegistrationModel}!removeRegistration@{removeRegistration}}
+\index{removeRegistration@{removeRegistration}!RegistrationModel@{RegistrationModel}}
+\doxysubsubsection{\texorpdfstring{removeRegistration()}{removeRegistration()}}
+{\footnotesize\ttfamily \label{class_registration_model_a43e74e2ea33a5068109327bbdafa95fa} 
+void Registration\+Model\+::remove\+Registration (\begin{DoxyParamCaption}\item[{int}]{row}{}\end{DoxyParamCaption})}
+
+
+
+Removes the \doxylink{class_registration}{Registration} at the specified row from the model. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em row} & The row of the \doxylink{class_registration}{Registration} to remove. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_registration_model_a6ad773658019ad6c86f7f62f4123b245}\index{RegistrationModel@{RegistrationModel}!setData@{setData}}
+\index{setData@{setData}!RegistrationModel@{RegistrationModel}}
+\doxysubsubsection{\texorpdfstring{setData()}{setData()}}
+{\footnotesize\ttfamily \label{class_registration_model_a6ad773658019ad6c86f7f62f4123b245} 
+bool Registration\+Model\+::set\+Data (\begin{DoxyParamCaption}\item[{const QModel\+Index \&}]{index}{, }\item[{const QVariant \&}]{value}{, }\item[{int}]{role}{ = {\ttfamily Qt\+:\+:EditRole}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Sets the data for the specified index in the model. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of the item to set the data for. \\
+\hline
+{\em value} & The new value for the item. \\
+\hline
+{\em role} & The role for which the data is being set (default is Qt\+::\+Edit\+Role). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the data was successfully set, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_registration_model_aa68957f232891fd73dbc8b6a7a668823}\index{RegistrationModel@{RegistrationModel}!sort@{sort}}
+\index{sort@{sort}!RegistrationModel@{RegistrationModel}}
+\doxysubsubsection{\texorpdfstring{sort()}{sort()}}
+{\footnotesize\ttfamily \label{class_registration_model_aa68957f232891fd73dbc8b6a7a668823} 
+void Registration\+Model\+::sort (\begin{DoxyParamCaption}\item[{int}]{column}{, }\item[{Qt\+::\+Sort\+Order}]{order}{ = {\ttfamily Qt\+:\+:AscendingOrder}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Sorts the model based on the specified column and order. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em column} & The column to sort by. \\
+\hline
+{\em order} & The sort order (default is Qt\+::\+Ascending\+Order). \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS3711-\/02-\/04/\mbox{\hyperlink{registrationmodel_8h}{registrationmodel.\+h}}\item 
+COS3711-\/02-\/04/\mbox{\hyperlink{registrationmodel_8cpp}{registrationmodel.\+cpp}}\end{DoxyCompactItemize}

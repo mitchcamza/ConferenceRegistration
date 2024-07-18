@@ -1,0 +1,65 @@
+\doxysection{mainwindow.\+h}
+\hypertarget{mainwindow_8h_source}{}\label{mainwindow_8h_source}\index{COS3711-\/02-\/04/mainwindow.h@{COS3711-\/02-\/04/mainwindow.h}}
+\mbox{\hyperlink{mainwindow_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ MAINWINDOW\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ MAINWINDOW\_H}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <QMainWindow>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }QGridLayout;}
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }QLineEdit;}
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }QPushButton;}
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }QTableView;}
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_registration_filter_proxy_model}{RegistrationFilterProxyModel}};}
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_registration_list}{RegistrationList}};}
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_registration_model}{RegistrationModel}};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_main_window}{MainWindow}}\ :\ \textcolor{keyword}{public}\ QMainWindow}
+\DoxyCodeLine{00029\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00031\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_main_window_a996c5a2b6f77944776856f08ec30858d}{MainWindow}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}{\string~MainWindow}}();}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ setupUI(QMainWindow\ *mainApplicationWindow);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_actionAddAttendee\_triggered();}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_actionGetTotalFees\_triggered();}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_actionGetNumberOfAttendeesFromAffiliation\_triggered();}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_actionClearFilter\_triggered();}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_actionExportRegistrationList\_triggered();}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_actionImportRegistrationList\_triggered();}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00082\ \ \ \ \ QTableView\ *tableViewRegistrations;\ }
+\DoxyCodeLine{00083\ \ \ \ \ \mbox{\hyperlink{class_registration_model}{RegistrationModel}}\ *registrationModel;\ }
+\DoxyCodeLine{00084\ \ \ \ \ \mbox{\hyperlink{class_registration_list}{RegistrationList}}\ *registrationList;\ }
+\DoxyCodeLine{00085\ \ \ \ \ QMenuBar\ *menuBar;\ }
+\DoxyCodeLine{00086\ \ \ \ \ QStatusBar\ *statusBar;\ }
+\DoxyCodeLine{00087\ \ \ \ \ QToolBar\ *toolBar;\ }
+\DoxyCodeLine{00088\ \ \ \ \ QAction\ *actionAddAttendee;\ }
+\DoxyCodeLine{00089\ \ \ \ \ QAction\ *actionExportRegistrationList;\ }
+\DoxyCodeLine{00090\ \ \ \ \ QAction\ *actionImportRegistrationList;\ }
+\DoxyCodeLine{00091\ \ \ \ \ QAction\ *actionSearchAttendee;\ }
+\DoxyCodeLine{00092\ \ \ \ \ QAction\ *actionGetTotalFees;\ }
+\DoxyCodeLine{00093\ \ \ \ \ QAction\ *actionGetNumberOfAttendeesForAffiliation;\ }
+\DoxyCodeLine{00094\ \ \ \ \ QAction\ *actionClose;\ }
+\DoxyCodeLine{00095\ \ \ \ \ QLineEdit\ *lineEditSearch;\ }
+\DoxyCodeLine{00096\ \ \ \ \ QPushButton\ *pushButtonClear;\ }
+\DoxyCodeLine{00097\ \ \ \ \ \mbox{\hyperlink{class_registration_filter_proxy_model}{RegistrationFilterProxyModel}}\ *proxyModel;\ }
+\DoxyCodeLine{00098\ \};}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ MAINWINDOW\_H}}
+
+\end{DoxyCode}
