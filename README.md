@@ -101,8 +101,3 @@ The application allows users to manage different types of registrations. The mai
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Acknowledgments
-
-- COS3711 course materials and lecturers for guidance on this assignment.
-- Qt Documentation.
