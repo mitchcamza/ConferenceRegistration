@@ -1,0 +1,107 @@
+\doxysection{Registration\+Types Class Reference}
+\hypertarget{class_registration_types}{}\label{class_registration_types}\index{RegistrationTypes@{RegistrationTypes}}
+
+
+The \doxylink{class_registration_types}{Registration\+Types} class represents the different types of registration.  
+
+
+
+
+{\ttfamily \#include $<$registrationtypes.\+h$>$}
+
+Inheritance diagram for Registration\+Types\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_registration_types}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_registration_types_ab4aebb7039e4758af4feba95d596b4d4}\label{class_registration_types_ab4aebb7039e4758af4feba95d596b4d4} 
+enum \mbox{\hyperlink{class_registration_types_ab4aebb7039e4758af4feba95d596b4d4}{Type}} \{ {\bfseries All}
+, {\bfseries Standard\+Registration}
+, {\bfseries Student\+Registration}
+, {\bfseries Guest\+Registration}
+ \}
+\begin{DoxyCompactList}\small\item\em The Type enumeration represents the different types of registration. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_registration_types_ae1c94763d0181beb58022765969c3ce6}{Registration\+Types}} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_registration_types}{Registration\+Types} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static QString \mbox{\hyperlink{class_registration_types_a5209999fd43cbca61f2f3a13210bdefb}{to\+String}} (\mbox{\hyperlink{class_registration_types_ab4aebb7039e4758af4feba95d596b4d4}{Type}} type)
+\begin{DoxyCompactList}\small\item\em Converts the given registration type to its string representation. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_registration_types_ab4aebb7039e4758af4feba95d596b4d4}{Type}} \mbox{\hyperlink{class_registration_types_a499b01f1a38291e1af8fb00b43cfb6ac}{from\+String}} (const QString \&str)
+\begin{DoxyCompactList}\small\item\em Converts the given string representation to its corresponding registration type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \doxylink{class_registration_types}{Registration\+Types} class represents the different types of registration. 
+
+This class is derived from QObject and provides an enumeration of registration types. It also provides static methods to convert between the enumeration values and their string representations. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_registration_types_ae1c94763d0181beb58022765969c3ce6}\index{RegistrationTypes@{RegistrationTypes}!RegistrationTypes@{RegistrationTypes}}
+\index{RegistrationTypes@{RegistrationTypes}!RegistrationTypes@{RegistrationTypes}}
+\doxysubsubsection{\texorpdfstring{RegistrationTypes()}{RegistrationTypes()}}
+{\footnotesize\ttfamily \label{class_registration_types_ae1c94763d0181beb58022765969c3ce6} 
+Registration\+Types\+::\+Registration\+Types (\begin{DoxyParamCaption}\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructs a \doxylink{class_registration_types}{Registration\+Types} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & The parent object. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_registration_types_a499b01f1a38291e1af8fb00b43cfb6ac}\index{RegistrationTypes@{RegistrationTypes}!fromString@{fromString}}
+\index{fromString@{fromString}!RegistrationTypes@{RegistrationTypes}}
+\doxysubsubsection{\texorpdfstring{fromString()}{fromString()}}
+{\footnotesize\ttfamily \label{class_registration_types_a499b01f1a38291e1af8fb00b43cfb6ac} 
+\mbox{\hyperlink{class_registration_types_ab4aebb7039e4758af4feba95d596b4d4}{Registration\+Types\+::\+Type}} Registration\+Types\+::from\+String (\begin{DoxyParamCaption}\item[{const QString \&}]{str}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Converts the given string representation to its corresponding registration type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & The string representation of the registration type. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The registration type. 
+\end{DoxyReturn}
+\Hypertarget{class_registration_types_a5209999fd43cbca61f2f3a13210bdefb}\index{RegistrationTypes@{RegistrationTypes}!toString@{toString}}
+\index{toString@{toString}!RegistrationTypes@{RegistrationTypes}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily \label{class_registration_types_a5209999fd43cbca61f2f3a13210bdefb} 
+QString Registration\+Types\+::to\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_registration_types_ab4aebb7039e4758af4feba95d596b4d4}{Type}}}]{type}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Converts the given registration type to its string representation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The registration type. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The string representation of the registration type. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS3711-\/02-\/04/\mbox{\hyperlink{registrationtypes_8h}{registrationtypes.\+h}}\item 
+COS3711-\/02-\/04/\mbox{\hyperlink{registrationtypes_8cpp}{registrationtypes.\+cpp}}\end{DoxyCompactItemize}

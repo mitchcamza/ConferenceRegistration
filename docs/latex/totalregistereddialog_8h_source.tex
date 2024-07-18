@@ -1,0 +1,42 @@
+\doxysection{totalregistereddialog.\+h}
+\hypertarget{totalregistereddialog_8h_source}{}\label{totalregistereddialog_8h_source}\index{COS3711-\/02-\/04/totalregistereddialog.h@{COS3711-\/02-\/04/totalregistereddialog.h}}
+\mbox{\hyperlink{totalregistereddialog_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ TOTALREGISTEREDDIALOG\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ TOTALREGISTEREDDIALOG\_H}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <QDialog>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }QGridLayout;}
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }QLabel;}
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }QLineEdit;}
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }QPushButton;}
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_registration_list}{RegistrationList}};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_total_registered_dialog}{TotalRegisteredDialog}}\ :\ \textcolor{keyword}{public}\ QDialog}
+\DoxyCodeLine{00027\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00029\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{class_total_registered_dialog_a3bd83625e4c1f67ef280e02dd8dcea3b}{TotalRegisteredDialog}}(\mbox{\hyperlink{class_registration_list}{RegistrationList}}\ *registrationList);}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_lineEditAffiliation\_textChanged();}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ setupUI();}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ QGridLayout\ *gridLayout;\ }
+\DoxyCodeLine{00052\ \ \ \ \ QLabel\ *labelAffiliation;\ }
+\DoxyCodeLine{00053\ \ \ \ \ QLineEdit\ *lineEditAffiliation;\ }
+\DoxyCodeLine{00054\ \ \ \ \ QLabel\ *labelTotalAttendees;\ }
+\DoxyCodeLine{00055\ \ \ \ \ QLineEdit\ *lineEditTotalAttendees;\ }
+\DoxyCodeLine{00056\ \ \ \ \ QPushButton\ *pushButtonClose;\ }
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{class_registration_list}{RegistrationList}}\ *registrationList;\ }
+\DoxyCodeLine{00058\ \};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TOTALREGISTEREDDIALOG\_H}}
+
+\end{DoxyCode}

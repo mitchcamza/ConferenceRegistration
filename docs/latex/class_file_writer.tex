@@ -1,0 +1,68 @@
+\doxysection{File\+Writer Class Reference}
+\hypertarget{class_file_writer}{}\label{class_file_writer}\index{FileWriter@{FileWriter}}
+
+
+The \doxylink{class_file_writer}{File\+Writer} class provides functionality to write data to a file.  
+
+
+
+
+{\ttfamily \#include $<$filewriter.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_file_writer_a8fb062e5c02de9afa2f1b0ba1605d058}{File\+Writer}} (const QString \&file\+Name)
+\begin{DoxyCompactList}\small\item\em Construct a new File Writer object. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_file_writer_a6b381f39fe68d279c3de6f802f2c3c24}{write}} (const QString \&contents) const
+\begin{DoxyCompactList}\small\item\em Write the contents to the file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \doxylink{class_file_writer}{File\+Writer} class provides functionality to write data to a file. 
+
+This class provides a simple interface to write data to a file. It takes a file name as input and provides a write method to write data to the file. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_file_writer_a8fb062e5c02de9afa2f1b0ba1605d058}\index{FileWriter@{FileWriter}!FileWriter@{FileWriter}}
+\index{FileWriter@{FileWriter}!FileWriter@{FileWriter}}
+\doxysubsubsection{\texorpdfstring{FileWriter()}{FileWriter()}}
+{\footnotesize\ttfamily \label{class_file_writer_a8fb062e5c02de9afa2f1b0ba1605d058} 
+File\+Writer\+::\+File\+Writer (\begin{DoxyParamCaption}\item[{const QString \&}]{file\+Name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Construct a new File Writer object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & The name of the file to write to. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_file_writer_a6b381f39fe68d279c3de6f802f2c3c24}\index{FileWriter@{FileWriter}!write@{write}}
+\index{write@{write}!FileWriter@{FileWriter}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily \label{class_file_writer_a6b381f39fe68d279c3de6f802f2c3c24} 
+bool File\+Writer\+::write (\begin{DoxyParamCaption}\item[{const QString \&}]{contents}{}\end{DoxyParamCaption}) const}
+
+
+
+Write the contents to the file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em contents} & The contents to write to the file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the write operation was successful, false otherwise. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+COS3711-\/02-\/04/\mbox{\hyperlink{filewriter_8h}{filewriter.\+h}}\item 
+COS3711-\/02-\/04/\mbox{\hyperlink{filewriter_8cpp}{filewriter.\+cpp}}\end{DoxyCompactItemize}

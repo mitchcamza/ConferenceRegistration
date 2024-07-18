@@ -1,0 +1,42 @@
+\doxysection{totalfeesdialog.\+h}
+\hypertarget{totalfeesdialog_8h_source}{}\label{totalfeesdialog_8h_source}\index{COS3711-\/02-\/04/totalfeesdialog.h@{COS3711-\/02-\/04/totalfeesdialog.h}}
+\mbox{\hyperlink{totalfeesdialog_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ TOTALFEESDIALOG\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ TOTALFEESDIALOG\_H}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <QDialog>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }QComboBox;}
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }QGridLayout;}
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }QLabel;}
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }QLineEdit;}
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }QPushButton;}
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_registration_list}{RegistrationList}};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_total_fees_dialog}{TotalFeesDialog}}\ :\ \textcolor{keyword}{public}\ QDialog}
+\DoxyCodeLine{00028\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00030\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{class_total_fees_dialog_ac357ebf01ee6d26bf65d51c340b8d3f0}{TotalFeesDialog}}(\mbox{\hyperlink{class_registration_list}{RegistrationList}}\ *registrationList);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_comboBoxRegistrationType\_currentIndexChanged();}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ setupUI();}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ QGridLayout\ *gridLayout;}
+\DoxyCodeLine{00050\ \ \ \ \ QLabel\ *labelRegistrationType;}
+\DoxyCodeLine{00051\ \ \ \ \ QComboBox\ *comboBoxRegistrationType;}
+\DoxyCodeLine{00052\ \ \ \ \ QLabel\ *labelTotalFees;}
+\DoxyCodeLine{00053\ \ \ \ \ QLineEdit\ *lineEditTotalFees;}
+\DoxyCodeLine{00054\ \ \ \ \ QPushButton\ *pushButtonClose;}
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{class_registration_list}{RegistrationList}}\ *registrationList;}
+\DoxyCodeLine{00056\ \};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TOTALFEESDIALOG\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,33 @@
+\doxysection{guestregistration.\+h}
+\hypertarget{guestregistration_8h_source}{}\label{guestregistration_8h_source}\index{COS3711-\/02-\/04/guestregistration.h@{COS3711-\/02-\/04/guestregistration.h}}
+\mbox{\hyperlink{guestregistration_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ GUESTREGISTRATION\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ GUESTREGISTRATION\_H}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{registration_8h}{registration.h}}"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_guest_registration}{GuestRegistration}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_registration}{Registration}}}
+\DoxyCodeLine{00022\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{class_guest_registration_afd57a28e423e26cfd6783412367670f8}{GuestRegistration}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_person}{Person}}\ \&attendee,\ \textcolor{keyword}{const}\ QDate\ \&bookingDate\ =\ QDate::currentDate(),\ \textcolor{keyword}{const}\ QString\ \&category\ =\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_guest_registration_a5ab6aef1ad639a5eaec6db22d4090d69}{\string~GuestRegistration}}()\ \textcolor{keyword}{override}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_guest_registration_af9f1c9f2a56552d252441d2b992341c6}{calculateFee}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{virtual}\ QString\ \mbox{\hyperlink{class_guest_registration_af6c23ccdba5862369ca2022734343fa0}{toString}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00055\ \ \ \ \ QString\ \mbox{\hyperlink{class_guest_registration_a8a135098a863ef66b804012d2907f2e2}{getCategory}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00058\ \ \ \ \ QString\ m\_Category;\ }
+\DoxyCodeLine{00059\ \};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ GUESTREGISTRATION\_H}}
+
+\end{DoxyCode}
