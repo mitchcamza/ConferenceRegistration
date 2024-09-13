@@ -1,5 +1,5 @@
-# ConferenceRegistration
-A Conference Registration Application
+# Conference Registration
+A Cross-Platform Desktop Application written in C++ using the Qt Framework.
 
 ## Project Overview
 
