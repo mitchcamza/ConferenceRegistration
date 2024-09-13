@@ -1,4 +1,4 @@
-# COS3711-02
+# ConferenceRegistration
 A Conference Registration Application
 
 ## Project Overview
@@ -35,7 +35,7 @@ A Conference Registration Application
 ### Getting the source code:
 
 #### Option 1: Download the Release
-1. **Download the Release**: Navigate to the [Releases](https://github.com/mitchcamza/COS3711-02/releases) page of this repository.
+1. **Download the Release**: Navigate to the [Releases](https://github.com/mitchcamza/ConferenceRegistration/releases) page of this repository.
 2. **Select the Latest Release**: Download the release with the version number formatted as `yyyy.mm.dd.<question_number>`.
 3. **Extract the Files**: Extract the downloaded archive to your desired location.
 
