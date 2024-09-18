@@ -1,8 +1,8 @@
 # Conference Registration
+[![Build](https://github.com/mitchcamza/ConferenceRegistration/actions/workflows/build.yml/badge.svg)](https://github.com/mitchcamza/ConferenceRegistration/actions/workflows/build.yml)
+
+## Overview
 A Cross-Platform Desktop Application written in C++ using the Qt Framework.
-
-## Project Overview
-
 - **Registration Classes**: An abstract base class `Registration` and derived classes representing various registration types (`StandardRegistration`, `StudentRegistration`, `GuestRegistration`).
 - **Graphical User Interface**: A Qt Widgets-based GUI to interact with the application.
 - **CMake Build System**: The project uses CMake to manage the build process.
