@@ -119,6 +119,9 @@ The application allows users to manage different types of registrations. The mai
 2. Browse for the XML file containing the registration list to be imported.
 3. Once the file has been selected, the imported registrations will be appended to the existing registration list.
 
+## API Documentation
+[API Docs](https://mitchcamza.github.io/ConferenceRegistration/)
+
 ## Authors
 
 - Mitch Campbell
