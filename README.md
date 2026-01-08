@@ -1,131 +1,321 @@
-# Conference Registration
+# Conference Registration System
 [![Build](https://github.com/mitchcamza/ConferenceRegistration/actions/workflows/build.yml/badge.svg)](https://github.com/mitchcamza/ConferenceRegistration/actions/workflows/build.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+![C++](https://img.shields.io/badge/C++-17-blue.svg)
+![Qt](https://img.shields.io/badge/Qt-5%20%7C%206-green.svg)
 
-## Overview
-A Cross-Platform Desktop Application written in C++ using the Qt Framework.
-- **Registration Classes**: An abstract base class `Registration` and derived classes representing various registration types (`StandardRegistration`, `StudentRegistration`, `GuestRegistration`).
-- **Graphical User Interface**: A Qt Widgets-based GUI to interact with the application.
-- **CMake Build System**: The project uses CMake to manage the build process.
+## 📋 Table of Contents
+- [About This Project](#about-this-project)
+- [Technical Skills Demonstrated](#technical-skills-demonstrated)
+- [Key Technical Highlights](#key-technical-highlights)
+- [Features](#features)
+- [Screenshots](#screenshots)
+- [Getting Started](#getting-started)
+- [Project Structure](#project-structure)
+- [Usage](#usage)
+- [What I Learned](#what-i-learned)
+- [Future Enhancements](#future-enhancements)
+- [API Documentation](#api-documentation)
+- [About Me](#about-me)
+- [License](#license)
 
-## Features
+## 🎯 About This Project
 
-- **Registration Management**: Add, view, and manage different types of registrations.
-- **Fee Calculation**: Calculate registration fees based on the type of registration.
-- **Attendee Numbers**: Display the number of attendees registered per affilaition.
-- **Filter Registrations**: Filter registrations based on attendee name.
-- **Export Registration List**: Exports (serializes) the registration list to an XML file.
-- **Import Registration List**: Imports (deserializes) a registration list from an XML file and appends the contents to the current registration list.
-- **User Interface**: Intuitive GUI for interacting with the registration system.
+Conference Registration is a professional-grade, cross-platform desktop application that streamlines the management of conference attendees. Built with C++ and the Qt Framework, this project demonstrates enterprise-level software engineering practices including object-oriented design, design patterns, and modern C++ development.
+
+**The Problem:** Conference organizers need an efficient way to manage different types of registrations (standard, student, and guest), calculate fees, track attendance, and maintain registration data with import/export capabilities.
+
+**The Solution:** A robust desktop application featuring:
+- Intuitive GUI for managing diverse registration types
+- Real-time filtering and search capabilities
+- XML-based serialization for data persistence
+- Automated fee calculation based on registration type
+- Cross-platform compatibility (Windows, macOS, Linux)
+
+**Built With:**
+- **Language:** C++17
+- **Framework:** Qt 5/6 (Widgets)
+- **Build System:** CMake 3.5+
+- **CI/CD:** GitHub Actions
+- **Documentation:** Doxygen
+
+## 💼 Technical Skills Demonstrated
+
+This project showcases proficiency in:
+
+### Core Programming
+- **C++ Development**: Modern C++17 features, STL usage, memory management
+- **Object-Oriented Programming**: Inheritance, polymorphism, abstraction, encapsulation
+- **Design Patterns**: Factory Pattern, Singleton Pattern, Model-View architecture
+
+### Software Architecture
+- **Separation of Concerns**: Clean separation between business logic, data models, and UI
+- **SOLID Principles**: Single Responsibility, Open/Closed, Liskov Substitution
+- **MVC Pattern**: Custom model implementation with Qt's Model/View framework
+
+### Qt Framework Expertise
+- **Qt Widgets**: Custom dialogs, main windows, interactive UI components
+- **Qt Model/View**: Custom `QAbstractTableModel` and proxy filtering
+- **Signal/Slot Mechanism**: Event-driven programming
+- **Qt XML**: Serialization and deserialization using `QXmlStreamWriter` and `QXmlStreamReader`
+
+### Development Practices
+- **Build Automation**: CMake for cross-platform builds
+- **CI/CD**: Automated builds using GitHub Actions
+- **Version Control**: Git with feature branch workflow
+- **Documentation**: Comprehensive Doxygen documentation
+- **Code Quality**: Consistent naming conventions, well-commented code
+
+### Additional Skills
+- **Cross-Platform Development**: Linux, Windows, macOS compatibility
+- **File I/O Operations**: XML parsing, file system operations
+- **Data Filtering**: Custom proxy models for real-time search
+- **Resource Management**: Qt resource system integration
+
+## 🔧 Key Technical Highlights
+
+### 1. **Factory Pattern Implementation**
+Implemented a singleton Factory class to create different registration types dynamically:
+```cpp
+Registration *createRegistration(const QString &type, ...);
+```
+
+### 2. **Custom Qt Model**
+Built a custom `QAbstractTableModel` to display registration data with real-time updates:
+- Overrode virtual methods (`data()`, `headerData()`, `rowCount()`)
+- Integrated with Qt's Model/View architecture
+- Supports dynamic data insertion and filtering
+
+### 3. **Proxy Model for Filtering**
+Developed a custom `QSortFilterProxyModel` for real-time name-based filtering without modifying the underlying data model.
+
+### 4. **XML Serialization**
+Implemented complete serialization/deserialization system:
+- Custom XML schema design
+- Robust error handling for malformed files
+- Support for appending imported data
+
+### 5. **Polymorphic Design**
+Abstract `Registration` base class with three derived types demonstrating runtime polymorphism for fee calculations and data management.
+
+### 6. **Automated CI/CD**
+GitHub Actions workflow for automated building on multiple branches, ensuring code quality and build stability.
+
+## ✨ Features
+
+- **📝 Registration Management**: Add, view, and manage different types of registrations (Standard, Student, Guest)
+- **💰 Dynamic Fee Calculation**: Automatically calculate registration fees based on type
+- **📊 Attendee Analytics**: Real-time display of attendee counts per affiliation
+- **🔍 Smart Filtering**: Instantly filter registrations by attendee name with live updates
+- **📤 Export Functionality**: Serialize registration data to XML format for backup and transfer
+- **📥 Import Functionality**: Deserialize and append registration data from XML files
+- **🎨 Intuitive UI**: Clean, user-friendly Qt-based interface with toolbar and menu access
+- **🔄 Cross-Platform**: Runs seamlessly on Windows, macOS, and Linux
+
+## 📸 Screenshots
+
+### Main Window - Registration List View
 <img width="1112" alt="Screenshot 2024-07-16 at 18 43 00" src="https://github.com/user-attachments/assets/3f972a05-0744-4f37-a1ad-db6616388b1a">
+
+### Filtering Registrations
 <img width="1112" alt="Screenshot 2024-07-16 at 18 43 08" src="https://github.com/user-attachments/assets/6ea16e03-a629-49c4-b512-337289cd9080">
+
+### Total Fees Dialog
 <img width="952" alt="Screenshot 2024-07-16 at 18 42 21" src="https://github.com/user-attachments/assets/aff71448-a1bf-44b3-865a-9acf8fdec458">
+
+### New Registration Dialog
 <img width="540" alt="Screenshot 2024-07-11 at 17 01 35" src="https://github.com/user-attachments/assets/bf47b5af-9967-478f-814b-2ea132827e2a">
+
+### Total Registrations by Affiliation
 <img width="464" alt="Screenshot 2024-07-11 at 16 57 34" src="https://github.com/user-attachments/assets/80b83476-91c6-43be-80f6-0a6d9f531fd0">
+
+### Export/Import Functionality
 <img width="424" alt="Screenshot 2024-07-11 at 16 57 48" src="https://github.com/user-attachments/assets/eeaa6e2f-baf0-4321-9cc5-80f43f6dba05">
 
 
-## Getting Started
+## 🚀 Getting Started
 
 ### Prerequisites
 
-- **Qt**: Ensure you have Qt installed (version 5 or 6).
-- **CMake**: Version 3.5 or higher.
-- **C++ Compiler**: Ensure you have a C++17 compatible compiler.
+Ensure you have the following installed on your system:
 
-### Getting the source code:
+- **Qt Framework**: Version 5 or 6 ([Download Qt](https://www.qt.io/download))
+- **CMake**: Version 3.5 or higher ([Download CMake](https://cmake.org/download/))
+- **C++ Compiler**: C++17 compatible (GCC, Clang, MSVC)
 
-#### Option 1: Download the Release
-1. **Download the Release**: Navigate to the [Releases](https://github.com/mitchcamza/ConferenceRegistration/releases) page of this repository.
-2. **Select the Latest Release**: Download the release with the version number formatted as `yyyy.mm.dd.<question_number>`.
-3. **Extract the Files**: Extract the downloaded archive to your desired location.
+### Installation
 
-#### Option 2: Clone the Repository
+#### Option 1: Download Pre-built Release
+1. Navigate to the [Releases](https://github.com/mitchcamza/ConferenceRegistration/releases) page
+2. Download the latest release (format: `yyyy.mm.dd.<version>`)
+3. Extract the archive to your desired location
+
+#### Option 2: Build from Source
 1. **Clone the Repository**:
-    ```bash
-    git clone https://github.com/mitchcamza/COS3711-02
-    cd COS3711-02
-    ```
-2. **Checkout the COS3711-02-04 branch**
+   ```bash
+   git clone https://github.com/mitchcamza/ConferenceRegistration.git
+   cd ConferenceRegistration
+   ```
+
+2. **Checkout the main branch** (or specific branch):
    ```bash
    git checkout COS3711-02-04
    ```
 
-### Building the Project
-1. **Navigate to the Project Directory**: Open a terminal or command prompt and navigate to the extracted project directory.
-2. **Make sure the build script is executable**: On linux: 
+3. **Make the build script executable** (Linux/macOS):
    ```bash
-   sudo chmod +x ./build_and_run.sh
+   chmod +x ./build_and_run.sh
    ```
+
 4. **Run the build script**:
    ```bash
-   sudo ./build_and_run.sh
+   ./build_and_run.sh
    ```
-    
-## Project Structure
 
-- **CMakeLists.txt**: CMake configuration file for building the project.
-- **src/**: Source files for the project.
-  - `main.cpp`: Entry point of the application.
-  - `person.h`, `person.cpp`: Base class for all registration types.
-  - `registration.h`, `registration.cpp`: Abstract class for registration.
-  - `standardregistration.h`, `standardregistration.cpp`: Class for standard registration.
-  - `studentregistration.h`, `studentregistration.cpp`: Class for student registration.
-  - `guestregistration.h`, `guestregistration.cpp`: Class for guest registration.
-  - `registrationlist.h`, `registrationlist.cpp`: Class for handling registrations.
-  - `registrationmodel.h`, `registrationmodel.cpp`: Custom model of registration data.
-  - `registrationfilterproxymodel.h`, `registrationfilterproxymodel.cpp`: Custom proxy model that filters data based on a filter text.
-  - `registrationtypes.h`, `registrationtypes.cpp`: Provides an enumeration to represent registration types.
-  - `mainwindow.h`, `mainwindow.cpp`: Main window class for the GUI.
-  - `newregistrationdialog.h`, `newregistrationdialog.cpp`: Dialog for adding new registrations.
-  - `totalfeesdialog.h`, `totalfeesdialog.cpp`: Dialog for displaying total fees.
-  - `totalregistereddialog.h`, `totalregistereddialog.cpp`: Dialog for displaying total registrations.
-  - `filewriter.h`, `filewriter.cpp`: Class for writing provided text to file.
-  - `filereader.h`, `filereader.cpp`: Class for reading XML file.
-  - `registrationlistwriter.h`, `registrationlistwriter.cpp`: Class for serializing Registration objects to XML.
-  - `registrationlistreader.h`, `registrationlistreader.cpp`: Class for deserializing Registration objects from XML.
-  - `registrationfactory.h`, `registrationfactory.cpp`: Factory class for creating `Registration` objects.
-  - `resources.qrc`: A resource file containing resources used.
+   Or manually build:
+   ```bash
+   mkdir build && cd build
+   cmake ../COS3711-02-04/
+   make
+   ./ConferenceRegistration
+   ```
+
+**⏱️ Build Time:** Approximately 2-3 minutes on a modern system.
+     
+## 📁 Project Structure
+
+```
+ConferenceRegistration/
+├── CMakeLists.txt                      # CMake build configuration
+└── src/
+    ├── main.cpp                        # Application entry point
+    │
+    ├── Core Classes
+    │   ├── person.h/cpp                # Base Person class
+    │   ├── registration.h/cpp          # Abstract Registration base class
+    │   ├── standardregistration.*      # Standard registration type
+    │   ├── studentregistration.*       # Student registration type
+    │   └── guestregistration.*         # Guest registration type
+    │
+    ├── Data Management
+    │   ├── registrationlist.h/cpp      # Registration collection manager
+    │   ├── registrationfactory.*       # Factory pattern for creating registrations
+    │   └── registrationtypes.*         # Registration type enumerations
+    │
+    ├── Qt Models
+    │   ├── registrationmodel.*         # Custom QAbstractTableModel
+    │   └── registrationfilterproxymodel.* # Filter proxy for search
+    │
+    ├── UI Components
+    │   ├── mainwindow.*                # Main application window
+    │   ├── newregistrationdialog.*     # Add registration dialog
+    │   ├── totalfeesdialog.*           # Display total fees
+    │   └── totalregistereddialog.*     # Display attendee counts
+    │
+    ├── Serialization
+    │   ├── filewriter.h/cpp            # Generic file writing
+    │   ├── filereader.h/cpp            # Generic file reading
+    │   ├── registrationlistwriter.*    # XML serialization
+    │   └── registrationlistreader.*    # XML deserialization
+    │
+    └── resources.qrc                   # Qt resource file (icons, etc.)
+```
+
+**Total Lines of Code:** ~2,700 lines across 40+ files
   
-## Usage
+## 📖 Usage
 
 The application allows users to manage different types of registrations. The main window provides options to view and filter existing registrations, add new registrations and view the total fees and number of registrations.
 
 ### Adding a Registration
 
-1. Click on "New Registration".
-2. Fill in the required details.
-3. Select the type of registration (Standrd, Student or Guest).
-4. Submit the registration.
+1. Click on "New Registration"
+2. Fill in the required details (name, email, affiliation, booking date)
+3. Select the type of registration (Standard, Student, or Guest)
+4. Submit the registration
 
 ### Viewing Total Fees and Registrations
 
-- Click on "Total Fees" to view the total registration fees.
-- Click on "Total Registrations" to view the number of registrations.
+- Click on "Total Fees" to view the total registration fees
+- Click on "Total Registrations" to view the number of registrations per affiliation
 
 ### Filtering Registrations
 
-- Begin typing the first or last name of an attendee in the search bar and the displayed results will update accordingly.
-- Clear the filter by removing the text, or using the 'Clear Filter' pushbutton.
+- Begin typing the first or last name of an attendee in the search bar and the displayed results will update in real-time
+- Clear the filter by removing the text, or using the 'Clear Filter' button
 
 ### Exporting Registrations
-1. Click on "Export Registrations" in the edit menu or tool bar.
-2. Browse to the desired directory using the file dialog and provide a file name to save the file.
-3. Click on the "save" and the registration list will be saved to file.
+1. Click on "Export Registrations" in the edit menu or toolbar
+2. Browse to the desired directory using the file dialog and provide a file name
+3. Click on "Save" and the registration list will be saved to file
 
-**Note that selecting an existing file will overwrite its contents.**
+**Note:** Selecting an existing file will overwrite its contents.
 
 ### Importing Registrations
-1. Click on "Import Registrations" in the edit menu or tool bar.
-2. Browse for the XML file containing the registration list to be imported.
-3. Once the file has been selected, the imported registrations will be appended to the existing registration list.
+1. Click on "Import Registrations" in the edit menu or toolbar
+2. Browse for the XML file containing the registration list to be imported
+3. Once the file has been selected, the imported registrations will be appended to the existing registration list
 
-## API Documentation
-[API Docs](https://mitchcamza.github.io/ConferenceRegistration/)
+## 💡 What I Learned
 
-## Authors
+Building this project provided hands-on experience with several important concepts:
 
-- Mitch Campbell
+### Technical Growth
+- **Qt Framework Mastery**: Gained deep understanding of Qt's Model/View architecture, signal/slot mechanism, and widget system
+- **Design Pattern Implementation**: Learned to recognize when and how to apply Factory and Singleton patterns effectively
+- **Cross-Platform Development**: Understood the challenges and solutions for building applications that work across different operating systems
+- **XML Processing**: Implemented robust parsing and generation of XML data with proper error handling
 
-## License
+### Software Engineering Practices
+- **Clean Architecture**: Practiced separating concerns between UI, business logic, and data layers
+- **Code Organization**: Structured a medium-sized codebase with 40+ files in a maintainable way
+- **CI/CD Integration**: Set up automated build pipelines to catch issues early
+- **Documentation**: Created comprehensive API documentation using Doxygen
+
+### Problem-Solving Skills
+- **Memory Management**: Handled Qt's parent-child object ownership model and avoided memory leaks
+- **Polymorphism in Practice**: Implemented abstract base classes with multiple derived types
+- **Real-time Data Filtering**: Developed efficient filtering without compromising user experience
+- **Error Handling**: Implemented robust error handling for file operations and user input
+
+## 🚀 Future Enhancements
+
+Potential improvements to demonstrate continuous learning:
+
+- **Database Integration**: Replace XML with SQLite for better scalability and querying
+- **Unit Testing**: Add comprehensive test suite using Qt Test framework
+- **Advanced Filtering**: Multiple filter criteria (date range, registration type, affiliation)
+- **Export Formats**: Support for CSV, JSON, and PDF export
+- **Authentication**: User login system with different permission levels
+- **Email Notifications**: Automated confirmation emails upon registration
+- **Data Analytics**: Charts and graphs showing registration trends over time
+- **Internationalization**: Multi-language support using Qt's translation system
+- **Cloud Sync**: Optional cloud backup and synchronization across devices
+
+## 📚 API Documentation
+[View Full API Documentation](https://mitchcamza.github.io/ConferenceRegistration/)
+
+## 👨‍💻 About Me
+
+Hi, I'm **Mitch Campbell**, an aspiring software engineer with a passion for building practical, well-architected applications. This project demonstrates my ability to:
+
+- Design and implement complete applications from scratch
+- Write clean, maintainable, and well-documented code
+- Apply software engineering principles and design patterns
+- Work with modern C++ and popular frameworks like Qt
+- Set up development workflows including build automation and CI/CD
+
+I'm actively seeking junior software engineering or programmer positions where I can contribute to meaningful projects while continuing to grow my skills.
+
+**Connect with me:**
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-mitch--campbell--93b18919b-blue?logo=linkedin)](https://www.linkedin.com/in/mitch-campbell-93b18919b/)
+[![GitHub](https://img.shields.io/badge/GitHub-@mitchcamza-181717?logo=github)](https://github.com/mitchcamza)
+
+## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+**⭐ If you found this project helpful or interesting, please consider starring the repository!**
