@@ -308,9 +308,9 @@ Hi, I'm **Mitch Campbell**, an aspiring software engineer with a passion for bui
 I'm actively seeking junior software engineering or programmer positions where I can contribute to meaningful projects while continuing to grow my skills.
 
 **Connect with me:**
-- 📧 Email: [Contact via GitHub](https://github.com/mitchcamza)
-- 💼 GitHub: [@mitchcamza](https://github.com/mitchcamza)
-- 📄 [View API Documentation](https://mitchcamza.github.io/ConferenceRegistration/)
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-mitch--campbell--93b18919b-blue?logo=linkedin)](https://www.linkedin.com/in/mitch-campbell-93b18919b/)
+[![GitHub](https://img.shields.io/badge/GitHub-@mitchcamza-181717?logo=github)](https://github.com/mitchcamza)
 
 ## 📄 License
 
