@@ -55,6 +55,3 @@ compile_commands.json
 
 # Build Files
 *build
-
-# Generated test data
-tools/registrationlist.xml
