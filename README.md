@@ -261,6 +261,33 @@ The application allows users to manage different types of registrations. The mai
 2. Browse for the XML file containing the registration list to be imported
 3. Once the file has been selected, the imported registrations will be appended to the existing registration list
 
+### Generating Test Registrations
+
+For testing and demonstration purposes, a Python script is provided to generate sample registration data:
+
+1. **Navigate to the tools directory**:
+   ```bash
+   cd tools
+   ```
+
+2. **Run the registration generator**:
+   ```bash
+   python3 registrationgenerator.py
+   ```
+
+3. **Output**: The script will create a file named `registrationlist.xml` in the current directory containing 200 sample registrations with the following distribution:
+   - **Student registrations**: 67 registrations (fee: $50 each)
+   - **Standard registrations**: 67 registrations (fee: $100 each)
+   - **Guest registrations**: 66 registrations (fee: $10 each)
+
+4. **Import the generated file**: 
+   - Launch the Conference Registration application
+   - Click "Import Registrations" from the File menu or toolbar
+   - Select the generated `registrationlist.xml` file
+   - The 200 test registrations will be appended to your current registration list
+
+**Note:** The generator creates sample data with placeholder names, emails, and affiliations for testing purposes. Each registration includes all required fields according to its type (qualification for students, category for guests).
+
 ## 💡 What I Learned
 
 Building this project provided hands-on experience with several important concepts:
