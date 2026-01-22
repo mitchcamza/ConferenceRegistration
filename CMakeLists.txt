@@ -13,33 +13,62 @@ find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets Xml)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Xml)
 
 set(PROJECT_SOURCES
-        main.cpp
+    src/main.cpp
+
+    # Core Classes
+    "src/core_classes/person.cpp"
+    "src/core_classes/person.h"
+    "src/core_classes/registration.cpp"
+    "src/core_classes/registration.h"
+    "src/core_classes/standardregistration.cpp"
+    "src/core_classes/standardregistration.h"
+    "src/core_classes/studentregistration.cpp"
+    "src/core_classes/studentregistration.h"
+    "src/core_classes/guestregistration.cpp"
+    "src/core_classes/guestregistration.h"
+
+    # Data Management
+    "src/data_management/registrationlist.cpp"
+    "src/data_management/registrationlist.h"
+    "src/data_management/registrationfactory.cpp"
+    "src/data_management/registrationfactory.h"
+    "src/data_management/registrationtypes.cpp"
+    "src/data_management/registrationtypes.h"
+
+    # Qt Models
+    "src/qt_models/registrationmodel.cpp"
+    "src/qt_models/registrationmodel.h"
+    "src/qt_models/registrationfilterproxymodel.cpp"
+    "src/qt_models/registrationfilterproxymodel.h"
+
+    # Serialization
+    "src/serialization/filewriter.cpp"
+    "src/serialization/filewriter.h"
+    "src/serialization/filereader.cpp"
+    "src/serialization/filereader.h"
+    "src/serialization/registrationlistwriter.cpp"
+    "src/serialization/registrationlistwriter.h"
+    "src/serialization/registrationlistreader.cpp"
+    "src/serialization/registrationlistreader.h"
+
+    # UI Components
+    "src/ui_components/mainwindow.cpp"
+    "src/ui_components/mainwindow.h"
+    "src/ui_components/newregistrationdialog.cpp"
+    "src/ui_components/newregistrationdialog.h"
+    "src/ui_components/totalfeesdialog.cpp"
+    "src/ui_components/totalfeesdialog.h"
+    "src/ui_components/totalregistereddialog.cpp"
+    "src/ui_components/totalregistereddialog.h"
+
+    # Resources
+    resources/resources.qrc
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(ConferenceRegistration
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
-        person.h person.cpp
-        registration.h registration.cpp
-        studentregistration.h studentregistration.cpp
-        guestregistration.h guestregistration.cpp
-        registrationlist.h registrationlist.cpp
-        standardregistration.h standardregistration.cpp
-        mainwindow.h mainwindow.cpp
-        newregistrationdialog.h newregistrationdialog.cpp
-
-        totalfeesdialog.h totalfeesdialog.cpp
-        totalregistereddialog.h totalregistereddialog.cpp
-        resources.qrc
-        registrationmodel.h registrationmodel.cpp
-        registrationtypes.h registrationtypes.cpp
-        registrationfilterproxymodel.h registrationfilterproxymodel.cpp
-        registrationlistwriter.h registrationlistwriter.cpp
-        filewriter.h filewriter.cpp
-        filereader.h filereader.cpp
-        registrationlistreader.h registrationlistreader.cpp
-        registrationfactory.h registrationfactory.cpp
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET ConferenceRegistration APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
@@ -61,6 +90,15 @@ endif()
 
 target_link_libraries(ConferenceRegistration PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
 target_link_libraries(ConferenceRegistration PRIVATE Qt6::Xml)
+
+target_include_directories(ConferenceRegistration PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}/src
+    "${CMAKE_CURRENT_SOURCE_DIR}/src/core_classes"
+    "${CMAKE_CURRENT_SOURCE_DIR}/src/data_management"
+    "${CMAKE_CURRENT_SOURCE_DIR}/src/qt_models"
+    "${CMAKE_CURRENT_SOURCE_DIR}/src/serialization"
+    "${CMAKE_CURRENT_SOURCE_DIR}/src/ui_components"
+)
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an

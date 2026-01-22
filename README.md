@@ -187,38 +187,43 @@ Ensure you have the following installed on your system:
 ```
 ConferenceRegistration/
 ├── CMakeLists.txt                      # CMake build configuration
-└── src/
-    ├── main.cpp                        # Application entry point
-    │
-    ├── Core Classes
-    │   ├── person.h/cpp                # Base Person class
-    │   ├── registration.h/cpp          # Abstract Registration base class
-    │   ├── standardregistration.*      # Standard registration type
-    │   ├── studentregistration.*       # Student registration type
-    │   └── guestregistration.*         # Guest registration type
-    │
-    ├── Data Management
-    │   ├── registrationlist.h/cpp      # Registration collection manager
-    │   ├── registrationfactory.*       # Factory pattern for creating registrations
-    │   └── registrationtypes.*         # Registration type enumerations
-    │
-    ├── Qt Models
-    │   ├── registrationmodel.*         # Custom QAbstractTableModel
-    │   └── registrationfilterproxymodel.* # Filter proxy for search
-    │
-    ├── UI Components
-    │   ├── mainwindow.*                # Main application window
-    │   ├── newregistrationdialog.*     # Add registration dialog
-    │   ├── totalfeesdialog.*           # Display total fees
-    │   └── totalregistereddialog.*     # Display attendee counts
-    │
-    ├── Serialization
-    │   ├── filewriter.h/cpp            # Generic file writing
-    │   ├── filereader.h/cpp            # Generic file reading
-    │   ├── registrationlistwriter.*    # XML serialization
-    │   └── registrationlistreader.*    # XML deserialization
-    │
-    └── resources.qrc                   # Qt resource file (icons, etc.)
+├── resources/                          # Assets and Qt resource collection
+│   ├── icons/                          # SVG icons used in the UI
+│   └── resources.qrc                   # Qt resource file referencing icons
+├── src/
+│   ├── main.cpp                        # Application entry point
+│   │
+│   ├── core_classes
+│   │   ├── person.h/cpp                # Base Person class
+│   │   ├── registration.h/cpp          # Abstract Registration base class
+│   │   ├── standardregistration.*      # Standard registration type
+│   │   ├── studentregistration.*       # Student registration type
+│   │   └── guestregistration.*         # Guest registration type
+│   │
+│   ├── data_management
+│   │   ├── registrationlist.h/cpp      # Registration collection manager
+│   │   ├── registrationfactory.*       # Factory pattern for creating registrations
+│   │   └── registrationtypes.*         # Registration type enumerations
+│   │
+│   ├── qt_models
+│   │   ├── registrationmodel.*         # Custom QAbstractTableModel
+│   │   └── registrationfilterproxymodel.* # Filter proxy for search
+│   │
+│   ├── ui_components
+│   │   ├── mainwindow.*                # Main application window
+│   │   ├── newregistrationdialog.*     # Add registration dialog
+│   │   ├── totalfeesdialog.*           # Display total fees
+│   │   └── totalregistereddialog.*     # Display attendee counts
+│   │
+│   └── serialization
+│       ├── filewriter.h/cpp            # Generic file writing
+│       ├── filereader.h/cpp            # Generic file reading
+│       ├── registrationlistwriter.*    # XML serialization
+│       └── registrationlistreader.*    # XML deserialization
+│
+└── tools/
+   ├── build_and_run.sh                # Helper build script
+   └── registrationgenerator.py        # Utility script for generating registrations
 ```
 
 **Total Lines of Code:** ~2,700 lines across 40+ files
