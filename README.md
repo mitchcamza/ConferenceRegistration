@@ -276,9 +276,9 @@ For testing and demonstration purposes, a Python script is provided to generate 
    ```
 
 3. **Output**: The script will create a file named `registrationlist.xml` in the current directory containing 200 sample registrations with the following distribution:
-   - **Student registrations**: ~67 registrations (fee: $50 each)
-   - **Standard registrations**: ~67 registrations (fee: $100 each)
-   - **Guest registrations**: ~66 registrations (fee: $10 each)
+   - **Student registrations**: 67 registrations (fee: $50 each)
+   - **Standard registrations**: 67 registrations (fee: $100 each)
+   - **Guest registrations**: 66 registrations (fee: $10 each)
 
 4. **Import the generated file**: 
    - Launch the Conference Registration application
