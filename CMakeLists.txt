@@ -89,7 +89,7 @@ else()
 endif()
 
 target_link_libraries(ConferenceRegistration PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
-target_link_libraries(ConferenceRegistration PRIVATE Qt6::Xml)
+target_link_libraries(ConferenceRegistration PRIVATE Qt${QT_VERSION_MAJOR}::Xml)
 
 target_include_directories(ConferenceRegistration PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/src
