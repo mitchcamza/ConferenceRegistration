@@ -44,7 +44,6 @@ MainWindow::MainWindow(QWidget *parent)
     actionGetNumberOfAttendeesForAffiliation(new QAction(QIcon(":/icons/affiliation"), tr("Registration per Affiliation"), this)),
     actionClose(new QAction(QIcon(":/icons/close"), tr("&Close"), this)),
     lineEditSearch(new QLineEdit(this)),
-    pushButtonClear(new QPushButton("Clear Filter", this)),
     proxyModel(new RegistrationFilterProxyModel(this))
 {
     // Connect signals and slots
@@ -54,7 +53,6 @@ MainWindow::MainWindow(QWidget *parent)
     connect(actionGetTotalFees, &QAction::triggered, this, &MainWindow::on_actionGetTotalFees_triggered);
     connect(actionGetNumberOfAttendeesForAffiliation, &QAction::triggered, this, &MainWindow::on_actionGetNumberOfAttendeesFromAffiliation_triggered);
     connect(actionClose, &QAction::triggered, this, &MainWindow::close);
-    connect(pushButtonClear, &QPushButton::clicked, this, &MainWindow::on_actionClearFilter_triggered);
     connect(lineEditSearch, &QLineEdit::textEdited, proxyModel, &RegistrationFilterProxyModel::setFilterText);
 
     // Set up the user interface
@@ -123,8 +121,8 @@ void MainWindow::setupUI(QMainWindow *mainApplicationWindow)
 
     // Searchbar
     lineEditSearch->setPlaceholderText("Search name");
-    gridLayout->addWidget(lineEditSearch, 0, 0, 1, 3);
-    gridLayout->addWidget(pushButtonClear, 0, 3, 1, 1);
+    lineEditSearch->setClearButtonEnabled(true);
+    gridLayout->addWidget(lineEditSearch, 0, 0, 1, 2);
 
     // Proxy model
     proxyModel->setSourceModel(registrationModel);
