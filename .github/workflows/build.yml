@@ -1,24 +1,9 @@
 name: Build
 
 on:
-  push:
-    branches: 
-      - main
-      - dev
-      - feature/*
-      - COS3711-02-01
-      - COS3711-02-02
-      - COS3711-02-03
-      - COS3711-02-04
-
   pull_request:
     branches: 
       - main
-      - dev
-      - COS3711-02-01
-      - COS3711-02-02
-      - COS3711-02-03
-      - COS3711-02-04
 
 jobs:
   build:
@@ -37,7 +22,7 @@ jobs:
         run: |
           mkdir -p build
           cd build
-          cmake ../COS3711-02-04/
+          cmake -S .. -B .
           make
 
       - name: Upload build artifacts
