@@ -20,6 +20,7 @@
 #include <QString>
 #include <QList>
 #include <QDate>
+#include <cmath>
 
 /**
  * @brief Test fixture for XML persistence integration tests
