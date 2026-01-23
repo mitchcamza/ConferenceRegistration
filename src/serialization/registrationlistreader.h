@@ -12,6 +12,7 @@
 #include "filereader.h"
 #include "registration.h"
 
+#include <QDebug>
 #include <QDomDocument>
 #include <QList>
 #include <QXmlStreamReader>

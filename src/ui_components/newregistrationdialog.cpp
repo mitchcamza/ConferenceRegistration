@@ -44,7 +44,7 @@ NewRegistrationDialog::NewRegistrationDialog(RegistrationList *list, QDialog *pa
     // Connect signals and slots
     connect(pushButtonRegister, &QPushButton::clicked, this, &NewRegistrationDialog::on_pushButtonRegister_clicked);
     connect(pushButtonCancel, &QPushButton::clicked, this, &NewRegistrationDialog::on_pushButtonCancel_clicked);
-    connect(comboBoxRegistrationType, &QComboBox::currentIndexChanged, this, &NewRegistrationDialog::on_comboBoxRegistrationType_changed);
+    connect(comboBoxRegistrationType, &QComboBox::currentTextChanged, this, &NewRegistrationDialog::on_comboBoxRegistrationTypeChanged);
 }
 
 
@@ -215,7 +215,7 @@ bool NewRegistrationDialog::isValidInput(const QString &type, const QString &nam
 }
 
 
-void NewRegistrationDialog::on_comboBoxRegistrationType_changed()
+void NewRegistrationDialog::on_comboBoxRegistrationTypeChanged()
 {
     updateRegistrationFormBasedOnRegistrationType();
 }
