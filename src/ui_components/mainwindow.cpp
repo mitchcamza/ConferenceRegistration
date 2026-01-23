@@ -52,7 +52,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(actionGetTotalFees, &QAction::triggered, this, &MainWindow::on_actionGetTotalFees_triggered);
     connect(actionGetNumberOfAttendeesForAffiliation, &QAction::triggered, this, &MainWindow::on_actionGetNumberOfAttendeesFromAffiliation_triggered);
     connect(actionClose, &QAction::triggered, this, &MainWindow::close);
-    connect(lineEditSearch, &QLineEdit::textEdited, proxyModel, &RegistrationFilterProxyModel::setFilterText);
+    connect(lineEditSearch, &QLineEdit::textChanged, proxyModel, &RegistrationFilterProxyModel::setFilterText);
 
     // Set up the user interface
     setupUI(this);
