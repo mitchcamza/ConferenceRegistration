@@ -1,0 +1,35 @@
+{
+	"BUILD_DIR" : "/home/runner/work/ConferenceRegistration/ConferenceRegistration/_codeql_build_dir/ConferenceRegistration_autogen",
+	"CMAKE_BINARY_DIR" : "/home/runner/work/ConferenceRegistration/ConferenceRegistration/_codeql_build_dir",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/runner/work/ConferenceRegistration/ConferenceRegistration/_codeql_build_dir",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/runner/work/ConferenceRegistration/ConferenceRegistration",
+	"CMAKE_SOURCE_DIR" : "/home/runner/work/ConferenceRegistration/ConferenceRegistration",
+	"CROSS_CONFIG" : false,
+	"GENERATOR" : "Unix Makefiles",
+	"INCLUDE_DIR" : "/home/runner/work/ConferenceRegistration/ConferenceRegistration/_codeql_build_dir/ConferenceRegistration_autogen/include",
+	"INPUTS" : 
+	[
+		"/home/runner/work/ConferenceRegistration/ConferenceRegistration/resources/icons/file_download_24dp.svg",
+		"/home/runner/work/ConferenceRegistration/ConferenceRegistration/resources/icons/person_remove_24dp.svg",
+		"/home/runner/work/ConferenceRegistration/ConferenceRegistration/resources/icons/playlist_add_24dp.svg",
+		"/home/runner/work/ConferenceRegistration/ConferenceRegistration/resources/icons/close_24dp.svg",
+		"/home/runner/work/ConferenceRegistration/ConferenceRegistration/resources/icons/help_center_24dp.svg",
+		"/home/runner/work/ConferenceRegistration/ConferenceRegistration/resources/icons/edit_24dp.svg",
+		"/home/runner/work/ConferenceRegistration/ConferenceRegistration/resources/icons/person_add_24dp_FILL0_wght400_GRAD0_opsz24.svg",
+		"/home/runner/work/ConferenceRegistration/ConferenceRegistration/resources/icons/file_upload_24dp.svg",
+		"/home/runner/work/ConferenceRegistration/ConferenceRegistration/resources/icons/people_24dp.svg",
+		"/home/runner/work/ConferenceRegistration/ConferenceRegistration/resources/icons/credit_card_24dp.svg",
+		"/home/runner/work/ConferenceRegistration/ConferenceRegistration/resources/icons/person_search_24dp.svg"
+	],
+	"LOCK_FILE" : "/home/runner/work/ConferenceRegistration/ConferenceRegistration/_codeql_build_dir/CMakeFiles/ConferenceRegistration_autogen.dir/AutoRcc_resources_3YJK5W5UP7_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "-name", "resources" ],
+	"OUTPUT_CHECKSUM" : "3YJK5W5UP7",
+	"OUTPUT_NAME" : "qrc_resources.cpp",
+	"RCC_EXECUTABLE" : "/usr/lib/qt6/libexec/rcc",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "/home/runner/work/ConferenceRegistration/ConferenceRegistration/_codeql_build_dir/CMakeFiles/ConferenceRegistration_autogen.dir/AutoRcc_resources_3YJK5W5UP7_Used.txt",
+	"SOURCE" : "/home/runner/work/ConferenceRegistration/ConferenceRegistration/resources/resources.qrc",
+	"USE_BETTER_GRAPH" : false,
+	"VERBOSITY" : 0
+}
