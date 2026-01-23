@@ -115,22 +115,16 @@ GitHub Actions workflow for automated building on multiple branches, ensuring co
 ## 📸 Screenshots
 
 ### Main Window - Registration List View
-<img width="1112" alt="Screenshot 2024-07-16 at 18 43 00" src="https://github.com/user-attachments/assets/3f972a05-0744-4f37-a1ad-db6616388b1a">
+<img width="1112" height="744" alt="registration-list-view" src="https://github.com/user-attachments/assets/5c7fa765-14a6-466b-90b6-ad789bf91c07" />
 
 ### Filtering Registrations
-<img width="1112" alt="Screenshot 2024-07-16 at 18 43 08" src="https://github.com/user-attachments/assets/6ea16e03-a629-49c4-b512-337289cd9080">
+Registrations can be filtered using any of the fields
+<img width="1112" height="744" alt="filter-by-name" src="https://github.com/user-attachments/assets/3f5351d3-c962-4259-9fc9-f0d9ba0766ee" />
+<img width="1112" height="744" alt="filter-by-affiliation" src="https://github.com/user-attachments/assets/cfe281d7-32a3-41dc-8aab-b16e9b966bd6" />
+<img width="1098" height="804" alt="filter-by-email" src="https://github.com/user-attachments/assets/d10cf54c-56f8-4fe7-ba19-e3222143cc3e" />
 
-### Total Fees Dialog
-<img width="952" alt="Screenshot 2024-07-16 at 18 42 21" src="https://github.com/user-attachments/assets/aff71448-a1bf-44b3-865a-9acf8fdec458">
-
-### New Registration Dialog
-<img width="540" alt="Screenshot 2024-07-11 at 17 01 35" src="https://github.com/user-attachments/assets/bf47b5af-9967-478f-814b-2ea132827e2a">
-
-### Total Registrations by Affiliation
-<img width="464" alt="Screenshot 2024-07-11 at 16 57 34" src="https://github.com/user-attachments/assets/80b83476-91c6-43be-80f6-0a6d9f531fd0">
-
-### Export/Import Functionality
-<img width="424" alt="Screenshot 2024-07-11 at 16 57 48" src="https://github.com/user-attachments/assets/eeaa6e2f-baf0-4321-9cc5-80f43f6dba05">
+### Handling XML
+<img width="964" height="1144" alt="registrations-xml" src="https://github.com/user-attachments/assets/12e2a166-9436-4a98-a9cc-9702a0742c43" />
 
 
 ## 🚀 Getting Started
@@ -156,18 +150,13 @@ Ensure you have the following installed on your system:
    git clone https://github.com/mitchcamza/ConferenceRegistration.git
    cd ConferenceRegistration
    ```
-
-2. **Checkout the main branch** (or specific branch):
+2. **Make the build script executable** (Linux/macOS):
    ```bash
-   git checkout COS3711-02-04
-   ```
-
-3. **Make the build script executable** (Linux/macOS):
-   ```bash
+   cd tools
    chmod +x ./build_and_run.sh
    ```
 
-4. **Run the build script**:
+3. **Run the build script**:
    ```bash
    ./build_and_run.sh
    ```
@@ -175,7 +164,7 @@ Ensure you have the following installed on your system:
    Or manually build:
    ```bash
    mkdir build && cd build
-   cmake ../COS3711-02-04/
+   cmake ..
    make
    ./ConferenceRegistration
    ```
