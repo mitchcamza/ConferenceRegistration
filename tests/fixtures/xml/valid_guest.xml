@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<registrationlist>
+    <registration type="guest">
+        <attendee>
+            <name>Bob Johnson</name>
+            <affiliation>Google</affiliation>
+            <email>bob.johnson@google.com</email>
+        </attendee>
+        <bookingdate>2024-08-01</bookingdate>
+        <category>Keynote Speaker</category>
+        <registrationfee>10</registrationfee>
+    </registration>
+</registrationlist>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<registrationlist>
+    <registration type="student">
+        <attendee>
+            <name>Jane Doe</name>
+            <affiliation>Stanford</affiliation>
+            <email>jane.doe@stanford.edu</email>
+        </attendee>
+        <bookingdate>2024-07-20</bookingdate>
+        <qualification>PhD Candidate</qualification>
+        <registrationfee>50</registrationfee>
+    </registration>
+</registrationlist>

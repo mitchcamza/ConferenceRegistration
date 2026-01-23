@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<registrationlist>
+    <registration type="standard">
+        <attendee>
+            <name>Alice Brown</name>
+            <affiliation>Harvard</affiliation>
+            <email>alice@harvard.edu</email>
+        </attendee>
+        <bookingdate>2024-07-10</bookingdate>
+        <registrationfee>100</registrationfee>
+    </registration>
+    <registration type="student">
+        <attendee>
+            <name>Charlie Wilson</name>
+            <affiliation>Yale</affiliation>
+            <email>charlie@yale.edu</email>
+        </attendee>
+        <bookingdate>2024-07-12</bookingdate>
+        <qualification>Masters Student</qualification>
+        <registrationfee>50</registrationfee>
+    </registration>
+    <registration type="guest">
+        <attendee>
+            <name>Diana Prince</name>
+            <affiliation>Amazon</affiliation>
+            <email>diana@amazon.com</email>
+        </attendee>
+        <bookingdate>2024-07-14</bookingdate>
+        <category>VIP Guest</category>
+        <registrationfee>10</registrationfee>
+    </registration>
+</registrationlist>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<registrationlist>
+    <registration type="standard">
+        <attendee>
+            <name>Invalid Entry
+            <affiliation>Broken University</affiliation>
+            <email>invalid@example.com</email>
+        </attendee>
+        <bookingdate>2024-07-15</bookingdate>
+    </registration>

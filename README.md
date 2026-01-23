@@ -106,12 +106,11 @@ Abstract `Registration` base class with three derived types demonstrating runtim
 ### 6. **Automated CI/CD**
 GitHub Actions workflow for automated building and unit testing on multiple branches, ensuring code quality and build stability.
 
-### 7. **Comprehensive Unit Testing**
-Implemented a robust test suite using GoogleTest with 42 tests covering core domain logic:
-- Person class validation and edge cases
-- Registration type fee calculations and business rules
-- Factory pattern and singleton implementation
-- Tests run automatically in CI pipeline
+### 7. **Comprehensive Testing**
+Implemented a robust test suite using GoogleTest with 58 tests covering both unit and integration testing:
+- **Unit Tests (42)**: Core domain logic including Person class, Registration types, and Factory pattern
+- **Integration Tests (16)**: End-to-end XML persistence with round-trip validation and fixture-based testing
+- Tests run automatically in CI pipeline ensuring code quality and preventing regressions
 
 <a id="features"></a>
 ## ✨ Features
@@ -221,25 +220,47 @@ ConferenceRegistration/
 │       ├── registrationlistwriter.*    # XML serialization
 │       └── registrationlistreader.*    # XML deserialization
 │
+├── tests/
+│   ├── unit/                           # Unit tests (42 tests)
+│   │   ├── person_test.cpp             # Person class tests
+│   │   ├── registration_test.cpp       # Registration types tests
+│   │   └── registrationfactory_test.cpp # Factory pattern tests
+│   │
+│   ├── integration/                    # Integration tests (16 tests)
+│   │   ├── xml_persistence_test.cpp    # End-to-end XML I/O tests
+│   │   └── README.md                   # Integration test documentation
+│   │
+│   └── fixtures/
+│       └── xml/                        # Test fixture files
+│           ├── valid_standard.xml      # Valid test data
+│           ├── malformed.xml           # Error case fixtures
+│           └── README.md               # Fixture documentation
+│
 └── tools/
    ├── build_and_run.sh                # Helper build script
    └── registrationgenerator.py        # Utility script for generating registrations
 ```
 
-**Total Lines of Code:** ~2,700 lines across 40+ files
+**Total Lines of Code:** ~3,200 lines across 45+ files
   
 <a id="testing"></a>
 ## 🧪 Testing
 
-The project includes a comprehensive unit test suite using **GoogleTest** to ensure code reliability and correctness. The tests focus on core business logic without UI dependencies, making them fast, deterministic, and suitable for CI/CD pipelines.
+The project includes a comprehensive test suite using **GoogleTest** to ensure code reliability and correctness. Tests are fast, deterministic, and suitable for CI/CD pipelines, covering both unit-level logic and end-to-end integration scenarios.
 
 ### Test Coverage
 
-The test suite includes **42 unit tests** covering:
+The test suite includes **58 tests** covering:
 
+#### Unit Tests (42 tests)
 - **Person Tests (6 tests)**: Constructor validation, empty/whitespace handling, special characters, and boundary testing
 - **Registration Tests (17 tests)**: Fee calculations for all registration types (Standard: $100, Student: $50, Guest: $10), booking date validation, and toString formatting
 - **RegistrationFactory Tests (19 tests)**: Singleton pattern verification, registration creation, case-insensitive type handling, and edge case validation
+
+#### Integration Tests (16 tests)
+- **Round-trip Integrity (5 tests)**: Write registrations to XML, read them back, and verify data integrity across all registration types
+- **Golden File Fixtures (4 tests)**: Parse known-good XML files and validate correct deserialization behavior
+- **Error & Edge Cases (7 tests)**: Malformed XML handling, missing required fields, missing type attributes, empty files, non-existent files, read-only locations, and deterministic output verification
 
 ### Running Tests
 
@@ -249,23 +270,37 @@ cd build
 ctest --output-on-failure
 ```
 
-#### Run Tests Directly
+#### Run Unit Tests Only
 ```bash
 cd build/tests/unit
 ./unit_tests
 ```
 
+#### Run Integration Tests Only
+```bash
+cd build
+ctest --output-on-failure -R XmlPersistence
+```
+
 #### Run Specific Tests
 ```bash
+# Unit tests
 ./unit_tests --gtest_filter=PersonTest.*
 ./unit_tests --gtest_filter=RegistrationFactoryTest.CreateStandardRegistration*
+
+# Integration tests
+cd build/tests/integration
+./integration_tests --gtest_filter=XmlPersistenceTest.RoundTripStandardRegistration
 ```
 
 ### CI Integration
 
-Tests run automatically on every pull request via GitHub Actions, ensuring code changes don't introduce regressions.
+Tests run automatically on every pull request via GitHub Actions, ensuring code changes don't introduce regressions. Both unit and integration tests must pass before merging.
 
-**For detailed test documentation**, see [tests/README.md](tests/README.md).
+**For detailed test documentation**, see:
+- Unit tests: [tests/README.md](tests/README.md)
+- Integration tests: [tests/integration/README.md](tests/integration/README.md)
+- Test fixtures: [tests/fixtures/xml/README.md](tests/fixtures/xml/README.md)
   
 <a id="usage"></a>
 ## 📖 Usage
@@ -357,7 +392,7 @@ Building this project provided hands-on experience with several important concep
 Potential improvements to demonstrate continuous learning:
 
 - **Database Integration**: Replace XML with SQLite for better scalability and querying
-- **Integration Testing**: Add integration tests for UI components and file I/O operations
+- **UI Testing**: Add automated UI tests using Qt Test framework
 - **Advanced Filtering**: Multiple filter criteria (date range, registration type, affiliation)
 - **Export Formats**: Support for CSV, JSON, and PDF export
 - **Authentication**: User login system with different permission levels

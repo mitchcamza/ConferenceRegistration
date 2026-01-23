@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<registrationlist>
+    <registration type="standard">
+        <attendee>
+            <name>John Smith</name>
+            <affiliation>MIT</affiliation>
+            <email>john.smith@mit.edu</email>
+        </attendee>
+        <bookingdate>2024-07-15</bookingdate>
+        <registrationfee>100</registrationfee>
+    </registration>
+</registrationlist>

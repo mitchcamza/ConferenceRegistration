@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<registrationlist>
+    <registration type="standard">
+        <attendee>
+            <affiliation>University</affiliation>
+            <email>missing@example.com</email>
+        </attendee>
+        <bookingdate>2024-07-15</bookingdate>
+        <registrationfee>100</registrationfee>
+    </registration>
+</registrationlist>
