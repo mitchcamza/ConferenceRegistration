@@ -47,6 +47,7 @@ RegistrationFilterProxyModel::RegistrationFilterProxyModel(QObject *parent)
 
 void RegistrationFilterProxyModel::setFilterText(const QString &filterText)
 {
+    beginFilterChange();
     m_filterText = filterText;
-    invalidateFilter();  // Trigger re-filtering
+    endFilterChange();
 }
