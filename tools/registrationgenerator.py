@@ -99,8 +99,8 @@ for i in range(1, 201):
         affiliation = random.choice(companies)
     ET.SubElement(attendee, "affiliation").text = affiliation
     
-    # Generate realistic email
-    email_name = f"{first_name.lower()}.{last_name.lower()}"
+    # Generate realistic email with unique identifier
+    email_name = f"{first_name.lower()}.{last_name.lower()}{i}"
     email_domain = random.choice(email_domains)
     email = f"{email_name}@{email_domain}"
     ET.SubElement(attendee, "email").text = email
