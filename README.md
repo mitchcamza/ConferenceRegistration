@@ -393,7 +393,6 @@ Potential improvements to demonstrate continuous learning:
 
 - **Database Integration**: Replace XML with SQLite for better scalability and querying
 - **UI Testing**: Add automated UI tests using Qt Test framework
-- **Advanced Filtering**: Multiple filter criteria (date range, registration type, affiliation)
 - **Export Formats**: Support for CSV, JSON, and PDF export
 - **Authentication**: User login system with different permission levels
 - **Email Notifications**: Automated confirmation emails upon registration
@@ -408,7 +407,7 @@ Potential improvements to demonstrate continuous learning:
 <a id="about-me"></a>
 ## 👨‍💻 About Me
 
-Hi, I'm **Mitch Campbell**, an aspiring software engineer with a passion for building practical, well-architected applications. This project demonstrates my ability to:
+Hi, I'm **Mitch Campbell**, a software engineer with a passion for building practical, well-architected applications. This project demonstrates my ability to:
 
 - Design and implement complete applications from scratch
 - Write clean, maintainable, and well-documented code
