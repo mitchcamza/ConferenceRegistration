@@ -1,5 +1,5 @@
 # Conference Registration System
-[![Build](https://github.com/mitchcamza/ConferenceRegistration/actions/workflows/build.yml/badge.svg)](https://github.com/mitchcamza/ConferenceRegistration/actions/workflows/build.yml)
+[![CI](https://github.com/mitchcamza/ConferenceRegistration/actions/workflows/ci.yml/badge.svg)](https://github.com/mitchcamza/ConferenceRegistration/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ![C++](https://img.shields.io/badge/C++-17-blue.svg)
 ![Qt](https://img.shields.io/badge/Qt-5%20%7C%206-green.svg)
