@@ -119,14 +119,9 @@ GitHub Actions workflow for automated building on multiple branches, ensuring co
 <a id="screenshots"></a>
 ## 📸 Screenshots
 
-### Main Window - Registration List View
-<img width="1112" height="744" alt="registration-list-view" src="https://github.com/user-attachments/assets/5c7fa765-14a6-466b-90b6-ad789bf91c07" />
-
-### Filtering Registrations
+### Main Window - Viewing & Filtering Registrations
 Registrations can be filtered using any of the fields
-<img width="1112" height="744" alt="filter-by-name" src="https://github.com/user-attachments/assets/3f5351d3-c962-4259-9fc9-f0d9ba0766ee" />
-<img width="1112" height="744" alt="filter-by-affiliation" src="https://github.com/user-attachments/assets/cfe281d7-32a3-41dc-8aab-b16e9b966bd6" />
-<img width="1098" height="804" alt="filter-by-email" src="https://github.com/user-attachments/assets/d10cf54c-56f8-4fe7-ba19-e3222143cc3e" />
+![filtering-registrations](https://github.com/user-attachments/assets/5dd71ed2-20d5-4dc2-826f-4408a68bf4d2)
 
 ### Handling XML
 <img width="964" height="1144" alt="registrations-xml" src="https://github.com/user-attachments/assets/12e2a166-9436-4a98-a9cc-9702a0742c43" />
