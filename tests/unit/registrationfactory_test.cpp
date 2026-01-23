@@ -12,6 +12,7 @@
 #include <gtest/gtest.h>
 #include <QDate>
 #include <QString>
+#include <vector>
 
 /**
  * @brief Test fixture for RegistrationFactory tests
