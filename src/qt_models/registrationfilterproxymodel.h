@@ -10,6 +10,7 @@
 #define REGISTRATIONFILTERPROXYMODEL_H
 
 #include <QSortFilterProxyModel>
+#include <QRegularExpression>
 
 
 /**
@@ -22,6 +23,7 @@ class RegistrationFilterProxyModel : public QSortFilterProxyModel
     Q_OBJECT
 private:
     QString m_filterText;
+    QRegularExpression m_filterRegex;
 
 protected:
     bool filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const override;
