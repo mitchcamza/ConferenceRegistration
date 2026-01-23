@@ -53,5 +53,9 @@ compile_commands.json
 
 *_qmlcache.qrc
 
-# Build Files
+# Build and CMake Files
 *build
+CMakeFiles/*
+CMakeCache.txt
+cmake_install.cmake
+*.app/Contents/
