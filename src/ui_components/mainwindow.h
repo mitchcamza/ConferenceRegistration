@@ -63,11 +63,6 @@ private slots:
     void on_actionGetNumberOfAttendeesFromAffiliation_triggered();
 
     /**
-     * @brief Slot function called when the "Clear Filter" action is triggered.
-     */
-    void on_actionClearFilter_triggered();
-
-    /**
      * @brief Slot function called when the "Export" action is triggered.
      */
     void on_actionExportRegistrationList_triggered();

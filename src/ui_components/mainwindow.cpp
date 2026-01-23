@@ -157,14 +157,6 @@ void MainWindow::on_actionGetNumberOfAttendeesFromAffiliation_triggered()
 }
 
 
-void MainWindow::on_actionClearFilter_triggered()
-{
-    lineEditSearch->clear();
-    lineEditSearch->setFocus();
-    proxyModel->setFilterText(lineEditSearch->text());
-}
-
-
 void MainWindow::on_actionExportRegistrationList_triggered()
 {
     QString fileName = QFileDialog::getSaveFileName(this, tr("Save Registration List"), "", tr("XML Files (*.xml);;All Files (*)"));
