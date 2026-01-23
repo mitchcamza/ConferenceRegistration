@@ -19,6 +19,7 @@
 - [About Me](#about-me)
 - [License](#license)
 
+<a id="about-this-project"></a>
 ## 🎯 About This Project
 
 Conference Registration is a professional-grade, cross-platform desktop application that streamlines the management of conference attendees. Built with C++ and the Qt Framework, this project demonstrates enterprise-level software engineering practices including object-oriented design, design patterns, and modern C++ development.
@@ -39,6 +40,7 @@ Conference Registration is a professional-grade, cross-platform desktop applicat
 - **CI/CD:** GitHub Actions
 - **Documentation:** Doxygen
 
+<a id="technical-skills-demonstrated"></a>
 ## 💼 Technical Skills Demonstrated
 
 This project showcases proficiency in:
@@ -72,6 +74,7 @@ This project showcases proficiency in:
 - **Data Filtering**: Custom proxy models for real-time search
 - **Resource Management**: Qt resource system integration
 
+<a id="key-technical-highlights"></a>
 ## 🔧 Key Technical Highlights
 
 ### 1. **Factory Pattern Implementation**
@@ -101,6 +104,7 @@ Abstract `Registration` base class with three derived types demonstrating runtim
 ### 6. **Automated CI/CD**
 GitHub Actions workflow for automated building on multiple branches, ensuring code quality and build stability.
 
+<a id="features"></a>
 ## ✨ Features
 
 - **📝 Registration Management**: Add, view, and manage different types of registrations (Standard, Student, Guest)
@@ -112,6 +116,7 @@ GitHub Actions workflow for automated building on multiple branches, ensuring co
 - **🎨 Intuitive UI**: Clean, user-friendly Qt-based interface with toolbar and menu access
 - **🔄 Cross-Platform**: Runs seamlessly on Windows, macOS, and Linux
 
+<a id="screenshots"></a>
 ## 📸 Screenshots
 
 ### Main Window - Registration List View
@@ -127,6 +132,7 @@ Registrations can be filtered using any of the fields
 <img width="964" height="1144" alt="registrations-xml" src="https://github.com/user-attachments/assets/12e2a166-9436-4a98-a9cc-9702a0742c43" />
 
 
+<a id="getting-started"></a>
 ## 🚀 Getting Started
 
 ### Prerequisites
@@ -171,6 +177,7 @@ Ensure you have the following installed on your system:
 
 **⏱️ Build Time:** Approximately 2-3 minutes on a modern system.
      
+<a id="project-structure"></a>
 ## 📁 Project Structure
 
 ```
@@ -217,6 +224,7 @@ ConferenceRegistration/
 
 **Total Lines of Code:** ~2,700 lines across 40+ files
   
+<a id="usage"></a>
 ## 📖 Usage
 
 The application allows users to manage different types of registrations. The main window provides options to view and filter existing registrations, add new registrations and view the total fees and number of registrations.
@@ -277,6 +285,7 @@ For testing and demonstration purposes, a Python script is provided to generate 
 
 **Note:** The generator creates sample data with placeholder names, emails, and affiliations for testing purposes. Each registration includes all required fields according to its type (qualification for students, category for guests).
 
+<a id="what-i-learned"></a>
 ## 💡 What I Learned
 
 Building this project provided hands-on experience with several important concepts:
@@ -299,6 +308,7 @@ Building this project provided hands-on experience with several important concep
 - **Real-time Data Filtering**: Developed efficient filtering without compromising user experience
 - **Error Handling**: Implemented robust error handling for file operations and user input
 
+<a id="future-enhancements"></a>
 ## 🚀 Future Enhancements
 
 Potential improvements to demonstrate continuous learning:
@@ -313,9 +323,11 @@ Potential improvements to demonstrate continuous learning:
 - **Internationalization**: Multi-language support using Qt's translation system
 - **Cloud Sync**: Optional cloud backup and synchronization across devices
 
+<a id="api-documentation"></a>
 ## 📚 API Documentation
 [View Full API Documentation](https://mitchcamza.github.io/ConferenceRegistration/)
 
+<a id="about-me"></a>
 ## 👨‍💻 About Me
 
 Hi, I'm **Mitch Campbell**, an aspiring software engineer with a passion for building practical, well-architected applications. This project demonstrates my ability to:
@@ -333,6 +345,7 @@ I'm actively seeking junior software engineering or programmer positions where I
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-mitch--campbell--93b18919b-blue?logo=linkedin)](https://www.linkedin.com/in/mitch-campbell-93b18919b/)
 [![GitHub](https://img.shields.io/badge/GitHub-@mitchcamza-181717?logo=github)](https://github.com/mitchcamza)
 
+<a id="license"></a>
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
