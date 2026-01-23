@@ -12,6 +12,7 @@
 - [Screenshots](#screenshots)
 - [Getting Started](#getting-started)
 - [Project Structure](#project-structure)
+- [Testing](#testing)
 - [Usage](#usage)
 - [What I Learned](#what-i-learned)
 - [Future Enhancements](#future-enhancements)
@@ -63,7 +64,8 @@ This project showcases proficiency in:
 
 ### Development Practices
 - **Build Automation**: CMake for cross-platform builds
-- **CI/CD**: Automated builds using GitHub Actions
+- **CI/CD**: Automated builds and testing using GitHub Actions
+- **Unit Testing**: Comprehensive test suite using GoogleTest framework
 - **Version Control**: Git with feature branch workflow
 - **Documentation**: Comprehensive Doxygen documentation
 - **Code Quality**: Consistent naming conventions, well-commented code
@@ -102,7 +104,14 @@ Implemented complete serialization/deserialization system:
 Abstract `Registration` base class with three derived types demonstrating runtime polymorphism for fee calculations and data management.
 
 ### 6. **Automated CI/CD**
-GitHub Actions workflow for automated building on multiple branches, ensuring code quality and build stability.
+GitHub Actions workflow for automated building and unit testing on multiple branches, ensuring code quality and build stability.
+
+### 7. **Comprehensive Unit Testing**
+Implemented a robust test suite using GoogleTest with 42 tests covering core domain logic:
+- Person class validation and edge cases
+- Registration type fee calculations and business rules
+- Factory pattern and singleton implementation
+- Tests run automatically in CI pipeline
 
 <a id="features"></a>
 ## ✨ Features
@@ -219,6 +228,45 @@ ConferenceRegistration/
 
 **Total Lines of Code:** ~2,700 lines across 40+ files
   
+<a id="testing"></a>
+## 🧪 Testing
+
+The project includes a comprehensive unit test suite using **GoogleTest** to ensure code reliability and correctness. The tests focus on core business logic without UI dependencies, making them fast, deterministic, and suitable for CI/CD pipelines.
+
+### Test Coverage
+
+The test suite includes **42 unit tests** covering:
+
+- **Person Tests (6 tests)**: Constructor validation, empty/whitespace handling, special characters, and boundary testing
+- **Registration Tests (17 tests)**: Fee calculations for all registration types (Standard: $100, Student: $50, Guest: $10), booking date validation, and toString formatting
+- **RegistrationFactory Tests (19 tests)**: Singleton pattern verification, registration creation, case-insensitive type handling, and edge case validation
+
+### Running Tests
+
+#### Build and Run All Tests
+```bash
+cd build
+ctest --output-on-failure
+```
+
+#### Run Tests Directly
+```bash
+cd build/tests/unit
+./unit_tests
+```
+
+#### Run Specific Tests
+```bash
+./unit_tests --gtest_filter=PersonTest.*
+./unit_tests --gtest_filter=RegistrationFactoryTest.CreateStandardRegistration*
+```
+
+### CI Integration
+
+Tests run automatically on every pull request via GitHub Actions, ensuring code changes don't introduce regressions.
+
+**For detailed test documentation**, see [tests/README.md](tests/README.md).
+  
 <a id="usage"></a>
 ## 📖 Usage
 
@@ -309,7 +357,7 @@ Building this project provided hands-on experience with several important concep
 Potential improvements to demonstrate continuous learning:
 
 - **Database Integration**: Replace XML with SQLite for better scalability and querying
-- **Unit Testing**: Add comprehensive test suite using Qt Test framework
+- **Integration Testing**: Add integration tests for UI components and file I/O operations
 - **Advanced Filtering**: Multiple filter criteria (date range, registration type, affiliation)
 - **Export Formats**: Support for CSV, JSON, and PDF export
 - **Authentication**: User login system with different permission levels
