@@ -10,6 +10,24 @@
 
 #include <QRegularExpression>
 
+bool RegistrationFilterProxyModel::filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const
+{
+    if (m_filterText.isEmpty()) return true;
+    
+    QRegularExpression regex(m_filterText, QRegularExpression::CaseInsensitiveOption);
+    
+    // Check all columns for a match
+    int columnCount = sourceModel()->columnCount(sourceParent);
+    for (int col = 0; col < columnCount; ++col) {
+        QModelIndex index = sourceModel()->index(sourceRow, col, sourceParent);
+        QString data = sourceModel()->data(index).toString();
+        if (regex.match(data).hasMatch()) {
+            return true;
+        }
+    }
+    return false;
+}
+
 
 RegistrationFilterProxyModel::RegistrationFilterProxyModel(QObject *parent)
     : QSortFilterProxyModel{parent}
@@ -20,6 +38,6 @@ RegistrationFilterProxyModel::RegistrationFilterProxyModel(QObject *parent)
 
 void RegistrationFilterProxyModel::setFilterText(const QString &filterText)
 {
-    QRegularExpression regex(filterText, QRegularExpression::CaseInsensitiveOption);
-    setFilterRegularExpression(regex);
+    m_filterText = filterText;
+    invalidateFilter();  // Trigger re-filtering
 }
