@@ -119,7 +119,7 @@ void MainWindow::setupUI(QMainWindow *mainApplicationWindow)
     mainApplicationWindow->setCentralWidget(centralWidget);
 
     // Searchbar
-    lineEditSearch->setPlaceholderText("Search name");
+    lineEditSearch->setPlaceholderText("Search");
     lineEditSearch->setClearButtonEnabled(true);
     gridLayout->addWidget(lineEditSearch, 0, 0, 1, 2);
 

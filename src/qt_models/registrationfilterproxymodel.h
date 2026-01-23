@@ -20,6 +20,11 @@
 class RegistrationFilterProxyModel : public QSortFilterProxyModel
 {
     Q_OBJECT
+private:
+    QString m_filterText;
+
+protected:
+    bool filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const override;
 
 public:
     /**

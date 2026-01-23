@@ -1,0 +1,1936 @@
+<?xml version="1.0" ?>
+<registrationlist>
+ <registration type="student">
+  <attendee>
+   <name>Jerry Cruz</name>
+   <affiliation>University of Southern California</affiliation>
+   <email>jerry.cruz1@icloud.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <qualification>Biomedical Engineering</qualification>
+  <registrationfee>50</registrationfee>
+ </registration>
+ <registration type="standard">
+  <attendee>
+   <name>Ryan Harris</name>
+   <affiliation>Adobe</affiliation>
+   <email>ryan.harris2@mail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <registrationfee>100</registrationfee>
+ </registration>
+ <registration type="guest">
+  <attendee>
+   <name>Michael Lewis</name>
+   <affiliation>SpaceX</affiliation>
+   <email>michael.lewis3@yahoo.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <category>Volunteer Coordinator</category>
+  <registrationfee>10</registrationfee>
+ </registration>
+ <registration type="student">
+  <attendee>
+   <name>Joshua Phillips</name>
+   <affiliation>Stanford University</affiliation>
+   <email>joshua.phillips4@gmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <qualification>Mechanical Engineering</qualification>
+  <registrationfee>50</registrationfee>
+ </registration>
+ <registration type="standard">
+  <attendee>
+   <name>Rachel Mendoza</name>
+   <affiliation>Uber</affiliation>
+   <email>rachel.mendoza5@hotmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <registrationfee>100</registrationfee>
+ </registration>
+ <registration type="guest">
+  <attendee>
+   <name>Scott Wood</name>
+   <affiliation>Dell Technologies</affiliation>
+   <email>scott.wood6@icloud.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <category>Exhibitor</category>
+  <registrationfee>10</registrationfee>
+ </registration>
+ <registration type="student">
+  <attendee>
+   <name>Kenneth Murphy</name>
+   <affiliation>University of Texas</affiliation>
+   <email>kenneth.murphy7@icloud.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <qualification>Computer Science</qualification>
+  <registrationfee>50</registrationfee>
+ </registration>
+ <registration type="standard">
+  <attendee>
+   <name>Deborah Miller</name>
+   <affiliation>Wells Fargo</affiliation>
+   <email>deborah.miller8@aol.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <registrationfee>100</registrationfee>
+ </registration>
+ <registration type="guest">
+  <attendee>
+   <name>Dorothy Phillips</name>
+   <affiliation>Dell Technologies</affiliation>
+   <email>dorothy.phillips9@fastmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <category>Sponsor Representative</category>
+  <registrationfee>10</registrationfee>
+ </registration>
+ <registration type="student">
+  <attendee>
+   <name>Charles Patel</name>
+   <affiliation>University of Pennsylvania</affiliation>
+   <email>charles.patel10@aol.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <qualification>Environmental Science</qualification>
+  <registrationfee>50</registrationfee>
+ </registration>
+ <registration type="standard">
+  <attendee>
+   <name>Helen Watson</name>
+   <affiliation>Meta</affiliation>
+   <email>helen.watson11@icloud.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <registrationfee>100</registrationfee>
+ </registration>
+ <registration type="guest">
+  <attendee>
+   <name>David Phillips</name>
+   <affiliation>Meta</affiliation>
+   <email>david.phillips12@gmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <category>Sponsor Representative</category>
+  <registrationfee>10</registrationfee>
+ </registration>
+ <registration type="student">
+  <attendee>
+   <name>John Sanders</name>
+   <affiliation>Penn State University</affiliation>
+   <email>john.sanders13@yahoo.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <qualification>Mathematics</qualification>
+  <registrationfee>50</registrationfee>
+ </registration>
+ <registration type="standard">
+  <attendee>
+   <name>Dennis Lee</name>
+   <affiliation>PwC</affiliation>
+   <email>dennis.lee14@hotmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <registrationfee>100</registrationfee>
+ </registration>
+ <registration type="guest">
+  <attendee>
+   <name>Daniel Baker</name>
+   <affiliation>Morgan Stanley</affiliation>
+   <email>daniel.baker15@gmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <category>Workshop Leader</category>
+  <registrationfee>10</registrationfee>
+ </registration>
+ <registration type="student">
+  <attendee>
+   <name>Sarah Parker</name>
+   <affiliation>Boston University</affiliation>
+   <email>sarah.parker16@mail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <qualification>Philosophy</qualification>
+  <registrationfee>50</registrationfee>
+ </registration>
+ <registration type="standard">
+  <attendee>
+   <name>Jonathan Lewis</name>
+   <affiliation>Deloitte</affiliation>
+   <email>jonathan.lewis17@icloud.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <registrationfee>100</registrationfee>
+ </registration>
+ <registration type="guest">
+  <attendee>
+   <name>Kevin Nguyen</name>
+   <affiliation>Salesforce</affiliation>
+   <email>kevin.nguyen18@hotmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <category>VIP Guest</category>
+  <registrationfee>10</registrationfee>
+ </registration>
+ <registration type="student">
+  <attendee>
+   <name>Cynthia Castillo</name>
+   <affiliation>ETH Zurich</affiliation>
+   <email>cynthia.castillo19@yahoo.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <qualification>Marketing</qualification>
+  <registrationfee>50</registrationfee>
+ </registration>
+ <registration type="standard">
+  <attendee>
+   <name>Kevin Taylor</name>
+   <affiliation>Dell Technologies</affiliation>
+   <email>kevin.taylor20@aol.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <registrationfee>100</registrationfee>
+ </registration>
+ <registration type="guest">
+  <attendee>
+   <name>Elizabeth Ruiz</name>
+   <affiliation>Accenture</affiliation>
+   <email>elizabeth.ruiz21@aol.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <category>Volunteer Coordinator</category>
+  <registrationfee>10</registrationfee>
+ </registration>
+ <registration type="student">
+  <attendee>
+   <name>Samantha Scott</name>
+   <affiliation>Duke University</affiliation>
+   <email>samantha.scott22@gmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <qualification>Computer Science</qualification>
+  <registrationfee>50</registrationfee>
+ </registration>
+ <registration type="standard">
+  <attendee>
+   <name>Karen Thomas</name>
+   <affiliation>Boston Consulting Group</affiliation>
+   <email>karen.thomas23@gmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <registrationfee>100</registrationfee>
+ </registration>
+ <registration type="guest">
+  <attendee>
+   <name>George Ruiz</name>
+   <affiliation>SpaceX</affiliation>
+   <email>george.ruiz24@aol.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <category>Keynote Speaker</category>
+  <registrationfee>10</registrationfee>
+ </registration>
+ <registration type="student">
+  <attendee>
+   <name>Katherine Ortiz</name>
+   <affiliation>University of Washington</affiliation>
+   <email>katherine.ortiz25@fastmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <qualification>Chemical Engineering</qualification>
+  <registrationfee>50</registrationfee>
+ </registration>
+ <registration type="standard">
+  <attendee>
+   <name>Carolyn Bennett</name>
+   <affiliation>Microsoft</affiliation>
+   <email>carolyn.bennett26@icloud.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <registrationfee>100</registrationfee>
+ </registration>
+ <registration type="guest">
+  <attendee>
+   <name>Kathleen Howard</name>
+   <affiliation>Bain &amp; Company</affiliation>
+   <email>kathleen.howard27@yahoo.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <category>Exhibitor</category>
+  <registrationfee>10</registrationfee>
+ </registration>
+ <registration type="student">
+  <attendee>
+   <name>Donald Mitchell</name>
+   <affiliation>UCL</affiliation>
+   <email>donald.mitchell28@aol.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <qualification>Marketing</qualification>
+  <registrationfee>50</registrationfee>
+ </registration>
+ <registration type="standard">
+  <attendee>
+   <name>David Cook</name>
+   <affiliation>Netflix</affiliation>
+   <email>david.cook29@outlook.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <registrationfee>100</registrationfee>
+ </registration>
+ <registration type="guest">
+  <attendee>
+   <name>Susan Brooks</name>
+   <affiliation>Intel</affiliation>
+   <email>susan.brooks30@mail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <category>Panel Moderator</category>
+  <registrationfee>10</registrationfee>
+ </registration>
+ <registration type="student">
+  <attendee>
+   <name>Kenneth Cooper</name>
+   <affiliation>New York University</affiliation>
+   <email>kenneth.cooper31@gmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <qualification>Psychology</qualification>
+  <registrationfee>50</registrationfee>
+ </registration>
+ <registration type="standard">
+  <attendee>
+   <name>Karen James</name>
+   <affiliation>IBM</affiliation>
+   <email>karen.james32@protonmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <registrationfee>100</registrationfee>
+ </registration>
+ <registration type="guest">
+  <attendee>
+   <name>Ashley Reed</name>
+   <affiliation>Salesforce</affiliation>
+   <email>ashley.reed33@hotmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <category>Industry Expert</category>
+  <registrationfee>10</registrationfee>
+ </registration>
+ <registration type="student">
+  <attendee>
+   <name>Dennis Cook</name>
+   <affiliation>University of Wisconsin</affiliation>
+   <email>dennis.cook34@fastmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <qualification>Mechanical Engineering</qualification>
+  <registrationfee>50</registrationfee>
+ </registration>
+ <registration type="standard">
+  <attendee>
+   <name>Michelle Nelson</name>
+   <affiliation>Dell Technologies</affiliation>
+   <email>michelle.nelson35@fastmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <registrationfee>100</registrationfee>
+ </registration>
+ <registration type="guest">
+  <attendee>
+   <name>Paul Lee</name>
+   <affiliation>HP Inc</affiliation>
+   <email>paul.lee36@protonmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <category>Sponsor Representative</category>
+  <registrationfee>10</registrationfee>
+ </registration>
+ <registration type="student">
+  <attendee>
+   <name>Robert Harris</name>
+   <affiliation>Harvard University</affiliation>
+   <email>robert.harris37@aol.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <qualification>English Literature</qualification>
+  <registrationfee>50</registrationfee>
+ </registration>
+ <registration type="standard">
+  <attendee>
+   <name>Melissa Reyes</name>
+   <affiliation>Microsoft</affiliation>
+   <email>melissa.reyes38@mail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <registrationfee>100</registrationfee>
+ </registration>
+ <registration type="guest">
+  <attendee>
+   <name>Carolyn Martin</name>
+   <affiliation>Bain &amp; Company</affiliation>
+   <email>carolyn.martin39@icloud.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <category>VIP Guest</category>
+  <registrationfee>10</registrationfee>
+ </registration>
+ <registration type="student">
+  <attendee>
+   <name>Raymond Wright</name>
+   <affiliation>Yale University</affiliation>
+   <email>raymond.wright40@aol.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <qualification>Data Science</qualification>
+  <registrationfee>50</registrationfee>
+ </registration>
+ <registration type="standard">
+  <attendee>
+   <name>Kevin Bennett</name>
+   <affiliation>Apple</affiliation>
+   <email>kevin.bennett41@mail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <registrationfee>100</registrationfee>
+ </registration>
+ <registration type="guest">
+  <attendee>
+   <name>Jennifer Cox</name>
+   <affiliation>Wells Fargo</affiliation>
+   <email>jennifer.cox42@fastmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <category>Panel Moderator</category>
+  <registrationfee>10</registrationfee>
+ </registration>
+ <registration type="student">
+  <attendee>
+   <name>Samantha Gomez</name>
+   <affiliation>University of Southern California</affiliation>
+   <email>samantha.gomez43@zoho.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <qualification>English Literature</qualification>
+  <registrationfee>50</registrationfee>
+ </registration>
+ <registration type="standard">
+  <attendee>
+   <name>Kathleen Watson</name>
+   <affiliation>Microsoft</affiliation>
+   <email>kathleen.watson44@outlook.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <registrationfee>100</registrationfee>
+ </registration>
+ <registration type="guest">
+  <attendee>
+   <name>Pamela Gray</name>
+   <affiliation>Oracle</affiliation>
+   <email>pamela.gray45@icloud.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <category>Press</category>
+  <registrationfee>10</registrationfee>
+ </registration>
+ <registration type="student">
+  <attendee>
+   <name>Amy Morales</name>
+   <affiliation>Cambridge University</affiliation>
+   <email>amy.morales46@protonmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <qualification>Biology</qualification>
+  <registrationfee>50</registrationfee>
+ </registration>
+ <registration type="standard">
+  <attendee>
+   <name>Nicole Phillips</name>
+   <affiliation>Bain &amp; Company</affiliation>
+   <email>nicole.phillips47@yahoo.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <registrationfee>100</registrationfee>
+ </registration>
+ <registration type="guest">
+  <attendee>
+   <name>Carol Flores</name>
+   <affiliation>PwC</affiliation>
+   <email>carol.flores48@yahoo.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <category>Sponsor Representative</category>
+  <registrationfee>10</registrationfee>
+ </registration>
+ <registration type="student">
+  <attendee>
+   <name>Katherine Hernandez</name>
+   <affiliation>UC Berkeley</affiliation>
+   <email>katherine.hernandez49@gmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <qualification>Marketing</qualification>
+  <registrationfee>50</registrationfee>
+ </registration>
+ <registration type="standard">
+  <attendee>
+   <name>Justin Hughes</name>
+   <affiliation>Adobe</affiliation>
+   <email>justin.hughes50@fastmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <registrationfee>100</registrationfee>
+ </registration>
+ <registration type="guest">
+  <attendee>
+   <name>Thomas Evans</name>
+   <affiliation>Tesla</affiliation>
+   <email>thomas.evans51@fastmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <category>Speaker</category>
+  <registrationfee>10</registrationfee>
+ </registration>
+ <registration type="student">
+  <attendee>
+   <name>Cynthia Ward</name>
+   <affiliation>Columbia University</affiliation>
+   <email>cynthia.ward52@protonmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <qualification>History</qualification>
+  <registrationfee>50</registrationfee>
+ </registration>
+ <registration type="standard">
+  <attendee>
+   <name>Nicholas Carter</name>
+   <affiliation>Morgan Stanley</affiliation>
+   <email>nicholas.carter53@mail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <registrationfee>100</registrationfee>
+ </registration>
+ <registration type="guest">
+  <attendee>
+   <name>Kathleen Gonzalez</name>
+   <affiliation>Bank of America</affiliation>
+   <email>kathleen.gonzalez54@yahoo.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <category>Keynote Speaker</category>
+  <registrationfee>10</registrationfee>
+ </registration>
+ <registration type="student">
+  <attendee>
+   <name>Brian Stewart</name>
+   <affiliation>Cambridge University</affiliation>
+   <email>brian.stewart55@hotmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <qualification>Physics</qualification>
+  <registrationfee>50</registrationfee>
+ </registration>
+ <registration type="standard">
+  <attendee>
+   <name>Andrew Rogers</name>
+   <affiliation>Citigroup</affiliation>
+   <email>andrew.rogers56@mail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <registrationfee>100</registrationfee>
+ </registration>
+ <registration type="guest">
+  <attendee>
+   <name>Joshua Moore</name>
+   <affiliation>Morgan Stanley</affiliation>
+   <email>joshua.moore57@zoho.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <category>Speaker</category>
+  <registrationfee>10</registrationfee>
+ </registration>
+ <registration type="student">
+  <attendee>
+   <name>Daniel Gonzalez</name>
+   <affiliation>Johns Hopkins University</affiliation>
+   <email>daniel.gonzalez58@hotmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <qualification>Civil Engineering</qualification>
+  <registrationfee>50</registrationfee>
+ </registration>
+ <registration type="standard">
+  <attendee>
+   <name>Janet Ruiz</name>
+   <affiliation>VMware</affiliation>
+   <email>janet.ruiz59@gmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <registrationfee>100</registrationfee>
+ </registration>
+ <registration type="guest">
+  <attendee>
+   <name>Rebecca Lee</name>
+   <affiliation>Airbnb</affiliation>
+   <email>rebecca.lee60@protonmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <category>Keynote Speaker</category>
+  <registrationfee>10</registrationfee>
+ </registration>
+ <registration type="student">
+  <attendee>
+   <name>Margaret Ramos</name>
+   <affiliation>Johns Hopkins University</affiliation>
+   <email>margaret.ramos61@protonmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <qualification>Civil Engineering</qualification>
+  <registrationfee>50</registrationfee>
+ </registration>
+ <registration type="standard">
+  <attendee>
+   <name>Ashley Stewart</name>
+   <affiliation>KPMG</affiliation>
+   <email>ashley.stewart62@protonmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <registrationfee>100</registrationfee>
+ </registration>
+ <registration type="guest">
+  <attendee>
+   <name>Mary Phillips</name>
+   <affiliation>JPMorgan Chase</affiliation>
+   <email>mary.phillips63@protonmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <category>Exhibitor</category>
+  <registrationfee>10</registrationfee>
+ </registration>
+ <registration type="student">
+  <attendee>
+   <name>Angela Baker</name>
+   <affiliation>Harvard University</affiliation>
+   <email>angela.baker64@mail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <qualification>Data Science</qualification>
+  <registrationfee>50</registrationfee>
+ </registration>
+ <registration type="standard">
+  <attendee>
+   <name>Scott Bennett</name>
+   <affiliation>HP Inc</affiliation>
+   <email>scott.bennett65@gmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <registrationfee>100</registrationfee>
+ </registration>
+ <registration type="guest">
+  <attendee>
+   <name>Kathleen Watson</name>
+   <affiliation>Dell Technologies</affiliation>
+   <email>kathleen.watson66@icloud.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <category>Industry Expert</category>
+  <registrationfee>10</registrationfee>
+ </registration>
+ <registration type="student">
+  <attendee>
+   <name>Jeffrey Perez</name>
+   <affiliation>Oxford University</affiliation>
+   <email>jeffrey.perez67@hotmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <qualification>Data Science</qualification>
+  <registrationfee>50</registrationfee>
+ </registration>
+ <registration type="standard">
+  <attendee>
+   <name>Ashley Parker</name>
+   <affiliation>Uber</affiliation>
+   <email>ashley.parker68@outlook.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <registrationfee>100</registrationfee>
+ </registration>
+ <registration type="guest">
+  <attendee>
+   <name>Matthew Rogers</name>
+   <affiliation>Apple</affiliation>
+   <email>matthew.rogers69@mail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <category>Workshop Leader</category>
+  <registrationfee>10</registrationfee>
+ </registration>
+ <registration type="student">
+  <attendee>
+   <name>Jessica Lee</name>
+   <affiliation>Boston University</affiliation>
+   <email>jessica.lee70@protonmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <qualification>Economics</qualification>
+  <registrationfee>50</registrationfee>
+ </registration>
+ <registration type="standard">
+  <attendee>
+   <name>Nancy Wright</name>
+   <affiliation>SpaceX</affiliation>
+   <email>nancy.wright71@fastmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <registrationfee>100</registrationfee>
+ </registration>
+ <registration type="guest">
+  <attendee>
+   <name>Ashley Evans</name>
+   <affiliation>Meta</affiliation>
+   <email>ashley.evans72@yahoo.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <category>Workshop Leader</category>
+  <registrationfee>10</registrationfee>
+ </registration>
+ <registration type="student">
+  <attendee>
+   <name>Emma Murphy</name>
+   <affiliation>UC San Diego</affiliation>
+   <email>emma.murphy73@yahoo.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <qualification>Mechanical Engineering</qualification>
+  <registrationfee>50</registrationfee>
+ </registration>
+ <registration type="standard">
+  <attendee>
+   <name>Rebecca Gomez</name>
+   <affiliation>Netflix</affiliation>
+   <email>rebecca.gomez74@yahoo.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <registrationfee>100</registrationfee>
+ </registration>
+ <registration type="guest">
+  <attendee>
+   <name>Michael Morris</name>
+   <affiliation>Dell Technologies</affiliation>
+   <email>michael.morris75@gmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <category>Volunteer Coordinator</category>
+  <registrationfee>10</registrationfee>
+ </registration>
+ <registration type="student">
+  <attendee>
+   <name>Nicole Ward</name>
+   <affiliation>Johns Hopkins University</affiliation>
+   <email>nicole.ward76@outlook.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <qualification>Philosophy</qualification>
+  <registrationfee>50</registrationfee>
+ </registration>
+ <registration type="standard">
+  <attendee>
+   <name>Steven Green</name>
+   <affiliation>LinkedIn</affiliation>
+   <email>steven.green77@icloud.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <registrationfee>100</registrationfee>
+ </registration>
+ <registration type="guest">
+  <attendee>
+   <name>Brenda Scott</name>
+   <affiliation>Goldman Sachs</affiliation>
+   <email>brenda.scott78@icloud.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <category>Board Member</category>
+  <registrationfee>10</registrationfee>
+ </registration>
+ <registration type="student">
+  <attendee>
+   <name>Kathleen Lopez</name>
+   <affiliation>University of Michigan</affiliation>
+   <email>kathleen.lopez79@hotmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <qualification>Environmental Science</qualification>
+  <registrationfee>50</registrationfee>
+ </registration>
+ <registration type="standard">
+  <attendee>
+   <name>Matthew Hernandez</name>
+   <affiliation>Microsoft</affiliation>
+   <email>matthew.hernandez80@gmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <registrationfee>100</registrationfee>
+ </registration>
+ <registration type="guest">
+  <attendee>
+   <name>Laura Wood</name>
+   <affiliation>Tesla</affiliation>
+   <email>laura.wood81@icloud.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <category>Exhibitor</category>
+  <registrationfee>10</registrationfee>
+ </registration>
+ <registration type="student">
+  <attendee>
+   <name>Laura Brooks</name>
+   <affiliation>University of Michigan</affiliation>
+   <email>laura.brooks82@zoho.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <qualification>English Literature</qualification>
+  <registrationfee>50</registrationfee>
+ </registration>
+ <registration type="standard">
+  <attendee>
+   <name>Dorothy Smith</name>
+   <affiliation>Google</affiliation>
+   <email>dorothy.smith83@aol.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <registrationfee>100</registrationfee>
+ </registration>
+ <registration type="guest">
+  <attendee>
+   <name>Donald Kim</name>
+   <affiliation>Uber</affiliation>
+   <email>donald.kim84@yahoo.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <category>Keynote Speaker</category>
+  <registrationfee>10</registrationfee>
+ </registration>
+ <registration type="student">
+  <attendee>
+   <name>Cynthia Robinson</name>
+   <affiliation>ETH Zurich</affiliation>
+   <email>cynthia.robinson85@zoho.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <qualification>Statistics</qualification>
+  <registrationfee>50</registrationfee>
+ </registration>
+ <registration type="standard">
+  <attendee>
+   <name>Jacob Alvarez</name>
+   <affiliation>HP Inc</affiliation>
+   <email>jacob.alvarez86@outlook.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <registrationfee>100</registrationfee>
+ </registration>
+ <registration type="guest">
+  <attendee>
+   <name>Jonathan Kim</name>
+   <affiliation>Intel</affiliation>
+   <email>jonathan.kim87@gmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <category>Keynote Speaker</category>
+  <registrationfee>10</registrationfee>
+ </registration>
+ <registration type="student">
+  <attendee>
+   <name>Brian Miller</name>
+   <affiliation>UC Berkeley</affiliation>
+   <email>brian.miller88@protonmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <qualification>Economics</qualification>
+  <registrationfee>50</registrationfee>
+ </registration>
+ <registration type="standard">
+  <attendee>
+   <name>John Nelson</name>
+   <affiliation>Tesla</affiliation>
+   <email>john.nelson89@mail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <registrationfee>100</registrationfee>
+ </registration>
+ <registration type="guest">
+  <attendee>
+   <name>Paul Morgan</name>
+   <affiliation>Google</affiliation>
+   <email>paul.morgan90@protonmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <category>VIP Guest</category>
+  <registrationfee>10</registrationfee>
+ </registration>
+ <registration type="student">
+  <attendee>
+   <name>Ronald Turner</name>
+   <affiliation>University of Texas</affiliation>
+   <email>ronald.turner91@icloud.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <qualification>Data Science</qualification>
+  <registrationfee>50</registrationfee>
+ </registration>
+ <registration type="standard">
+  <attendee>
+   <name>Shirley Lewis</name>
+   <affiliation>Boston Consulting Group</affiliation>
+   <email>shirley.lewis92@icloud.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <registrationfee>100</registrationfee>
+ </registration>
+ <registration type="guest">
+  <attendee>
+   <name>Donald Hernandez</name>
+   <affiliation>JPMorgan Chase</affiliation>
+   <email>donald.hernandez93@icloud.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <category>Media</category>
+  <registrationfee>10</registrationfee>
+ </registration>
+ <registration type="student">
+  <attendee>
+   <name>Dennis Price</name>
+   <affiliation>UCL</affiliation>
+   <email>dennis.price94@outlook.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <qualification>Chemical Engineering</qualification>
+  <registrationfee>50</registrationfee>
+ </registration>
+ <registration type="standard">
+  <attendee>
+   <name>Nicholas Ramirez</name>
+   <affiliation>PwC</affiliation>
+   <email>nicholas.ramirez95@aol.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <registrationfee>100</registrationfee>
+ </registration>
+ <registration type="guest">
+  <attendee>
+   <name>Larry Mitchell</name>
+   <affiliation>Tesla</affiliation>
+   <email>larry.mitchell96@icloud.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <category>Board Member</category>
+  <registrationfee>10</registrationfee>
+ </registration>
+ <registration type="student">
+  <attendee>
+   <name>Michael Moore</name>
+   <affiliation>ETH Zurich</affiliation>
+   <email>michael.moore97@outlook.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <qualification>Business Administration</qualification>
+  <registrationfee>50</registrationfee>
+ </registration>
+ <registration type="standard">
+  <attendee>
+   <name>Debra Flores</name>
+   <affiliation>McKinsey &amp; Company</affiliation>
+   <email>debra.flores98@icloud.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <registrationfee>100</registrationfee>
+ </registration>
+ <registration type="guest">
+  <attendee>
+   <name>Elizabeth Myers</name>
+   <affiliation>Boston Consulting Group</affiliation>
+   <email>elizabeth.myers99@yahoo.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <category>VIP Guest</category>
+  <registrationfee>10</registrationfee>
+ </registration>
+ <registration type="student">
+  <attendee>
+   <name>Margaret Lopez</name>
+   <affiliation>Yale University</affiliation>
+   <email>margaret.lopez100@protonmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <qualification>Business Administration</qualification>
+  <registrationfee>50</registrationfee>
+ </registration>
+ <registration type="standard">
+  <attendee>
+   <name>Ronald Morris</name>
+   <affiliation>Tesla</affiliation>
+   <email>ronald.morris101@hotmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <registrationfee>100</registrationfee>
+ </registration>
+ <registration type="guest">
+  <attendee>
+   <name>Ronald Collins</name>
+   <affiliation>Adobe</affiliation>
+   <email>ronald.collins102@hotmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <category>Special Guest</category>
+  <registrationfee>10</registrationfee>
+ </registration>
+ <registration type="student">
+  <attendee>
+   <name>Justin Stewart</name>
+   <affiliation>Boston University</affiliation>
+   <email>justin.stewart103@gmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <qualification>Electrical Engineering</qualification>
+  <registrationfee>50</registrationfee>
+ </registration>
+ <registration type="standard">
+  <attendee>
+   <name>Kimberly Lopez</name>
+   <affiliation>Uber</affiliation>
+   <email>kimberly.lopez104@zoho.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <registrationfee>100</registrationfee>
+ </registration>
+ <registration type="guest">
+  <attendee>
+   <name>Betty Morales</name>
+   <affiliation>Accenture</affiliation>
+   <email>betty.morales105@protonmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <category>Press</category>
+  <registrationfee>10</registrationfee>
+ </registration>
+ <registration type="student">
+  <attendee>
+   <name>Kevin Martinez</name>
+   <affiliation>Yale University</affiliation>
+   <email>kevin.martinez106@aol.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <qualification>Marketing</qualification>
+  <registrationfee>50</registrationfee>
+ </registration>
+ <registration type="standard">
+  <attendee>
+   <name>Jessica Cook</name>
+   <affiliation>LinkedIn</affiliation>
+   <email>jessica.cook107@aol.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <registrationfee>100</registrationfee>
+ </registration>
+ <registration type="guest">
+  <attendee>
+   <name>Susan Reed</name>
+   <affiliation>KPMG</affiliation>
+   <email>susan.reed108@outlook.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <category>VIP Guest</category>
+  <registrationfee>10</registrationfee>
+ </registration>
+ <registration type="student">
+  <attendee>
+   <name>Pamela Sanders</name>
+   <affiliation>Stanford University</affiliation>
+   <email>pamela.sanders109@yahoo.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <qualification>Physics</qualification>
+  <registrationfee>50</registrationfee>
+ </registration>
+ <registration type="standard">
+  <attendee>
+   <name>Nancy Williams</name>
+   <affiliation>Morgan Stanley</affiliation>
+   <email>nancy.williams110@mail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <registrationfee>100</registrationfee>
+ </registration>
+ <registration type="guest">
+  <attendee>
+   <name>Thomas Martin</name>
+   <affiliation>Deloitte</affiliation>
+   <email>thomas.martin111@yahoo.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <category>Sponsor Representative</category>
+  <registrationfee>10</registrationfee>
+ </registration>
+ <registration type="student">
+  <attendee>
+   <name>Angela Baker</name>
+   <affiliation>Oxford University</affiliation>
+   <email>angela.baker112@aol.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <qualification>Biomedical Engineering</qualification>
+  <registrationfee>50</registrationfee>
+ </registration>
+ <registration type="standard">
+  <attendee>
+   <name>Jacob Clark</name>
+   <affiliation>Bank of America</affiliation>
+   <email>jacob.clark113@hotmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <registrationfee>100</registrationfee>
+ </registration>
+ <registration type="guest">
+  <attendee>
+   <name>Timothy Morris</name>
+   <affiliation>Netflix</affiliation>
+   <email>timothy.morris114@outlook.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <category>Press</category>
+  <registrationfee>10</registrationfee>
+ </registration>
+ <registration type="student">
+  <attendee>
+   <name>Matthew Kelly</name>
+   <affiliation>University of Wisconsin</affiliation>
+   <email>matthew.kelly115@mail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <qualification>Physics</qualification>
+  <registrationfee>50</registrationfee>
+ </registration>
+ <registration type="standard">
+  <attendee>
+   <name>Donald Morgan</name>
+   <affiliation>VMware</affiliation>
+   <email>donald.morgan116@zoho.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <registrationfee>100</registrationfee>
+ </registration>
+ <registration type="guest">
+  <attendee>
+   <name>Ryan Morgan</name>
+   <affiliation>Microsoft</affiliation>
+   <email>ryan.morgan117@gmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <category>VIP Guest</category>
+  <registrationfee>10</registrationfee>
+ </registration>
+ <registration type="student">
+  <attendee>
+   <name>Jonathan Morris</name>
+   <affiliation>Penn State University</affiliation>
+   <email>jonathan.morris118@protonmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <qualification>Mathematics</qualification>
+  <registrationfee>50</registrationfee>
+ </registration>
+ <registration type="standard">
+  <attendee>
+   <name>Jack Cox</name>
+   <affiliation>PwC</affiliation>
+   <email>jack.cox119@gmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <registrationfee>100</registrationfee>
+ </registration>
+ <registration type="guest">
+  <attendee>
+   <name>Helen Mitchell</name>
+   <affiliation>Tesla</affiliation>
+   <email>helen.mitchell120@gmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <category>Special Guest</category>
+  <registrationfee>10</registrationfee>
+ </registration>
+ <registration type="student">
+  <attendee>
+   <name>Eric Cooper</name>
+   <affiliation>UC San Diego</affiliation>
+   <email>eric.cooper121@aol.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <qualification>Information Systems</qualification>
+  <registrationfee>50</registrationfee>
+ </registration>
+ <registration type="standard">
+  <attendee>
+   <name>Mark Patel</name>
+   <affiliation>IBM</affiliation>
+   <email>mark.patel122@protonmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <registrationfee>100</registrationfee>
+ </registration>
+ <registration type="guest">
+  <attendee>
+   <name>Nicholas Scott</name>
+   <affiliation>Citigroup</affiliation>
+   <email>nicholas.scott123@fastmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <category>Press</category>
+  <registrationfee>10</registrationfee>
+ </registration>
+ <registration type="student">
+  <attendee>
+   <name>Helen Brown</name>
+   <affiliation>University of Pennsylvania</affiliation>
+   <email>helen.brown124@yahoo.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <qualification>History</qualification>
+  <registrationfee>50</registrationfee>
+ </registration>
+ <registration type="standard">
+  <attendee>
+   <name>David Mendoza</name>
+   <affiliation>Apple</affiliation>
+   <email>david.mendoza125@gmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <registrationfee>100</registrationfee>
+ </registration>
+ <registration type="guest">
+  <attendee>
+   <name>Sharon Gray</name>
+   <affiliation>Citigroup</affiliation>
+   <email>sharon.gray126@aol.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <category>Speaker</category>
+  <registrationfee>10</registrationfee>
+ </registration>
+ <registration type="student">
+  <attendee>
+   <name>Benjamin Gomez</name>
+   <affiliation>University of Pennsylvania</affiliation>
+   <email>benjamin.gomez127@icloud.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <qualification>History</qualification>
+  <registrationfee>50</registrationfee>
+ </registration>
+ <registration type="standard">
+  <attendee>
+   <name>Nancy White</name>
+   <affiliation>IBM</affiliation>
+   <email>nancy.white128@icloud.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <registrationfee>100</registrationfee>
+ </registration>
+ <registration type="guest">
+  <attendee>
+   <name>Joseph Wright</name>
+   <affiliation>Dell Technologies</affiliation>
+   <email>joseph.wright129@hotmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <category>Sponsor Representative</category>
+  <registrationfee>10</registrationfee>
+ </registration>
+ <registration type="student">
+  <attendee>
+   <name>Michael Ortiz</name>
+   <affiliation>University of Toronto</affiliation>
+   <email>michael.ortiz130@aol.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <qualification>Accounting</qualification>
+  <registrationfee>50</registrationfee>
+ </registration>
+ <registration type="standard">
+  <attendee>
+   <name>Michael Chavez</name>
+   <affiliation>Bank of America</affiliation>
+   <email>michael.chavez131@fastmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <registrationfee>100</registrationfee>
+ </registration>
+ <registration type="guest">
+  <attendee>
+   <name>Kevin Price</name>
+   <affiliation>Dell Technologies</affiliation>
+   <email>kevin.price132@protonmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <category>Advisory Council</category>
+  <registrationfee>10</registrationfee>
+ </registration>
+ <registration type="student">
+  <attendee>
+   <name>Susan Diaz</name>
+   <affiliation>Imperial College London</affiliation>
+   <email>susan.diaz133@protonmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <qualification>Marketing</qualification>
+  <registrationfee>50</registrationfee>
+ </registration>
+ <registration type="standard">
+  <attendee>
+   <name>Amy Allen</name>
+   <affiliation>LinkedIn</affiliation>
+   <email>amy.allen134@mail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <registrationfee>100</registrationfee>
+ </registration>
+ <registration type="guest">
+  <attendee>
+   <name>Mark Jones</name>
+   <affiliation>Bain &amp; Company</affiliation>
+   <email>mark.jones135@aol.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <category>Speaker</category>
+  <registrationfee>10</registrationfee>
+ </registration>
+ <registration type="student">
+  <attendee>
+   <name>Nicholas Torres</name>
+   <affiliation>University of Pennsylvania</affiliation>
+   <email>nicholas.torres136@mail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <qualification>Data Science</qualification>
+  <registrationfee>50</registrationfee>
+ </registration>
+ <registration type="standard">
+  <attendee>
+   <name>Kathleen Nguyen</name>
+   <affiliation>VMware</affiliation>
+   <email>kathleen.nguyen137@icloud.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <registrationfee>100</registrationfee>
+ </registration>
+ <registration type="guest">
+  <attendee>
+   <name>Sharon James</name>
+   <affiliation>Salesforce</affiliation>
+   <email>sharon.james138@mail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <category>Keynote Speaker</category>
+  <registrationfee>10</registrationfee>
+ </registration>
+ <registration type="student">
+  <attendee>
+   <name>Janet Gutierrez</name>
+   <affiliation>Harvard University</affiliation>
+   <email>janet.gutierrez139@aol.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <qualification>Psychology</qualification>
+  <registrationfee>50</registrationfee>
+ </registration>
+ <registration type="standard">
+  <attendee>
+   <name>Matthew Gutierrez</name>
+   <affiliation>SpaceX</affiliation>
+   <email>matthew.gutierrez140@gmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <registrationfee>100</registrationfee>
+ </registration>
+ <registration type="guest">
+  <attendee>
+   <name>Ashley Roberts</name>
+   <affiliation>McKinsey &amp; Company</affiliation>
+   <email>ashley.roberts141@yahoo.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <category>Exhibitor</category>
+  <registrationfee>10</registrationfee>
+ </registration>
+ <registration type="student">
+  <attendee>
+   <name>Brandon Turner</name>
+   <affiliation>Cambridge University</affiliation>
+   <email>brandon.turner142@aol.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <qualification>Accounting</qualification>
+  <registrationfee>50</registrationfee>
+ </registration>
+ <registration type="standard">
+  <attendee>
+   <name>Richard Young</name>
+   <affiliation>Bain &amp; Company</affiliation>
+   <email>richard.young143@aol.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <registrationfee>100</registrationfee>
+ </registration>
+ <registration type="guest">
+  <attendee>
+   <name>Jerry Ramirez</name>
+   <affiliation>EY</affiliation>
+   <email>jerry.ramirez144@protonmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <category>Media</category>
+  <registrationfee>10</registrationfee>
+ </registration>
+ <registration type="student">
+  <attendee>
+   <name>Nancy Moore</name>
+   <affiliation>University of Washington</affiliation>
+   <email>nancy.moore145@fastmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <qualification>Biology</qualification>
+  <registrationfee>50</registrationfee>
+ </registration>
+ <registration type="standard">
+  <attendee>
+   <name>Pamela Miller</name>
+   <affiliation>Bain &amp; Company</affiliation>
+   <email>pamela.miller146@aol.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <registrationfee>100</registrationfee>
+ </registration>
+ <registration type="guest">
+  <attendee>
+   <name>Linda Jackson</name>
+   <affiliation>Microsoft</affiliation>
+   <email>linda.jackson147@gmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <category>Panel Moderator</category>
+  <registrationfee>10</registrationfee>
+ </registration>
+ <registration type="student">
+  <attendee>
+   <name>Helen Lee</name>
+   <affiliation>New York University</affiliation>
+   <email>helen.lee148@hotmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <qualification>Finance</qualification>
+  <registrationfee>50</registrationfee>
+ </registration>
+ <registration type="standard">
+  <attendee>
+   <name>Alexander Flores</name>
+   <affiliation>Salesforce</affiliation>
+   <email>alexander.flores149@hotmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <registrationfee>100</registrationfee>
+ </registration>
+ <registration type="guest">
+  <attendee>
+   <name>Cynthia Lee</name>
+   <affiliation>Deloitte</affiliation>
+   <email>cynthia.lee150@yahoo.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <category>Press</category>
+  <registrationfee>10</registrationfee>
+ </registration>
+ <registration type="student">
+  <attendee>
+   <name>Matthew Peterson</name>
+   <affiliation>University of Washington</affiliation>
+   <email>matthew.peterson151@aol.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <qualification>Civil Engineering</qualification>
+  <registrationfee>50</registrationfee>
+ </registration>
+ <registration type="standard">
+  <attendee>
+   <name>Steven Ward</name>
+   <affiliation>Meta</affiliation>
+   <email>steven.ward152@zoho.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <registrationfee>100</registrationfee>
+ </registration>
+ <registration type="guest">
+  <attendee>
+   <name>Nicholas Garcia</name>
+   <affiliation>Adobe</affiliation>
+   <email>nicholas.garcia153@yahoo.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <category>VIP Guest</category>
+  <registrationfee>10</registrationfee>
+ </registration>
+ <registration type="student">
+  <attendee>
+   <name>Eric Green</name>
+   <affiliation>University of Washington</affiliation>
+   <email>eric.green154@protonmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <qualification>Political Science</qualification>
+  <registrationfee>50</registrationfee>
+ </registration>
+ <registration type="standard">
+  <attendee>
+   <name>Rachel Reed</name>
+   <affiliation>Tesla</affiliation>
+   <email>rachel.reed155@aol.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <registrationfee>100</registrationfee>
+ </registration>
+ <registration type="guest">
+  <attendee>
+   <name>David Lopez</name>
+   <affiliation>JPMorgan Chase</affiliation>
+   <email>david.lopez156@yahoo.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <category>Sponsor Representative</category>
+  <registrationfee>10</registrationfee>
+ </registration>
+ <registration type="student">
+  <attendee>
+   <name>Mary Moore</name>
+   <affiliation>University of Southern California</affiliation>
+   <email>mary.moore157@zoho.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <qualification>Sociology</qualification>
+  <registrationfee>50</registrationfee>
+ </registration>
+ <registration type="standard">
+  <attendee>
+   <name>Brian Howard</name>
+   <affiliation>McKinsey &amp; Company</affiliation>
+   <email>brian.howard158@hotmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <registrationfee>100</registrationfee>
+ </registration>
+ <registration type="guest">
+  <attendee>
+   <name>Elizabeth Hernandez</name>
+   <affiliation>VMware</affiliation>
+   <email>elizabeth.hernandez159@gmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <category>Media</category>
+  <registrationfee>10</registrationfee>
+ </registration>
+ <registration type="student">
+  <attendee>
+   <name>Paul Anderson</name>
+   <affiliation>University of Chicago</affiliation>
+   <email>paul.anderson160@outlook.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <qualification>Sociology</qualification>
+  <registrationfee>50</registrationfee>
+ </registration>
+ <registration type="standard">
+  <attendee>
+   <name>Michelle Brooks</name>
+   <affiliation>Deloitte</affiliation>
+   <email>michelle.brooks161@fastmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <registrationfee>100</registrationfee>
+ </registration>
+ <registration type="guest">
+  <attendee>
+   <name>Donna Davis</name>
+   <affiliation>Google</affiliation>
+   <email>donna.davis162@protonmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <category>Panel Moderator</category>
+  <registrationfee>10</registrationfee>
+ </registration>
+ <registration type="student">
+  <attendee>
+   <name>Nicholas Lopez</name>
+   <affiliation>Georgia Tech</affiliation>
+   <email>nicholas.lopez163@fastmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <qualification>Chemical Engineering</qualification>
+  <registrationfee>50</registrationfee>
+ </registration>
+ <registration type="standard">
+  <attendee>
+   <name>Stephanie Campbell</name>
+   <affiliation>VMware</affiliation>
+   <email>stephanie.campbell164@aol.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <registrationfee>100</registrationfee>
+ </registration>
+ <registration type="guest">
+  <attendee>
+   <name>Carol Price</name>
+   <affiliation>VMware</affiliation>
+   <email>carol.price165@yahoo.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <category>Exhibitor</category>
+  <registrationfee>10</registrationfee>
+ </registration>
+ <registration type="student">
+  <attendee>
+   <name>Lisa Scott</name>
+   <affiliation>Boston University</affiliation>
+   <email>lisa.scott166@icloud.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <qualification>Mathematics</qualification>
+  <registrationfee>50</registrationfee>
+ </registration>
+ <registration type="standard">
+  <attendee>
+   <name>Cynthia Hernandez</name>
+   <affiliation>IBM</affiliation>
+   <email>cynthia.hernandez167@hotmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <registrationfee>100</registrationfee>
+ </registration>
+ <registration type="guest">
+  <attendee>
+   <name>Kenneth Lee</name>
+   <affiliation>Bain &amp; Company</affiliation>
+   <email>kenneth.lee168@aol.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <category>Volunteer Coordinator</category>
+  <registrationfee>10</registrationfee>
+ </registration>
+ <registration type="student">
+  <attendee>
+   <name>Katherine Kelly</name>
+   <affiliation>University of Pennsylvania</affiliation>
+   <email>katherine.kelly169@icloud.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <qualification>Mathematics</qualification>
+  <registrationfee>50</registrationfee>
+ </registration>
+ <registration type="standard">
+  <attendee>
+   <name>Elizabeth Reed</name>
+   <affiliation>Morgan Stanley</affiliation>
+   <email>elizabeth.reed170@gmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <registrationfee>100</registrationfee>
+ </registration>
+ <registration type="guest">
+  <attendee>
+   <name>Stephanie Clark</name>
+   <affiliation>Deloitte</affiliation>
+   <email>stephanie.clark171@outlook.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <category>Advisory Council</category>
+  <registrationfee>10</registrationfee>
+ </registration>
+ <registration type="student">
+  <attendee>
+   <name>Betty Cooper</name>
+   <affiliation>University of Michigan</affiliation>
+   <email>betty.cooper172@gmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <qualification>Computer Science</qualification>
+  <registrationfee>50</registrationfee>
+ </registration>
+ <registration type="standard">
+  <attendee>
+   <name>Melissa Flores</name>
+   <affiliation>Salesforce</affiliation>
+   <email>melissa.flores173@protonmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <registrationfee>100</registrationfee>
+ </registration>
+ <registration type="guest">
+  <attendee>
+   <name>Debra Rodriguez</name>
+   <affiliation>Oracle</affiliation>
+   <email>debra.rodriguez174@mail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <category>Board Member</category>
+  <registrationfee>10</registrationfee>
+ </registration>
+ <registration type="student">
+  <attendee>
+   <name>Thomas White</name>
+   <affiliation>Boston University</affiliation>
+   <email>thomas.white175@outlook.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <qualification>Biology</qualification>
+  <registrationfee>50</registrationfee>
+ </registration>
+ <registration type="standard">
+  <attendee>
+   <name>Catherine Thomas</name>
+   <affiliation>VMware</affiliation>
+   <email>catherine.thomas176@fastmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <registrationfee>100</registrationfee>
+ </registration>
+ <registration type="guest">
+  <attendee>
+   <name>Thomas Reyes</name>
+   <affiliation>SAP</affiliation>
+   <email>thomas.reyes177@hotmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <category>Workshop Leader</category>
+  <registrationfee>10</registrationfee>
+ </registration>
+ <registration type="student">
+  <attendee>
+   <name>Linda Taylor</name>
+   <affiliation>Oxford University</affiliation>
+   <email>linda.taylor178@hotmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <qualification>Physics</qualification>
+  <registrationfee>50</registrationfee>
+ </registration>
+ <registration type="standard">
+  <attendee>
+   <name>Jessica Collins</name>
+   <affiliation>Adobe</affiliation>
+   <email>jessica.collins179@yahoo.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <registrationfee>100</registrationfee>
+ </registration>
+ <registration type="guest">
+  <attendee>
+   <name>Linda Mitchell</name>
+   <affiliation>Microsoft</affiliation>
+   <email>linda.mitchell180@gmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <category>Special Guest</category>
+  <registrationfee>10</registrationfee>
+ </registration>
+ <registration type="student">
+  <attendee>
+   <name>Andrew Sanchez</name>
+   <affiliation>University of Southern California</affiliation>
+   <email>andrew.sanchez181@fastmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <qualification>Sociology</qualification>
+  <registrationfee>50</registrationfee>
+ </registration>
+ <registration type="standard">
+  <attendee>
+   <name>Carolyn Myers</name>
+   <affiliation>Dell Technologies</affiliation>
+   <email>carolyn.myers182@aol.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <registrationfee>100</registrationfee>
+ </registration>
+ <registration type="guest">
+  <attendee>
+   <name>Brenda Edwards</name>
+   <affiliation>McKinsey &amp; Company</affiliation>
+   <email>brenda.edwards183@yahoo.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <category>Media</category>
+  <registrationfee>10</registrationfee>
+ </registration>
+ <registration type="student">
+  <attendee>
+   <name>Deborah Taylor</name>
+   <affiliation>Georgia Tech</affiliation>
+   <email>deborah.taylor184@mail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <qualification>Biology</qualification>
+  <registrationfee>50</registrationfee>
+ </registration>
+ <registration type="standard">
+  <attendee>
+   <name>Shirley Lee</name>
+   <affiliation>Deloitte</affiliation>
+   <email>shirley.lee185@protonmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <registrationfee>100</registrationfee>
+ </registration>
+ <registration type="guest">
+  <attendee>
+   <name>Kenneth Bennett</name>
+   <affiliation>SpaceX</affiliation>
+   <email>kenneth.bennett186@outlook.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <category>Exhibitor</category>
+  <registrationfee>10</registrationfee>
+ </registration>
+ <registration type="student">
+  <attendee>
+   <name>Cynthia Carter</name>
+   <affiliation>Oxford University</affiliation>
+   <email>cynthia.carter187@zoho.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <qualification>Physics</qualification>
+  <registrationfee>50</registrationfee>
+ </registration>
+ <registration type="standard">
+  <attendee>
+   <name>Debra Anderson</name>
+   <affiliation>Tesla</affiliation>
+   <email>debra.anderson188@hotmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <registrationfee>100</registrationfee>
+ </registration>
+ <registration type="guest">
+  <attendee>
+   <name>Jerry Morris</name>
+   <affiliation>Google</affiliation>
+   <email>jerry.morris189@mail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <category>Volunteer Coordinator</category>
+  <registrationfee>10</registrationfee>
+ </registration>
+ <registration type="student">
+  <attendee>
+   <name>Michael James</name>
+   <affiliation>New York University</affiliation>
+   <email>michael.james190@gmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <qualification>Psychology</qualification>
+  <registrationfee>50</registrationfee>
+ </registration>
+ <registration type="standard">
+  <attendee>
+   <name>Justin Rivera</name>
+   <affiliation>Citigroup</affiliation>
+   <email>justin.rivera191@mail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <registrationfee>100</registrationfee>
+ </registration>
+ <registration type="guest">
+  <attendee>
+   <name>Jason Lewis</name>
+   <affiliation>IBM</affiliation>
+   <email>jason.lewis192@fastmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <category>Board Member</category>
+  <registrationfee>10</registrationfee>
+ </registration>
+ <registration type="student">
+  <attendee>
+   <name>Justin Kelly</name>
+   <affiliation>Princeton University</affiliation>
+   <email>justin.kelly193@icloud.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <qualification>Accounting</qualification>
+  <registrationfee>50</registrationfee>
+ </registration>
+ <registration type="standard">
+  <attendee>
+   <name>Amy Baker</name>
+   <affiliation>JPMorgan Chase</affiliation>
+   <email>amy.baker194@yahoo.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <registrationfee>100</registrationfee>
+ </registration>
+ <registration type="guest">
+  <attendee>
+   <name>Angela Myers</name>
+   <affiliation>KPMG</affiliation>
+   <email>angela.myers195@hotmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <category>Press</category>
+  <registrationfee>10</registrationfee>
+ </registration>
+ <registration type="student">
+  <attendee>
+   <name>Pamela Allen</name>
+   <affiliation>Penn State University</affiliation>
+   <email>pamela.allen196@gmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <qualification>English Literature</qualification>
+  <registrationfee>50</registrationfee>
+ </registration>
+ <registration type="standard">
+  <attendee>
+   <name>Richard King</name>
+   <affiliation>McKinsey &amp; Company</affiliation>
+   <email>richard.king197@protonmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <registrationfee>100</registrationfee>
+ </registration>
+ <registration type="guest">
+  <attendee>
+   <name>Edward Hernandez</name>
+   <affiliation>Airbnb</affiliation>
+   <email>edward.hernandez198@zoho.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <category>Board Member</category>
+  <registrationfee>10</registrationfee>
+ </registration>
+ <registration type="student">
+  <attendee>
+   <name>Jennifer Morales</name>
+   <affiliation>New York University</affiliation>
+   <email>jennifer.morales199@fastmail.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <qualification>Statistics</qualification>
+  <registrationfee>50</registrationfee>
+ </registration>
+ <registration type="standard">
+  <attendee>
+   <name>Robert Nelson</name>
+   <affiliation>JPMorgan Chase</affiliation>
+   <email>robert.nelson200@zoho.com</email>
+  </attendee>
+  <bookingdate>2024-07-16</bookingdate>
+  <registrationfee>100</registrationfee>
+ </registration>
+</registrationlist>
