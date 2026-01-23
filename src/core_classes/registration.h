@@ -12,6 +12,7 @@
 #include "person.h"
 
 #include <QDate>
+#include <QObject>
 #include <QString>
 
 
