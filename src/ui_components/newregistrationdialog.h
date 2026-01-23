@@ -56,7 +56,7 @@ private slots:
     /**
      * @brief Slot for handling the change event of the Registration Type combobox.
      */
-    void on_comboBoxRegistrationType_changed();
+    void on_comboBoxRegistrationTypeChanged();
 
 private:
     /**

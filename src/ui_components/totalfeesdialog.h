@@ -38,7 +38,7 @@ private slots:
     /**
      * @brief Slot function that is called when the registration type is changed.
      */
-    void on_comboBoxRegistrationType_currentIndexChanged();
+    void on_comboBoxRegistrationTypeChanged();
 
 private:
     /**

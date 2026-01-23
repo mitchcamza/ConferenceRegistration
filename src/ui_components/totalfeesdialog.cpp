@@ -30,14 +30,14 @@ TotalFeesDialog::TotalFeesDialog(RegistrationList *registrationList)
     setupUI();
 
     connect(pushButtonClose, &QPushButton::clicked, this, &TotalFeesDialog::close);
-    connect(comboBoxRegistrationType, &QComboBox::currentIndexChanged, this, &TotalFeesDialog::on_comboBoxRegistrationType_currentIndexChanged);
+    connect(comboBoxRegistrationType, &QComboBox::currentTextChanged, this, &TotalFeesDialog::on_comboBoxRegistrationTypeChanged);
     
     // Display default selection
-    on_comboBoxRegistrationType_currentIndexChanged();
+    on_comboBoxRegistrationTypeChanged();
 }
 
 
-void TotalFeesDialog::on_comboBoxRegistrationType_currentIndexChanged()
+void TotalFeesDialog::on_comboBoxRegistrationTypeChanged()
 {
     QString typeString = comboBoxRegistrationType->currentText();
     double totalFee = registrationList->totalFee(typeString);
