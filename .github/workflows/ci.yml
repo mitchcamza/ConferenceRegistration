@@ -50,8 +50,13 @@ jobs:
           name: build-artifacts
           path: build/
 
+      - name: List test binaries
+        run: ls -lR build/
+
+      - name: Make all build files executable
+        run: find build/ -type f -exec chmod +x {} +
+
       - name: Run unit tests
         run: |
           cd build
-          chmod +x * || true  # Make executables runnable
           ctest --output-on-failure
