@@ -41,6 +41,8 @@ void RegistrationFilterProxyModel::setFilterText(const QString &filterText)
     m_filterText = filterText;
     if (!m_filterText.isEmpty()) {
         m_filterRegex = QRegularExpression(m_filterText, QRegularExpression::CaseInsensitiveOption);
+    } else {
+        m_filterRegex = QRegularExpression();
     }
     invalidateFilter();  // Trigger re-filtering
 }
