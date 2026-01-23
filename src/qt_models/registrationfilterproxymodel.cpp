@@ -14,6 +14,8 @@ bool RegistrationFilterProxyModel::filterAcceptsRow(int sourceRow, const QModelI
 {
     if (m_filterText.isEmpty()) return true;
     
+    if (!m_filterRegex.isValid()) return true;
+    
     // Check all columns for a match
     int columnCount = sourceModel()->columnCount(sourceParent);
     for (int col = 0; col < columnCount; ++col) {
