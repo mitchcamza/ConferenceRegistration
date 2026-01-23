@@ -12,6 +12,8 @@
 
 bool RegistrationFilterProxyModel::filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const
 {
+    if (!sourceModel()) return false;
+    
     if (m_filterText.isEmpty()) return true;
     
     QRegularExpression regex(m_filterText, QRegularExpression::CaseInsensitiveOption);
