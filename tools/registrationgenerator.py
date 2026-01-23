@@ -10,7 +10,7 @@ def prettify(elem):
 
 def sanitize_for_email(name):
     """Remove non-alphanumeric characters from name for use in email addresses"""
-    return re.sub(r'[^a-z]', '', name.lower())
+    return re.sub(r'[^a-z0-9]', '', name.lower())
 
 # Realistic name lists based on common names from various sources
 first_names = [
