@@ -1,11 +1,16 @@
 import xml.etree.ElementTree as ET
 from xml.dom import minidom
 import random
+import re
 
 def prettify(elem):
     rough_string = ET.tostring(elem, 'utf-8')
     reparsed = minidom.parseString(rough_string)
     return reparsed.toprettyxml(indent=" ")
+
+def sanitize_for_email(name):
+    """Remove non-alphanumeric characters from name for use in email addresses"""
+    return re.sub(r'[^a-z]', '', name.lower())
 
 # Realistic name lists based on common names from various sources
 first_names = [
@@ -100,7 +105,7 @@ for i in range(1, 201):
     ET.SubElement(attendee, "affiliation").text = affiliation
     
     # Generate realistic email with unique identifier
-    email_name = f"{first_name.lower()}.{last_name.lower()}{i}"
+    email_name = f"{sanitize_for_email(first_name)}.{sanitize_for_email(last_name)}{i}"
     email_domain = random.choice(email_domains)
     email = f"{email_name}@{email_domain}"
     ET.SubElement(attendee, "email").text = email
