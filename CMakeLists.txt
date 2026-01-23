@@ -124,3 +124,7 @@ install(TARGETS ConferenceRegistration
 if(QT_VERSION_MAJOR EQUAL 6)
     qt_finalize_executable(ConferenceRegistration)
 endif()
+
+# Testing
+enable_testing()
+add_subdirectory(tests)

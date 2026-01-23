@@ -50,7 +50,6 @@ compile_commands.json
 
 # QtCreator local machine specific files for imported projects
 *creator.user*
-
 *_qmlcache.qrc
 
 # Build and CMake Files
@@ -59,3 +58,11 @@ CMakeFiles/*
 CMakeCache.txt
 cmake_install.cmake
 *.app/Contents/
+
+# Test artifacts
+Testing/
+_deps/
+
+# CodeQL
+_codeql_build_dir/
+_codeql_detected_source_root
