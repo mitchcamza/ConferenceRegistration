@@ -24,7 +24,6 @@
 #include <QLineEdit>
 #include <QMenuBar>
 #include <QMessageBox>
-#include <QPushButton>
 #include <QStandardItem>
 #include <QStatusBar>
 #include <QTableView>

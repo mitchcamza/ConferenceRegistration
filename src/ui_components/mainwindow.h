@@ -13,7 +13,6 @@
 
 class QGridLayout;
 class QLineEdit;
-class QPushButton;
 class QTableView;
 class RegistrationFilterProxyModel;
 class RegistrationList;
@@ -23,7 +22,7 @@ class RegistrationModel;
 /**
  * @class MainWindow
  * @brief The MainWindow class represents the main application window.
- * @details This class inherits from QMainWindow and provides the user interface for the application. It contains various widgets such as a table view, line edit, push button, and actions. The MainWindow class also manages the registration model, registration list, and proxy model.
+ * @details This class inherits from QMainWindow and provides the user interface for the application. It contains various widgets such as a table view, line edit, and actions. The MainWindow class also manages the registration model, registration list, and proxy model.
  */
 class MainWindow : public QMainWindow
 {
@@ -93,7 +92,6 @@ private:
     QAction *actionGetNumberOfAttendeesForAffiliation; /**< The action for getting the number of attendees for an affiliation. */
     QAction *actionClose; /**< The action for closing the application. */
     QLineEdit *lineEditSearch; /**< The line edit widget for searching. */
-    QPushButton *pushButtonClear; /**< The push button widget for clearing the filter. */
     RegistrationFilterProxyModel *proxyModel; /**< The proxy model for filtering registrations. */
 };
 
