@@ -156,31 +156,40 @@ Ensure you have the following installed on your system:
 - **CMake**: Version 3.5 or higher ([Download CMake](https://cmake.org/download/))
 - **C++ Compiler**: C++17 compatible (GCC, Clang, MSVC)
 
-### Installation
+### To Build & Run:
 
 1. **Clone the Repository**:
    ```bash
    git clone https://github.com/mitchcamza/ConferenceRegistration.git
    cd ConferenceRegistration
    ```
-2. **Make the build script executable** (Linux/macOS):
-   ```bash
-   cd tools
-   chmod +x ./build_and_run.sh
-   ```
 
-3. **Run the build script**:
-   ```bash
-   ./build_and_run.sh
-   ```
-
-   Or manually build:
+2. **Build**
    ```bash
    mkdir build && cd build
-   cmake ..
+   cmake -S .. -B .
    make
+   ```
+
+3. **Run the Application** (may require admin/sudo permissions)
+   
+   On Windows:
+   ```bash
+   ./ConferenceRegistration.exe
+   ```
+
+   On Linux:
+   ```bash
+   chmod +x ConferenceRegistration
    ./ConferenceRegistration
    ```
+   
+   On macOS:
+   ```bash
+   chmod +x ConferenceRegistration
+   ./ConferenceRegistration.app
+   ```
+
 
 **⏱️ Build Time:** Less than a minute on a modern system.
      

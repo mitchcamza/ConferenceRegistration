@@ -42,7 +42,7 @@ if ! command_exists cmake; then
 fi
 
 echo "Configuring the project with CMake..."
-cmake ../COS3711-02-04/
+cmake -S .. -B .
 
 # Build the project
 echo "Building the project..."
@@ -50,7 +50,7 @@ make
 
 # Run the application
 echo "Running the application..."
-./COS3711-02-04
+./ConferenceRegistration
 
 # Print completion message
 echo "Build and run completed successfully."
