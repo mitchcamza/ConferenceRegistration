@@ -42,7 +42,7 @@ if ! command_exists cmake; then
 fi
 
 echo "Configuring the project with CMake..."
-cmake -S .. -B .
+cmake -S ../.. -B .
 
 # Build the project
 echo "Building the project..."
