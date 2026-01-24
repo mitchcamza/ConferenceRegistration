@@ -66,6 +66,8 @@ This project showcases proficiency in:
 - **Build Automation**: CMake for cross-platform builds
 - **CI/CD**: Automated builds and testing using GitHub Actions
 - **Unit Testing**: Comprehensive test suite using GoogleTest framework
+- **UI Testing**: Qt Test framework for GUI component testing
+- **Code Coverage**: lcov/genhtml integration with 81.5% line coverage
 - **Version Control**: Git with feature branch workflow
 - **Documentation**: Comprehensive Doxygen documentation
 - **Code Quality**: Consistent naming conventions, well-commented code
@@ -107,10 +109,18 @@ Abstract `Registration` base class with three derived types demonstrating runtim
 GitHub Actions workflow for automated building and unit testing on multiple branches, ensuring code quality and build stability.
 
 ### 7. **Comprehensive Testing**
-Implemented a robust test suite using GoogleTest with 58 tests covering both unit and integration testing:
-- **Unit Tests (42)**: Core domain logic including Person class, Registration types, and Factory pattern
-- **Integration Tests (16)**: End-to-end XML persistence with round-trip validation and fixture-based testing
+Implemented a robust test suite with 61 tests covering unit, integration, and UI testing:
+- **Unit Tests (42)**: Core domain logic including Person class, Registration types, and Factory pattern using GoogleTest
+- **Integration Tests (16)**: End-to-end XML persistence with round-trip validation and fixture-based testing using GoogleTest
+- **UI Tests (3 suites, 38 test functions)**: Qt-based UI component testing using Qt Test framework
 - Tests run automatically in CI pipeline ensuring code quality and preventing regressions
+
+### 8. **Code Coverage Reporting**
+Integrated code coverage reporting using lcov/genhtml:
+- Achieves **81.5% line coverage** and **78.8% function coverage**
+- Excludes third-party code (Qt, GoogleTest, system headers)
+- HTML reports generated for detailed analysis
+- Coverage metrics tracked in CI pipeline
 
 <a id="features"></a>
 ## ✨ Features
@@ -230,6 +240,12 @@ ConferenceRegistration/
 │   │   ├── xml_persistence_test.cpp    # End-to-end XML I/O tests
 │   │   └── README.md                   # Integration test documentation
 │   │
+│   ├── ui/                             # UI tests (3 suites, 38 test functions)
+│   │   ├── mainwindow_test.cpp         # MainWindow UI tests
+│   │   ├── newregistrationdialog_test.cpp # Dialog UI tests
+│   │   ├── statistics_dialogs_test.cpp # Statistics dialogs tests
+│   │   └── README.md                   # UI test documentation
+│   │
 │   └── fixtures/
 │       └── xml/                        # Test fixture files
 │           ├── valid_standard.xml      # Valid test data
@@ -238,6 +254,7 @@ ConferenceRegistration/
 │
 └── tools/
    ├── build_and_run.sh                # Helper build script
+   ├── coverage_summary.sh             # Coverage metrics script
    └── registrationgenerator.py        # Utility script for generating registrations
 ```
 
@@ -246,27 +263,43 @@ ConferenceRegistration/
 <a id="testing"></a>
 ## 🧪 Testing
 
-The project includes a comprehensive test suite using **GoogleTest** to ensure code reliability and correctness. Tests are fast, deterministic, and suitable for CI/CD pipelines, covering both unit-level logic and end-to-end integration scenarios.
+The project includes a comprehensive test suite to ensure code reliability and correctness. Tests are fast, deterministic, and suitable for CI/CD pipelines, covering unit-level logic, end-to-end integration scenarios, and UI component testing.
 
 ### Test Coverage
 
-The test suite includes **58 tests** covering:
+The test suite includes **61 tests** covering:
 
 #### Unit Tests (42 tests)
+Using **GoogleTest** framework:
 - **Person Tests (6 tests)**: Constructor validation, empty/whitespace handling, special characters, and boundary testing
 - **Registration Tests (17 tests)**: Fee calculations for all registration types (Standard: $100, Student: $50, Guest: $10), booking date validation, and toString formatting
 - **RegistrationFactory Tests (19 tests)**: Singleton pattern verification, registration creation, case-insensitive type handling, and edge case validation
 
 #### Integration Tests (16 tests)
+Using **GoogleTest** framework:
 - **Round-trip Integrity (5 tests)**: Write registrations to XML, read them back, and verify data integrity across all registration types
 - **Golden File Fixtures (4 tests)**: Parse known-good XML files and validate correct deserialization behavior
 - **Error & Edge Cases (7 tests)**: Malformed XML handling, missing required fields, missing type attributes, empty files, non-existent files, read-only locations, and deterministic output verification
+
+#### UI Tests (3 suites, 38 test functions)
+Using **Qt Test** framework:
+- **MainWindow Tests (11 tests)**: Window initialization, menu structure (File, Edit, Reports), toolbar, table view/model, search widget
+- **NewRegistrationDialog Tests (14 tests)**: Dialog initialization, form fields, validation, registration type switching, conditional field visibility (student qualification, guest category)
+- **Statistics Dialogs Tests (13 tests)**: TotalFeesDialog and TotalRegisteredDialog initialization, calculations, and display
+
+#### Code Coverage
+- **Line Coverage**: 81.5% (555 of 681 lines)
+- **Function Coverage**: 78.8% (78 of 99 functions)
+- Coverage reports generated using lcov/genhtml
+- Excludes third-party code (Qt, GoogleTest, system headers)
 
 ### Running Tests
 
 #### Build and Run All Tests
 ```bash
 cd build
+# Set headless mode for UI tests
+export QT_QPA_PLATFORM=offscreen
 ctest --output-on-failure
 ```
 
@@ -282,6 +315,19 @@ cd build
 ctest --output-on-failure -R XmlPersistence
 ```
 
+#### Run UI Tests Only
+```bash
+cd build
+export QT_QPA_PLATFORM=offscreen
+ctest --output-on-failure -R "MainWindowTests|NewRegistrationDialogTests|StatisticsDialogsTests"
+
+# Or run individually
+cd tests/ui
+./mainwindow_test
+./newregistrationdialog_test
+./statistics_dialogs_test
+```
+
 #### Run Specific Tests
 ```bash
 # Unit tests
@@ -293,13 +339,36 @@ cd build/tests/integration
 ./integration_tests --gtest_filter=XmlPersistenceTest.RoundTripStandardRegistration
 ```
 
+#### Generate Code Coverage Report
+```bash
+# Build with coverage enabled
+cmake -S . -B build -DENABLE_COVERAGE=ON
+cd build
+make
+
+# Run tests
+export QT_QPA_PLATFORM=offscreen
+ctest --output-on-failure
+
+# Generate coverage report
+make coverage
+
+# View coverage summary
+../tools/coverage_summary.sh
+
+# View HTML report
+xdg-open coverage_report/index.html  # Linux
+open coverage_report/index.html      # macOS
+```
+
 ### CI Integration
 
-Tests run automatically on every pull request via GitHub Actions, ensuring code changes don't introduce regressions. Both unit and integration tests must pass before merging.
+Tests run automatically on every pull request via GitHub Actions, ensuring code changes don't introduce regressions. Unit, integration, and UI tests must all pass before merging. Code coverage reports are generated and uploaded as artifacts.
 
 **For detailed test documentation**, see:
 - Unit tests: [tests/README.md](tests/README.md)
 - Integration tests: [tests/integration/README.md](tests/integration/README.md)
+- UI tests: [tests/ui/README.md](tests/ui/README.md)
 - Test fixtures: [tests/fixtures/xml/README.md](tests/fixtures/xml/README.md)
   
 <a id="usage"></a>
@@ -379,6 +448,8 @@ Building this project provided hands-on experience with several important concep
 - **Code Organization**: Structured a medium-sized codebase with 40+ files in a maintainable way
 - **Unit Testing**: Developed 42 unit tests using GoogleTest to validate individual components in isolation, ensuring each class and method works correctly independently
 - **Integration Testing**: Created 16 integration tests to verify end-to-end workflows, particularly XML serialization/deserialization with round-trip validation and fixture-based testing
+- **UI Testing**: Implemented 38 UI test functions using Qt Test framework to validate graphical components, ensuring proper widget initialization, user interactions, and signal/slot connections work correctly in headless mode
+- **Code Coverage**: Integrated lcov/genhtml to track test coverage, achieving 81.5% line coverage and 78.8% function coverage, with HTML reports for detailed analysis
 - **CI/CD Integration**: Set up automated build pipelines to catch issues early
 - **Documentation**: Created comprehensive API documentation using Doxygen
 
@@ -394,7 +465,6 @@ Building this project provided hands-on experience with several important concep
 Potential improvements to demonstrate continuous learning:
 
 - **Database Integration**: Replace XML with SQLite for better scalability and querying
-- **UI Testing**: Add automated UI tests using Qt Test framework
 - **Export Formats**: Support for CSV, JSON, and PDF export
 - **Authentication**: User login system with different permission levels
 - **Email Notifications**: Automated confirmation emails upon registration
