@@ -171,7 +171,7 @@ Ensure you have the following installed on your system:
    cmake --build .   # add "--config Release" for multi-config generators (e.g., Visual Studio, Xcode)
    ```
 
-3. **Run the Application** (may require admin/sudo permissions)
+3. **Run the Application**
    
    On Windows:
    ```bash
