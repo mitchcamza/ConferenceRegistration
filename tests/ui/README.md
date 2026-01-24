@@ -54,27 +54,38 @@ Tests for statistics dialogs:
 ### Build and Run All UI Tests
 ```bash
 cd build
-ctest --output-on-failure -R UITests
+export QT_QPA_PLATFORM=offscreen
+ctest --output-on-failure -R "MainWindowTests|NewRegistrationDialogTests|StatisticsDialogsTests"
 ```
 
 ### Run UI Tests Directly
 ```bash
 cd build/tests/ui
-./ui_tests
+export QT_QPA_PLATFORM=offscreen
+
+# Run all UI tests
+./mainwindow_test
+./newregistrationdialog_test
+./statistics_dialogs_test
 ```
 
 ### Run Tests Headless (for CI)
 ```bash
+cd build
 export QT_QPA_PLATFORM=offscreen
-cd build/tests/ui
-./ui_tests
+ctest --output-on-failure -R "MainWindowTests|NewRegistrationDialogTests|StatisticsDialogsTests"
 ```
 
 ### Run Specific Test Case
 ```bash
 cd build/tests/ui
-./ui_tests -functions  # List all test functions
-./ui_tests MainWindowTest::testWindowInitialization
+export QT_QPA_PLATFORM=offscreen
+
+# List all test functions in a specific test binary
+./mainwindow_test -functions
+
+# Run a specific test function
+./mainwindow_test MainWindowTest::testWindowInitialization
 ```
 
 ## Test Approach
