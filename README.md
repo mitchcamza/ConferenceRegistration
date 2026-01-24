@@ -23,7 +23,7 @@
 <a id="about-this-project"></a>
 ## 🎯 About This Project
 
-Conference Registration is a professional-grade, cross-platform desktop application that streamlines the management of conference attendees. Built with C++ and the Qt Framework, this project demonstrates enterprise-level software engineering practices including object-oriented design, design patterns, and modern C++ development.
+Conference Registration is a cross-platform desktop application that streamlines the management of conference attendees. Built with C++ and the Qt Framework, this project demonstrates enterprise-level software engineering practices including object-oriented design, design patterns, and modern C++ development.
 
 **The Problem:** Conference organizers need an efficient way to manage different types of registrations (standard, student, and guest), calculate fees, track attendance, and maintain registration data with import/export capabilities.
 
@@ -158,12 +158,6 @@ Ensure you have the following installed on your system:
 
 ### Installation
 
-#### Option 1: Download Pre-built Release
-1. Navigate to the [Releases](https://github.com/mitchcamza/ConferenceRegistration/releases) page
-2. Download the latest release (format: `yyyy.mm.dd.<version>`)
-3. Extract the archive to your desired location
-
-#### Option 2: Build from Source
 1. **Clone the Repository**:
    ```bash
    git clone https://github.com/mitchcamza/ConferenceRegistration.git
@@ -188,7 +182,7 @@ Ensure you have the following installed on your system:
    ./ConferenceRegistration
    ```
 
-**⏱️ Build Time:** Approximately 2-3 minutes on a modern system.
+**⏱️ Build Time:** Less than a minute on a modern system.
      
 <a id="project-structure"></a>
 ## 📁 Project Structure
