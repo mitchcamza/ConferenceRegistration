@@ -168,7 +168,7 @@ Ensure you have the following installed on your system:
    ```bash
    mkdir build && cd build
    cmake -S .. -B .
-   make
+   cmake --build .   # add "--config Release" for multi-config generators (e.g., Visual Studio, Xcode)
    ```
 
 3. **Run the Application** (may require admin/sudo permissions)
