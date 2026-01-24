@@ -186,8 +186,14 @@ Ensure you have the following installed on your system:
    
    On macOS:
    ```bash
-   chmod +x ConferenceRegistration
-   ./ConferenceRegistration.app
+   # Ensure the bundled executable is runnable (if needed)
+   chmod +x ConferenceRegistration.app/Contents/MacOS/ConferenceRegistration
+   
+   # Launch via Finder
+   open ConferenceRegistration.app
+   
+   # Or run the binary directly
+   ./ConferenceRegistration.app/Contents/MacOS/ConferenceRegistration
    ```
 
 
