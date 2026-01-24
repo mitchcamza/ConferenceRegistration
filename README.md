@@ -377,6 +377,8 @@ Building this project provided hands-on experience with several important concep
 ### Software Engineering Practices
 - **Clean Architecture**: Practiced separating concerns between UI, business logic, and data layers
 - **Code Organization**: Structured a medium-sized codebase with 40+ files in a maintainable way
+- **Unit Testing**: Developed 42 unit tests using GoogleTest to validate individual components in isolation, ensuring each class and method works correctly independently
+- **Integration Testing**: Created 16 integration tests to verify end-to-end workflows, particularly XML serialization/deserialization with round-trip validation and fixture-based testing
 - **CI/CD Integration**: Set up automated build pipelines to catch issues early
 - **Documentation**: Created comprehensive API documentation using Doxygen
 
