@@ -175,6 +175,10 @@ Ensure you have the following installed on your system:
    
    On Windows:
    ```bash
+   # For multi-config generators (Visual Studio), executables are in config subdirectories:
+   ./Release/ConferenceRegistration.exe   # or ./Debug/ConferenceRegistration.exe
+   
+   # For single-config generators (Ninja, MinGW Makefiles):
    ./ConferenceRegistration.exe
    ```
 
@@ -186,14 +190,19 @@ Ensure you have the following installed on your system:
    
    On macOS:
    ```bash
+   # For multi-config generators (Xcode), executables are in config subdirectories:
    # Ensure the bundled executable is runnable (if needed)
-   chmod +x ConferenceRegistration.app/Contents/MacOS/ConferenceRegistration
+   chmod +x Release/ConferenceRegistration.app/Contents/MacOS/ConferenceRegistration
    
    # Launch via Finder
-   open ConferenceRegistration.app
+   open Release/ConferenceRegistration.app   # or Debug/ConferenceRegistration.app
    
    # Or run the binary directly
-   ./ConferenceRegistration.app/Contents/MacOS/ConferenceRegistration
+   ./Release/ConferenceRegistration.app/Contents/MacOS/ConferenceRegistration
+   
+   # For single-config generators (Unix Makefiles, Ninja):
+   open ConferenceRegistration.app
+   # or ./ConferenceRegistration.app/Contents/MacOS/ConferenceRegistration
    ```
 
 
