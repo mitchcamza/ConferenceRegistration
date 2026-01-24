@@ -90,12 +90,12 @@ private slots:
     {
         TotalFeesDialog dialog(regList);
         
-        // With empty list, total fees should be 0
+        // With empty list, verify line edit exists
         QLineEdit *lineEdit = dialog.findChild<QLineEdit*>();
         QVERIFY(lineEdit != nullptr);
         
-        // The line edit should contain a value (even if it's 0)
-        QVERIFY(!lineEdit->text().isEmpty() || lineEdit->text().isEmpty());
+        // Line edit should be disabled for display (not editable)
+        QVERIFY(!lineEdit->isEnabled());
     }
 
     void testTotalFeesDialogWithRegistrations()
@@ -118,13 +118,15 @@ private slots:
         
         TotalFeesDialog dialog(regList);
         
-        // Line edit should exist and contain fees
+        // Line edit should exist
         QLineEdit *lineEdit = dialog.findChild<QLineEdit*>();
         QVERIFY(lineEdit != nullptr);
         
-        // There should be some text in the line edit
-        // (actual calculation is tested in unit tests)
-        QVERIFY(!lineEdit->text().isEmpty() || lineEdit->isReadOnly());
+        // Line edit should be disabled (display only, not editable)
+        QVERIFY(!lineEdit->isEnabled());
+        
+        // Line edit should contain some text
+        QVERIFY(!lineEdit->text().isEmpty());
     }
 
     // TotalRegisteredDialog Tests
