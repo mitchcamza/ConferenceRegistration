@@ -173,13 +173,22 @@ Ensure you have the following installed on your system:
 
 3. **Run the Application**
    
-   On Windows:
+   On Windows (Git Bash/WSL):
    ```bash
    # For multi-config generators (Visual Studio), executables are in config subdirectories:
    ./Release/ConferenceRegistration.exe   # or ./Debug/ConferenceRegistration.exe
    
    # For single-config generators (Ninja, MinGW Makefiles):
    ./ConferenceRegistration.exe
+   ```
+   
+   On Windows (cmd/PowerShell):
+   ```powershell
+   # For multi-config generators (Visual Studio), executables are in config subdirectories:
+   .\Release\ConferenceRegistration.exe   # or .\Debug\ConferenceRegistration.exe
+   
+   # For single-config generators (Ninja, MinGW Makefiles):
+   .\ConferenceRegistration.exe
    ```
 
    On Linux:
