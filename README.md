@@ -23,7 +23,7 @@
 <a id="about-this-project"></a>
 ## 🎯 About This Project
 
-Conference Registration is a professional-grade, cross-platform desktop application that streamlines the management of conference attendees. Built with C++ and the Qt Framework, this project demonstrates enterprise-level software engineering practices including object-oriented design, design patterns, and modern C++ development.
+Conference Registration is a cross-platform desktop application that streamlines the management of conference attendees. Built with C++ and the Qt Framework, this project demonstrates enterprise-level software engineering practices including object-oriented design, design patterns, and modern C++ development.
 
 **The Problem:** Conference organizers need an efficient way to manage different types of registrations (standard, student, and guest), calculate fees, track attendance, and maintain registration data with import/export capabilities.
 
@@ -156,39 +156,66 @@ Ensure you have the following installed on your system:
 - **CMake**: Version 3.5 or higher ([Download CMake](https://cmake.org/download/))
 - **C++ Compiler**: C++17 compatible (GCC, Clang, MSVC)
 
-### Installation
+### To Build & Run:
 
-#### Option 1: Download Pre-built Release
-1. Navigate to the [Releases](https://github.com/mitchcamza/ConferenceRegistration/releases) page
-2. Download the latest release (format: `yyyy.mm.dd.<version>`)
-3. Extract the archive to your desired location
-
-#### Option 2: Build from Source
 1. **Clone the Repository**:
    ```bash
    git clone https://github.com/mitchcamza/ConferenceRegistration.git
    cd ConferenceRegistration
    ```
-2. **Make the build script executable** (Linux/macOS):
-   ```bash
-   cd tools
-   chmod +x ./build_and_run.sh
-   ```
 
-3. **Run the build script**:
-   ```bash
-   ./build_and_run.sh
-   ```
-
-   Or manually build:
+2. **Build**
    ```bash
    mkdir build && cd build
-   cmake ..
-   make
-   ./ConferenceRegistration
+   cmake -S .. -B .
+   cmake --build .   # add "--config Release" for multi-config generators (e.g., Visual Studio, Xcode)
    ```
 
-**⏱️ Build Time:** Approximately 2-3 minutes on a modern system.
+3. **Run the Application**
+   
+   On Windows (Git Bash/WSL):
+   ```bash
+   # For multi-config generators (Visual Studio), executables are in config subdirectories:
+   ./Release/ConferenceRegistration.exe   # or ./Debug/ConferenceRegistration.exe
+   
+   # For single-config generators (Ninja, MinGW Makefiles):
+   ./ConferenceRegistration.exe
+   ```
+   
+   On Windows (cmd/PowerShell):
+   ```powershell
+   # For multi-config generators (Visual Studio), executables are in config subdirectories:
+   .\Release\ConferenceRegistration.exe   # or .\Debug\ConferenceRegistration.exe
+   
+   # For single-config generators (Ninja, MinGW Makefiles):
+   .\ConferenceRegistration.exe
+   ```
+
+   On Linux:
+   ```bash
+   chmod +x ConferenceRegistration
+   ./ConferenceRegistration
+   ```
+   
+   On macOS:
+   ```bash
+   # For multi-config generators (Xcode), executables are in config subdirectories:
+   # Ensure the bundled executable is runnable (if needed)
+   chmod +x Release/ConferenceRegistration.app/Contents/MacOS/ConferenceRegistration
+   
+   # Launch via Finder
+   open Release/ConferenceRegistration.app   # or Debug/ConferenceRegistration.app
+   
+   # Or run the binary directly
+   ./Release/ConferenceRegistration.app/Contents/MacOS/ConferenceRegistration
+   
+   # For single-config generators (Unix Makefiles, Ninja):
+   open ConferenceRegistration.app
+   # or ./ConferenceRegistration.app/Contents/MacOS/ConferenceRegistration
+   ```
+
+
+**⏱️ Build Time:** Less than a minute on a modern system.
      
 <a id="project-structure"></a>
 ## 📁 Project Structure
@@ -295,7 +322,7 @@ Using **Qt Test** framework:
 
 ### Running Tests
 
-#### Build and Run All Tests
+#### Run All Tests
 ```bash
 cd build
 # Set headless mode for UI tests

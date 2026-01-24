@@ -36,13 +36,8 @@ mkdir -p build
 cd build
 
 # Run CMake to configure the project
-if ! command_exists cmake; then
-    echo "CMake is not installed, installing CMake..."
-    sudo apt-get install -y cmake
-fi
-
 echo "Configuring the project with CMake..."
-cmake ../COS3711-02-04/
+cmake -S ../.. -B .
 
 # Build the project
 echo "Building the project..."
@@ -50,7 +45,7 @@ make
 
 # Run the application
 echo "Running the application..."
-./COS3711-02-04
+./ConferenceRegistration
 
 # Print completion message
 echo "Build and run completed successfully."
