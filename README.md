@@ -173,27 +173,29 @@ Ensure you have the following installed on your system:
 
 3. **Run the Application**
    
-   On Windows:
+   On Windows (with multi-config generators like Visual Studio):
    ```bash
-   ./ConferenceRegistration.exe
+   ./Release/ConferenceRegistration.exe
+   # Or for Debug builds: ./Debug/ConferenceRegistration.exe
    ```
 
-   On Linux:
+   On Linux (single-config generator):
    ```bash
    chmod +x ConferenceRegistration
    ./ConferenceRegistration
    ```
    
-   On macOS:
+   On macOS (with Xcode, multi-config generator):
    ```bash
    # Ensure the bundled executable is runnable (if needed)
-   chmod +x ConferenceRegistration.app/Contents/MacOS/ConferenceRegistration
+   chmod +x Release/ConferenceRegistration.app/Contents/MacOS/ConferenceRegistration
    
    # Launch via Finder
-   open ConferenceRegistration.app
+   open Release/ConferenceRegistration.app
    
    # Or run the binary directly
-   ./ConferenceRegistration.app/Contents/MacOS/ConferenceRegistration
+   ./Release/ConferenceRegistration.app/Contents/MacOS/ConferenceRegistration
+   # For Debug builds, replace "Release" with "Debug" in the paths above
    ```
 
 
