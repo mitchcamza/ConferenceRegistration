@@ -36,7 +36,7 @@ mkdir -p build
 cd build
 
 # Run CMake to configure the project
-if ! command_exists cmake; then
+if ! command -v cmake >/dev/null 2>&1; then
     echo "CMake is not installed, installing CMake..."
     sudo apt-get install -y cmake
 fi
