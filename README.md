@@ -304,7 +304,7 @@ Using **Qt Test** framework:
 
 ### Running Tests
 
-#### Build and Run All Tests
+#### Run All Tests
 ```bash
 cd build
 # Set headless mode for UI tests
