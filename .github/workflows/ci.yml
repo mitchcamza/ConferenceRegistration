@@ -16,13 +16,13 @@ jobs:
       - name: Set up Qt and dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y libgl1-mesa-dev qt6-base-dev qt6-tools-dev qt6-tools-dev-tools cmake g++
+          sudo apt-get install -y libgl1-mesa-dev qt6-base-dev qt6-tools-dev qt6-tools-dev-tools cmake g++ lcov
 
-      - name: Build project
+      - name: Build project with coverage
         run: |
           mkdir -p build
           cd build
-          cmake -S .. -B .
+          cmake -S .. -B . -DENABLE_COVERAGE=ON
           make
 
       - name: Upload build artifacts
@@ -42,7 +42,7 @@ jobs:
       - name: Install Qt runtime dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y libgl1-mesa-dev qt6-base-dev qt6-tools-dev qt6-tools-dev-tools
+          sudo apt-get install -y libgl1-mesa-dev qt6-base-dev qt6-tools-dev qt6-tools-dev-tools lcov
 
       - name: Download build artifacts
         uses: actions/download-artifact@v4
@@ -59,5 +59,21 @@ jobs:
       - name: Run tests
         run: |
           cd build
-          # Runs all tests registered with CTest (unit + integration)
+          # Set headless mode for UI tests
+          export QT_QPA_PLATFORM=offscreen
+          # Runs all tests registered with CTest (unit + integration + UI)
           ctest --output-on-failure
+
+      - name: Generate coverage report
+        run: |
+          cd build
+          lcov --directory . --capture --output-file coverage.info --ignore-errors mismatch,source
+          lcov --remove coverage.info '/usr/*' '*/googletest/*' '*/_deps/*' '*/tests/*' --output-file coverage.info --ignore-errors mismatch,source,unused
+          lcov --list coverage.info
+          genhtml coverage.info --output-directory coverage_report --ignore-errors source
+
+      - name: Upload coverage report
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report
+          path: build/coverage_report/

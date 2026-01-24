@@ -5,3 +5,6 @@ add_subdirectory(unit)
 
 # Add integration tests subdirectory
 add_subdirectory(integration)
+
+# Add UI tests subdirectory
+add_subdirectory(ui)
