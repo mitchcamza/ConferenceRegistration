@@ -125,6 +125,37 @@ if(QT_VERSION_MAJOR EQUAL 6)
     qt_finalize_executable(ConferenceRegistration)
 endif()
 
+# Code Coverage Configuration
+option(ENABLE_COVERAGE "Enable code coverage" OFF)
+
+if(ENABLE_COVERAGE)
+    if(CMAKE_COMPILER_IS_GNUCXX)
+        message(STATUS "Enabling code coverage")
+        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --coverage -fprofile-arcs -ftest-coverage")
+        set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} --coverage -fprofile-arcs -ftest-coverage")
+        set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} --coverage")
+        
+        find_program(LCOV_PATH lcov)
+        find_program(GENHTML_PATH genhtml)
+        
+        if(LCOV_PATH AND GENHTML_PATH)
+            message(STATUS "Found lcov and genhtml - coverage target available")
+            add_custom_target(coverage
+                COMMAND ${LCOV_PATH} --directory . --capture --output-file coverage.info --ignore-errors mismatch,source
+                COMMAND ${LCOV_PATH} --remove coverage.info '/usr/*' '*/googletest/*' '${CMAKE_BINARY_DIR}/*' '*/tests/*' --output-file coverage.info --ignore-errors mismatch,source,unused
+                COMMAND ${GENHTML_PATH} coverage.info --output-directory coverage_report --ignore-errors source
+                COMMAND ${CMAKE_COMMAND} -E echo "Coverage report generated in coverage_report/index.html"
+                WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
+                COMMENT "Generating code coverage report"
+            )
+        else()
+            message(WARNING "lcov or genhtml not found - coverage target not available")
+        endif()
+    else()
+        message(WARNING "Code coverage only supported with GCC compiler")
+    endif()
+endif()
+
 # Testing
 enable_testing()
 add_subdirectory(tests)
